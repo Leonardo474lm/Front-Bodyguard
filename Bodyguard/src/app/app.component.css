@@ -1,0 +1,118 @@
+.example-container {
+    width: 100%;
+    height: 90%;
+
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+.search-field {
+    width: 20%; /* Ancho completo del formulario */
+  }
+  
+  /* Alinear el ícono de búsqueda a la derecha */
+  mat-icon.matSuffix {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  mat-toolbar{
+    background-color: rgb(221, 132, 49);
+  }
+#menu
+  .menu{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(26, 23, 23);
+    box-shadow: 3px 0px 5px  #c2c0c0; /* Agrega una sombra ligera */
+    z-index: 1; /* Establece una posición por encima de otros elementos */
+    border-left: 7%;
+    border-right: 7%;
+  }
+
+  .sidenav {
+    width: 200px;
+    background-color: rgb(32, 27, 27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+
+  .listaLink {
+    display: flex;
+  flex-direction: column;
+  }
+  
+  .item{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .botonItem{
+    width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  color: #e6a038;
+  transition: background-color 0.3s, color 0.3s;
+  }
+  .botonItem:hover {
+    background-color: #000000;
+    color: #e6a038;
+  }
+  
+  .botonItem.active {
+    background-color: #bb7814;
+    color: white;
+  }
+  
+/* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
+.icono {
+    font-size: 2em; /* Cambia el tamaño de fuente del ícono a tu preferencia */
+  }
+
+  .nombre_icono {
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Alinea el texto debajo de la imagen */
+  text-align: center; /* Centra el texto horizontalmente */
+  margin-top: 5px; 
+  }
+ 
+  .boton{
+    width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ffffff; /* Define el estilo y el color de la línea */
+    margin: 10px 0; /* Añade espacio arriba y abajo de la línea */
+  }
+  .iconos.icono-person {
+    font-size: 3em; /* Aumenta el tamaño de fuente solo para este ícono */
+    margin-bottom: 5px; /* Añade espacio entre el ícono y el texto */
+  }
+  /* Estilo para el texto "administrador" */
+.nombre_iconoimage {
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
