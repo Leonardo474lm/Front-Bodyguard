@@ -59,7 +59,7 @@
           <!-- Services -->
 
           <div class="item">
-            <div routerLink="" class="botonItem" [class.active]="activeButton === 1" (click)="setActiveButton(1)">
+            <div routerLink="service" class="botonItem" [class.active]="activeButton === 1" (click)="setActiveButton(1)">
               <mat-icon aria-label="Services" class="icono">poll</mat-icon>
               <span class="nombre_icono">Services</span>
             </div>
@@ -67,7 +67,7 @@
           <!-- Bodyguard -->
 
           <div class="item">
-            <div routerLink="" class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
+            <div routerLink="bodyguard" class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
               <mat-icon aria-label="Clients" class="icono">person</mat-icon>
               <span class="nombre_icono">Bodyguars</span>
             </div>
@@ -75,23 +75,31 @@
           <!-- Specialties -->
 
           <div class="item">
-            <div routerLink="" class="botonItem" [class.active]="activeButton === 3" (click)="setActiveButton(3)">
+            <div routerLink="specialization" class="botonItem" [class.active]="activeButton === 3" (click)="setActiveButton(3)">
               <mat-icon aria-label="Specialties" class="icono">person</mat-icon>
-              <span class="nombre_icono">Specialties</span>
+              <span class="nombre_icono">Specialization</span>
             </div>
           </div>
           <!-- Clients -->
 
           <div class="item">
-            <div routerLink="" class="botonItem" [class.active]="activeButton === 4" (click)="setActiveButton(4)">
+            <div routerLink="client" class="botonItem" [class.active]="activeButton === 4" (click)="setActiveButton(4)">
               <mat-icon aria-label="Clients" class="icono">people</mat-icon>
               <span class="nombre_icono">Clients</span>
             </div>
           </div>
+            <!-- payment -->
+
+            <div class="item">
+              <div routerLink="payment" class="botonItem" [class.active]="activeButton === 5" (click)="setActiveButton(5)">
+                <mat-icon aria-label="Specialties" class="icono">person</mat-icon>
+                <span class="nombre_icono">Paymenty</span>
+              </div>
+            </div>
           <!-- Perfil -->
 
           <div class="item">
-            <div routerLink="" class="botonItem" [class.active]="activeButton === 5" (click)="setActiveButton(5)">
+            <div routerLink="" class="botonItem" [class.active]="activeButton === 6" (click)="setActiveButton(6)">
               <mat-icon aria-label="Perfil" class="icono">person</mat-icon>
               <span class="nombre_icono">Perfil</span>
             </div>
@@ -100,7 +108,7 @@
           <!-- log out -->
 
           <div class="item">
-            <div routerLink="" class="botonItem" [class.active]="activeButton === 6" (click)="setActiveButton(6)">
+            <div routerLink="" class="botonItem" [class.active]="activeButton === 7" (click)="setActiveButton(7)">
               <mat-icon aria-label="Perfil" class="icono">last_page</mat-icon>
               <span class="nombre_icono">Log out</span>
             </div>
