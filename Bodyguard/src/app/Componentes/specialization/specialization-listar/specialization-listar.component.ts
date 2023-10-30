@@ -13,13 +13,16 @@ import { SpecializationService } from 'src/app/Services/Sspecialization.service'
 })
 export class SpecializationListarComponent implements OnInit {
   lista: Specialization[] = [];
-  displayedColumns = ['id', 'name','description'];
+  displayedColumns = ['id', 'name','description','actions'];
   dataSource = new MatTableDataSource();
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild('MatSort') sort!: MatSort;
 
-  constructor(private Sspecializationservice: SpecializationService) {
-    console.log("Load Constructor");
+  constructor(private specializationServ: SpecializationService) {
+     this.specializationServ.list().subscribe(data => this.dataSource.data = data);
+    this.specializationServ.getList().subscribe(data => {
+      this.dataSource.data = data;
+    });
   }
 
   ngOnInit(): void {
