@@ -1,0 +1,131 @@
+.menu{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+  height: 80px;
+  position: sticky;
+  z-index: 100;
+}
+.menu__logo{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.mat-mdc-button>.mat-icon{
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+}
+.menu__user{
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+.menu__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.menu__search mat-icon{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+
+}
+.menu__search input{
+  padding:5px 0px 5px 30px;
+  border-radius: 20px;
+  border: 2px solid #BCBCBC;
+}
+.menu__user .menu__notification{
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+/* Sidenav   */
+.main {
+  height: calc(100% - 80px);
+  z-index: 1;
+}
+.main__sidenav {
+  background-color: #2C2C2C;
+  width: 230px;
+
+}
+
+.main__acount{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px ;
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 10px;
+  border-bottom: 4px solid #FFB908;
+}
+.main__acount span{
+  color: #fff;
+  padding-bottom: 10px;
+}
+.main__content {
+  height: 100%;
+  background: #F3F3F3;
+}
+.main__buttons{
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.main__buttons .main__button{
+  background-color: rgba(119, 119, 119, 0.4);
+  border-bottom: 2.5px solid rgba(119, 119, 119, .1);
+  width: 100%;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  font-size: 17px;
+  border-radius: 0;
+  color: #fff;
+  transition: border ease-in-out .6ms;
+
+
+
+}
+.main__buttons .main__button:focus{
+    border-bottom: 2.5px solid #FFB908;
+    background: rgba(119, 119, 119, 0.1);
+    color: #FFB908;
+}
+.main__button mat-icon{
+  color: #FFB908;
+}
+.main__logout{
+  border-top: 4px solid #FFB908;
+  padding-top: 10px;
+}
+.main__logout button{
+  width: 100%;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+}
+.main__logout .mat-icon{
+  color: #FFB908;
+}
+
+.main__content{
+
+  padding: 40px ;
+}

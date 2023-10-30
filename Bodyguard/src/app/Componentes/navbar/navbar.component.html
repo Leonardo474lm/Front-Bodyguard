@@ -1,0 +1,60 @@
+<mat-toolbar class="menu">
+
+  <div class="menu__logo">
+    <img src="/assets/logo_bodyguard_black.svg" alt="acount of user">
+    <button mat-button (click)="drawer.toggle()">
+      <mat-icon class="menu__icon" aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
+    </button>
+  </div>
+  <div class="menu__user">
+    <div class="menu__search">
+      <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="search"></mat-icon>
+      <input type="text" placeholder="Search">
+    </div>
+    <mat-icon class="menu__notification" aria-hidden="false" aria-label="notifications icon"
+      fontIcon="notifications"></mat-icon>
+    <img src="/assets/logo.svg" alt="acount of user">
+
+  </div>
+</mat-toolbar>
+<mat-drawer-container class="main">
+  <mat-drawer #drawer class="main__sidenav" mode="side">
+    <div class="main__acount">
+      <img src="/assets/administrador.png" alt="acount of administrator">
+      <span>Administrador</span>
+    </div>
+
+    <div class="main__buttons">
+      <button mat-button class="main__button" routerLink="home">
+        <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon> Home
+      </button>
+          <button mat-button class="main__button" routerLink="service">
+        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="design_services"></mat-icon> Servicios
+      </button>
+      <button mat-button class="main__button" routerLink="bodyguard">
+        <mat-icon class="" aria-hidden="false" aria-label="Bodyguards icon" fontIcon="person"></mat-icon> Bodyguards
+      </button>
+      <button mat-button class="main__button" routerLink="specialization">
+        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="person"></mat-icon> Especialidades
+      </button>
+      <button mat-button class="main__button" routerLink="client">
+        <mat-icon class="" aria-hidden="false" aria-label="Clients icon" fontIcon="groups"></mat-icon> Clientes
+      </button>
+      <button mat-button class="main__button" routerLink="perfil">
+        <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon> Perfil
+      </button>
+    </div>
+    <div class="main__logout">
+      <button mat-button class="" routerLink="login">
+        <mat-icon class="main__icon_logout" aria-hidden="false" aria-label="menu icon" fontIcon="logout"></mat-icon> Logout
+      </button>
+    </div>
+
+  </mat-drawer>
+  <div class="main__content">
+    <router-outlet></router-outlet>
+
+  </div>
+
+</mat-drawer-container>
+

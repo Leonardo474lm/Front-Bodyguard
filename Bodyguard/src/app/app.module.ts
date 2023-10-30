@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +44,9 @@ import { SpecializationListarComponent } from './Componentes/specialization/spec
 import { SpecializationEditarComponent } from './Componentes/specialization/specialization-editar/specialization-editar.component';
 import { MatTableModule} from '@angular/material/table';//add
 import { MatPaginatorModule} from '@angular/material/paginator';
+import { NavbarComponent } from './Componentes/navbar/navbar.component';
+
+import { PerfilComponent } from './Componentes/perfil/perfil.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,9 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     ServiceEditarComponent,
     SpecializationListarComponent,
     SpecializationEditarComponent,
- 
+    NavbarComponent,
+    PerfilComponent,
+
   ],
   imports: [
     BrowserModule,
