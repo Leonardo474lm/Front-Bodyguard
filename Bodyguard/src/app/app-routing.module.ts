@@ -13,11 +13,17 @@ import { ServiceEditarComponent } from './Componentes/service/service-editar/ser
 import { SpecializationComponent } from './Componentes/specialization/specialization.component';
 import { SpecializationListarComponent } from './Componentes/specialization/specialization-listar/specialization-listar.component';
 import { SpecializationEditarComponent } from './Componentes/specialization/specialization-editar/specialization-editar.component';
+import { HomeComponent } from './Componentes/home/home.component';
+import { PerfilComponent } from './Componentes/perfil/perfil.component';
 
 const routes: Routes = [
 
 //  path para elección de rol
   //path para clients
+  {
+    path:'home',
+    component:HomeComponent
+  },
   {
     path: 'client',
     component: ClientComponent,
@@ -31,7 +37,7 @@ const routes: Routes = [
         component: ClientEditarComponent,
       },
     ],
-   
+
   },
    //path para bodyguar
    {
@@ -47,7 +53,7 @@ const routes: Routes = [
         component: BodyEditarComponent,
       },
     ],
-   
+
   },
   //path para service
   {
@@ -63,7 +69,7 @@ const routes: Routes = [
         component: ServiceEditarComponent,
       },
     ],
-   
+
   },
    //path para service
    {
@@ -71,7 +77,7 @@ const routes: Routes = [
     component: SpecializationComponent,
     children: [
       {
-        path: 'specializationLitar',  
+        path: 'specializationLitar',
         component: SpecializationListarComponent,
       },
       {
@@ -79,8 +85,13 @@ const routes: Routes = [
         component: SpecializationEditarComponent,
       },
     ],
-   
+
   },
+  {
+    path: 'perfil',
+    component:PerfilComponent
+
+  }
 ];
 
 @NgModule({
