@@ -1,5 +1,5 @@
-<div class="cuadroLogin">
-    <div class="izq">
+
+    <!--<div class="izq">
       <div class="contenido">
         <div></div>
   
@@ -19,9 +19,51 @@
         </div>
   
       </div>
-    </div>
-    <div class="der">
-      <router-outlet></router-outlet>
-    </div>
-  
+    </div>-->
+    
+
+    <div class="container" >
+      <div class="half left">
+        <img src="assets/loginimagen.png" class="img-fluid" class="full-size" alt="...">
+      </div>
+      <div class="divider"></div>
+
+      <div class="half right">
+        <div class="bodylogin">
+          <img src="assets/bodylogin.png" class="img-fluid" class="bodyimagen" alt="...">
+        </div>
+        <div>
+          <h3> Welcom back you've been missed !</h3>
+        </div>
+        <div>
+          
+              <h2>Iniciar Sesión</h2>
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Input</mat-label>
+                  <input matInput>
+                </mat-form-field>
+                  
+              </div>
+              <div class="form-group">
+                <div class="example-container">
+                  <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+              </div>
+              <button (click)="iniciarSesion()">Iniciar Sesión</button>
+          
+        </div>
+      </div>
   </div>
+  
+
+
+  <router-outlet></router-outlet>
+  
+
+

@@ -15,16 +15,28 @@ import { SpecializationListarComponent } from './Componentes/specialization/spec
 import { SpecializationEditarComponent } from './Componentes/specialization/specialization-editar/specialization-editar.component';
 import { HomeComponent } from './Componentes/home/home.component';
 import { PerfilComponent } from './Componentes/perfil/perfil.component';
+import { NavbarComponent } from './Componentes/navbar/navbar.component';
 
 const routes: Routes = [
 
 //  path para elección de rol
   //path para clients
-  {
-    path:'home',
-    component:HomeComponent
+  { path: '', 
+    redirectTo: 'login',
+    pathMatch: 'prefix'
   },
   {
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'navar',
+    component:NavbarComponent
+    
+    
+  },
+  {
+        
     path: 'client',
     component: ClientComponent,
     children: [
@@ -37,8 +49,14 @@ const routes: Routes = [
         component: ClientEditarComponent,
       },
     ],
-
+    
+  
   },
+  {
+    path:'home',
+    component:HomeComponent
+  },
+  
    //path para bodyguar
    {
     path: 'bodyguard',
@@ -77,7 +95,7 @@ const routes: Routes = [
     component: SpecializationComponent,
     children: [
       {
-        path: 'specializationLitar',
+        path: 'specializationListar',
         component: SpecializationListarComponent,
       },
       {
