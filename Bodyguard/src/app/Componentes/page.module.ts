@@ -8,13 +8,16 @@ import { PageRoutingModule } from './page-routing.module';
 
 @NgModule({
     declarations: [
- 
+
   ],
     imports: [
-    
+
         HttpClientModule,
         CommonModule,
         PageRoutingModule,
+
+
+
     ],
     providers: [],
 

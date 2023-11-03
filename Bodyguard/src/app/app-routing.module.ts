@@ -8,7 +8,7 @@ const routes: Routes = [
 
 //  path para elección de rol
   //path para clients
-  { path: '', 
+  { path: '',
     redirectTo: 'login',
     pathMatch: 'prefix'
   },
@@ -17,7 +17,7 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-    path:'navar',
+    path:'bodyguard',
     component:NavbarComponent,
     children: [
       {
@@ -25,14 +25,14 @@ const routes: Routes = [
         loadChildren: () => import('./Componentes/page.module').then((m) => m.PageModule),
 
       },
-     
+
     ],
-    
+
   },
-  
-  
-        
-  
+
+
+
+
 ];
 
 @NgModule({
