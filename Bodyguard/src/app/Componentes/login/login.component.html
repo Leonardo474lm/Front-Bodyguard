@@ -1,27 +1,40 @@
-<div class="cuadroLogin">
-    <div class="izq">
-      <div class="contenido">
-        <div></div>
-  
-        <div class="logo">
-          <div class="logo1"></div>
-        </div>
-  
-        <div></div>
-  
-        <div class="formulario">
-         <p>hola</p>
-        </div>
-        <div></div>
-        <div class="LinkRegistro">
-          <span class="nota"> ¿No tienes una cuenta? </span>
-          <a routerLink="/login/clientregister" class="register">Regístrate aquí</a>
-        </div>
-  
+<div class="content">
+  <div class="container">
+
+    <img src="/assets/bodyguard2.svg" class="container__img" alt="Bodyguards on street">
+
+    <div class="container__form">
+
+      <div class="logo">
+        <img src="/assets/BODY_FONDo_NARANJA.png" alt="Bodyguard logo with background orange">
+        <p>Wellcome back you’ve been missed</p>
       </div>
+      <form class="formulario" [formGroup]="form" (submit)="submit()" action="#">
+        <mat-form-field class="campo">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="Enter your email" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field class="campo">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password" formControlName="password" />
+          <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button> -->
+        </mat-form-field>
+
+        <span class="link"> Recovery password</span>
+        <button class="btn" type="submit">Log in</button>
+        <p>Not a memeber? <span class="link" href="#">Register now</span></p>
+        <p style="color: red;">{{message}}</p>
+      </form>
+
     </div>
-    <div class="der">
-      <router-outlet></router-outlet>
-    </div>
-  
+
   </div>
+</div>
+ 
+
+
+<router-outlet></router-outlet>

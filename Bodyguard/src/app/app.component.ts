@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Bodyguard';
   activeButton: number = -1;
+  
   role:string="";
   setActiveButton(index: number): void {
     this.activeButton = index;

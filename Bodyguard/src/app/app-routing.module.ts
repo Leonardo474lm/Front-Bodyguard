@@ -1,75 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Componentes/login/login.component';
-import { ClientComponent } from './Componentes/client/client.component';
-import { ClientListarComponent } from './Componentes/client/client-listar/client-listar.component';
-import { ClientEditarComponent } from './Componentes/client/client-editar/client-editar.component';
-import { BodyguarComponent } from './Componentes/bodyguar/bodyguar.component';
-import { BodyListarComponent } from './Componentes/bodyguar/body-listar/body-listar.component';
-import { BodyEditarComponent } from './Componentes/bodyguar/body-editar/body-editar.component';
-import { ServiceComponent } from './Componentes/service/service.component';
-import { ServiceListarComponent } from './Componentes/service/service-listar/service-listar.component';
-import { ServiceEditarComponent } from './Componentes/service/service-editar/service-editar.component';
-import { SpecializationComponent } from './Componentes/specialization/specialization.component';
-import { SpecializationListarComponent } from './Componentes/specialization/specialization-listar/specialization-listar.component';
-import { SpecializationEditarComponent } from './Componentes/specialization/specialization-editar/specialization-editar.component';
-import { HomeComponent } from './Componentes/home/home.component';
-import { PerfilComponent } from './Componentes/perfil/perfil.component';
+import { NavbarComponent } from './Componentes/navbar/navbar.component';
+
 
 const routes: Routes = [
 
 //  path para elección de rol
   //path para clients
-  {
-    path:'home',
-    component:HomeComponent
+  { path: '',
+    redirectTo: 'login',
+    pathMatch: 'prefix'
   },
   {
-    path: 'client',
-    component: ClientComponent,
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'bodyguard',
+    component:NavbarComponent,
     children: [
       {
-        path: 'clientinsertar',
-        component: ClientListarComponent,
+        path: 'pages',
+        loadChildren: () => import('./Componentes/page.module').then((m) => m.PageModule),
+
       },
-      {
-        path: 'edicion/:id',
-        component: ClientEditarComponent,
-      },
+
     ],
 
   },
-   //path para bodyguar
-   {
-    path: 'bodyguard',
-    component: BodyguarComponent,
-    children: [
-      {
-        path: 'bodyinsertar',
-        component: BodyListarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: BodyEditarComponent,
-      },
-    ],
 
-  },
-  //path para service
-  {
-    path: 'service',
-    component: ServiceComponent,
-    children: [
-      {
-        path: 'bodyinsertar',
-        component: ServiceListarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: ServiceEditarComponent,
-      },
-    ],
 
+<<<<<<< HEAD
   },
    //path para specialization
    {
@@ -85,13 +47,10 @@ const routes: Routes = [
         component: SpecializationEditarComponent,
       },
     ],
+=======
+>>>>>>> bf3a92b9863cfe9b8880d18b198b3da96c592b60
 
-  },
-  {
-    path: 'perfil',
-    component:PerfilComponent
 
-  }
 ];
 
 @NgModule({

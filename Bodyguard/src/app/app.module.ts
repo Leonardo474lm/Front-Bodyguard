@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {NgIf} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
@@ -48,6 +49,10 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
 
 import { PerfilComponent } from './Componentes/perfil/perfil.component';
+
+import {MatCardModule} from '@angular/material/card';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +73,7 @@ import { PerfilComponent } from './Componentes/perfil/perfil.component';
     NavbarComponent,
     PerfilComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -85,7 +91,10 @@ import { PerfilComponent } from './Componentes/perfil/perfil.component';
     MatSnackBarModule,
     MatTableModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

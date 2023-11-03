@@ -18,15 +18,19 @@ export class SpecializationListarComponent implements OnInit {
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild('MatSort') sort!: MatSort;
 
-  constructor(private specializationServ: SpecializationService) {
-     this.specializationServ.list().subscribe(data => this.dataSource.data = data);
-    this.specializationServ.getList().subscribe(data => {
+  constructor(private Sspecializationservice: SpecializationService) {
+     this.Sspecializationservice.list().subscribe(data => this.dataSource.data = data);
+    this.Sspecializationservice.getList().subscribe(data => {
       this.dataSource.data = data;
     });
   }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     this.specializationServ.list().subscribe(data => this.dataSource.data = data);
+=======
+    this.Sspecializationservice.list().subscribe(data => this.dataSource.data = data);
+>>>>>>> bf3a92b9863cfe9b8880d18b198b3da96c592b60
 
   }
   ngAfterViewInit() {

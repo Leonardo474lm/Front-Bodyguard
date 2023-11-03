@@ -24,25 +24,66 @@
       <span *ngIf="role == 'ADMIN'">Administrador</span>
       <span *ngIf="role == 'USER'">CHICHO</span>
       <span *ngIf="role == 'BODY'">BODIGUARD</span>
+<<<<<<< HEAD
 
     </div>
 
     <div class="main__buttons" *ngIf="role == 'ADMIN'">
       <button mat-button class="main__button" routerLink="home">
+=======
+    </div>
+
+    <div class="main__buttons" *ngIf="role == 'ADMIN'">
+      <button mat-button class="main__button" routerLink="menu">
+>>>>>>> bf3a92b9863cfe9b8880d18b198b3da96c592b60
         <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon> Home
       </button>
-          <button mat-button class="main__button" routerLink="service">
+          <button mat-button class="main__button" routerLink="pages/service">
         <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="design_services"></mat-icon> Servicios
+      </button>
+      <button mat-button class="main__button" routerLink="pages/bodyguard">
+        <mat-icon class="" aria-hidden="false" aria-label="Bodyguards icon" fontIcon="person"></mat-icon> Bodyguards
+      </button>
+      <button mat-button class="main__button" routerLink="pages/specialization">
+        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="person"></mat-icon> Especialidades
+      </button>
+      <button mat-button class="main__button" routerLink="pages/client">
+        <mat-icon class="" aria-hidden="false" aria-label="Clients icon" fontIcon="groups"></mat-icon> Clientes
+      </button>
+      <button mat-button class="main__button" routerLink="pages/perfil">
+        <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon> Perfil
+      </button>
+    </div>
+    <div class="main__buttons" *ngIf="role == 'USER'">
+      <button mat-button class="main__button" routerLink="">
+        <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon> Home
+      </button>
+          <button mat-button class="main__button" routerLink="">
+        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="date_range"></mat-icon> History
       </button>
       <button mat-button class="main__button" routerLink="bodyguard">
         <mat-icon class="" aria-hidden="false" aria-label="Bodyguards icon" fontIcon="person"></mat-icon> Bodyguards
       </button>
-      <button mat-button class="main__button" routerLink="specialization">
-        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="person"></mat-icon> Especialidades
+      <button mat-button class="main__button" routerLink="">
+        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="assessment"></mat-icon> Services
       </button>
-      <button mat-button class="main__button" routerLink="client">
-        <mat-icon class="" aria-hidden="false" aria-label="Clients icon" fontIcon="groups"></mat-icon> Clientes
+
+      <button mat-button class="main__button" routerLink="perfil">
+        <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon> Perfil
       </button>
+    </div>
+    <div class="main__buttons" *ngIf="role == 'BODY'">
+      <button mat-button class="main__button" routerLink="">
+        <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon> Home
+      </button>
+          <button mat-button class="main__button" routerLink="">
+        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="library_add"></mat-icon> Peticiones
+      </button>
+
+      <button mat-button class="main__button" routerLink="">
+        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="fast_forward"></mat-icon> Services
+      </button>
+
       <button mat-button class="main__button" routerLink="perfil">
         <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon> Perfil
       </button>
@@ -82,16 +123,17 @@
       </button>
     </div>
     <div class="main__logout">
-      <button mat-button class="" routerLink="login">
+      <button mat-button class="" routerLink="/login">
         <mat-icon class="main__icon_logout" aria-hidden="false" aria-label="menu icon" fontIcon="logout"></mat-icon> Logout
       </button>
     </div>
 
   </mat-drawer>
+
   <div class="main__content">
     <router-outlet></router-outlet>
 
   </div>
-
 </mat-drawer-container>
+
 
