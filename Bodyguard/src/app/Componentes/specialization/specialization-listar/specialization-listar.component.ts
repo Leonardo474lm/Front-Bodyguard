@@ -26,11 +26,7 @@ export class SpecializationListarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-<<<<<<< HEAD
-    this.specializationServ.list().subscribe(data => this.dataSource.data = data);
-=======
     this.Sspecializationservice.list().subscribe(data => this.dataSource.data = data);
->>>>>>> bf3a92b9863cfe9b8880d18b198b3da96c592b60
 
   }
   ngAfterViewInit() {
