@@ -84,7 +84,7 @@ button[type="submit"] {
  */
 
 
-  .content {
+ .content {
     background-color: #e5f0fb;
     width: 100vw;
     height: 100vh;
@@ -123,12 +123,16 @@ button[type="submit"] {
   .formulario {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
     width: 100%;
   }
-  .formulario mat-form-field{
+  .formulario .largos mat-form-field{ 
       width: 100%;
+      margin-bottom: 1%;
   }
+  .formulario .cortos mat-form-field{ 
+    width: 50%;
+}
 
   .formulario .link {
     font-weight: 900;
@@ -138,12 +142,7 @@ button[type="submit"] {
   .formulario p{
     text-align: right;
   }
-  .link {
-    color: #f9b501; /* Cambia el color según tus preferencias */
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
+
   .btn {
     display: block;
     width: 100%;
@@ -160,6 +159,13 @@ button[type="submit"] {
   }
   .btn:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+
+  .link {
+    color: #f9b501; /* Cambia el color según tus preferencias */
+    text-decoration: underline;
+    cursor: pointer;
   }
 @media (min-width: 576px)
 {

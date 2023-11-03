@@ -34,6 +34,7 @@ const routes: Routes = [
     ],
 
   },
+  
   {
     path: 'client',
     component: ClientComponent,

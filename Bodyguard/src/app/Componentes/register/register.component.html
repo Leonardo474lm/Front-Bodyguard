@@ -1,0 +1,81 @@
+<div class="content">
+    <div class="container">
+  
+      <img src="/assets/bodyguard2.svg" class="container__img" alt="Bodyguards on street">
+  
+      <div class="container__form">
+  
+        <div class="logo">
+          <img src="/assets/BODY_FONDo_NARANJA.png" alt="Bodyguard logo with background orange">
+          <p>Wellcome back you’ve been missed</p>
+        </div>
+        <form [formGroup]="form"  action="#" class="formulario">
+
+          <div class="largos">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>DNI</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+          <div class="cortos">
+          <mat-form-field appearance="fill">
+            <mat-label>BirthDate</mat-label>
+            <input matInput [matDatepicker]="picker"
+            max="maxFecha">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+         </mat-form-field>
+        
+
+
+         <mat-form-field>
+          <mat-label>Genero</mat-label>
+          <mat-select [(value)]="value">
+            <mat-option value="Masculino">Masculino</mat-option>
+            <mat-option value="Femenino">Femenino</mat-option>
+            <mat-option value="30 tipos de gays">30 tipos de gays</mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+
+
+          <mat-form-field class="campo" >
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Enter your email" formControlName="email" />
+          </mat-form-field>
+          <div class="cortos">
+          <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput>
+          </mat-form-field>
+          
+          <mat-form-field class="campo">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Password" formControlName="password" />
+          </mat-form-field>
+        </div>
+          <button class="btn" type="submit" routerLink="/bodyguard">Sign in</button>
+          <p>Do you already have an account? <span class="link" href="#" routerLink="/login">Log In</span></p>
+          <p style="color: red;">{{message}}</p>
+        </form>
+        <p>asofnaso XDXDD</p>
+      </div>
+  
+    </div>
+  </div>
+   
+  
+  
+  <router-outlet></router-outlet>
+  

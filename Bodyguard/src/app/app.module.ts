@@ -34,23 +34,29 @@ import { ClientEditarComponent } from './Componentes/client/client-editar/client
 import { LoginComponent } from './Componentes/login/login.component';
 //angular
 
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {NgIf} from '@angular/common';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgIf } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatTableModule} from '@angular/material/table';//add
-import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';//add
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
 
 import { PerfilComponent } from './Componentes/perfil/perfil.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { RegisterComponent } from './Componentes/register/register.component';
 
-import {MatCardModule} from '@angular/material/card';
+
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -60,6 +66,7 @@ import {MatCardModule} from '@angular/material/card';
     PaymentComponent,
     SpecializationComponent,
     LoginComponent,
+    RegisterComponent,
     ServiceComponent,
     ClientComponent,
     ClientListarComponent,
@@ -94,7 +101,10 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

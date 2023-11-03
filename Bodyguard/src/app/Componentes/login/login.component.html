@@ -1,9 +1,9 @@
-<div class="content">
+<div class="content" *ngIf="showLogin">
   <div class="container">
 
     <img src="/assets/bodyguard2.svg" class="container__img" alt="Bodyguards on street">
 
-    <div class="container__form">
+    <div class="container__form" >
 
       <div class="logo">
         <img src="/assets/BODY_FONDo_NARANJA.png" alt="Bodyguard logo with background orange">
@@ -26,12 +26,12 @@
 
         <span class="link"> Recovery password</span>
         <button class="btn" type="submit">Log in</button>
-        <p>Not a memeber? <span class="link" href="#">Register now</span></p>
+        <p>Not a memeber? <span class="link" href="#" (click)="goToRegister()">Register now</span></p>
         <p style="color: red;">{{message}}</p>
       </form>
 
     </div>
-
+    
   </div>
 </div>
  
