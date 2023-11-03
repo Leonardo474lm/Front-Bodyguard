@@ -26,11 +26,11 @@ export class SpecializationListarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.Sspecializationservice.list().subscribe(data => this.dataSource.data = data);
+    this.specializationServ.list().subscribe(data => this.dataSource.data = data);
 
   }
   ngAfterViewInit() {
-  //  this.dataSource.sort = this.sort;
-    //this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 }

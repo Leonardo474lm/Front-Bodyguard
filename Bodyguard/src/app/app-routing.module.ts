@@ -71,7 +71,7 @@ const routes: Routes = [
     ],
 
   },
-   //path para service
+   //path para specialization
    {
     path: 'specialization',
     component: SpecializationComponent,
