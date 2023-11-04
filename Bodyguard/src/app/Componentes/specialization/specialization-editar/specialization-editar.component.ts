@@ -66,7 +66,7 @@ export class SpecializationEditarComponent implements OnInit {
             this.specializationServ.setList(data);
           })
         })
-        this.router.navigate(['specialization']);
+        this.router.navigate(['/specialization']);
 
       }
     } else {
