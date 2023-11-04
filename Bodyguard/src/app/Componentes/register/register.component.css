@@ -84,7 +84,7 @@ button[type="submit"] {
  */
 
 
-  .content {
+ .content {
     background-color: #e5f0fb;
     width: 100vw;
     height: 100vh;
@@ -123,12 +123,26 @@ button[type="submit"] {
   .formulario {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    gap: 0px;
+    width: 10%;
   }
-  .formulario mat-form-field{
-      width: 100%;
+  .formulario .largos mat-form-field{ 
+      width: 110%;
+      margin-top: 0rem;
+      margin-bottom: -1rem;
+      
   }
+  .formulario .cortos mat-form-field{ 
+    width: 50%;
+    font-size: 16px;
+    margin-bottom: -1rem;
+
+}
+mat-form-field {
+  margin-right: 500px auto;
+  /* Añade un espacio de relleno alrededor del texto dentro del input */
+  /* Cambia el tamaño del texto dentro del input */
+}
 
   .formulario .link {
     font-weight: 900;
@@ -138,12 +152,7 @@ button[type="submit"] {
   .formulario p{
     text-align: right;
   }
-  .link {
-    color: #f9b501; /* Cambia el color según tus preferencias */
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
+
   .btn {
     display: block;
     width: 100%;
@@ -161,6 +170,13 @@ button[type="submit"] {
   .btn:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+
+
+  .link {
+    color: #f9b501; /* Cambia el color según tus preferencias */
+    text-decoration: underline;
+    cursor: pointer;
+  }
 @media (min-width: 576px)
 {
   .container__form {
@@ -168,7 +184,7 @@ button[type="submit"] {
     width: 400px;
   }
    .formulario {
-    gap: 12px;
+    gap: 0px;
     width: 100%;
   }
   .btn {
@@ -203,7 +219,7 @@ button[type="submit"] {
     width: 400px;
   }
   .formulario {
-    gap: 15px;
+    gap: 0px;
     width: 100%;
   }
   .btn {

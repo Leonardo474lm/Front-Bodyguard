@@ -18,6 +18,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 const routes: Routes = [
 
 
+
     //path para specialization
     {
         path: 'specialization',
@@ -32,6 +33,22 @@ const routes: Routes = [
                 component: SpecializationEditarComponent,
             },
         ],
+
+  },
+  
+  {
+    path: 'client',
+    component: ClientComponent,
+    children: [
+      {
+        path: 'clientinsertar',
+        component: ClientListarComponent,
+      },
+      {
+        path: 'edicion/:id',
+        component: ClientEditarComponent,
+      },
+    ],
 
     },
     {

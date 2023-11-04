@@ -30,7 +30,7 @@ export class SpecializationListarComponent implements OnInit {
 
   }
   ngAfterViewInit() {
-  //  this.dataSource.sort = this.sort;
-    //this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 }

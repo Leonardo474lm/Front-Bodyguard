@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/Model/User';
 import { LoginService } from 'src/app/Services/login.service';
 
 //import { JwtHelperService } from '@auth0/angular-jwt';
@@ -11,28 +13,64 @@ import { LoginService } from 'src/app/Services/login.service';
 })
 export class LoginComponent  implements OnInit{
 
-  username: string = ""
-  password: string = ""
-  mensaje: string = ""
   role: string=""
-  activeButton: number = -1;
   hide = true;
-  mostrarLogin = false;
+  showLogin = true;
+
+  user:User;
+  form:  FormGroup = new FormGroup({});
+  message: String;
+
   constructor(
-    public route: ActivatedRoute,
-    private router: Router,
-    private snackBar: MatSnackBar,
-    private loginService: LoginService
-  ){}
+    private router:Router,
+    public route:ActivatedRoute
+  ){
+    this.message="";
+    this.user=new User();
+
+  }
+
   ngOnInit(): void {
+     const store = localStorage.getItem("userProfile");
+    if(store){
+        this.user= JSON.parse(store) as User;
+    }else {
+      this.user.email=""
+      this.user.password="";
+    };
+
+    this.form = new FormGroup(
+      {
+        email:new FormControl(this.user.email,[Validators.email,Validators.required]),
+        password: new FormControl(this.user.password,[Validators.required])
+      }
+    )
   }
-  iniciarSesion()
-  {
-    this.router.navigate(['navar']);
+
+  submit():void {
+    this.user.email= this.form.value['email'];
+    this.user.password= this.form.value['password'];
+
+    if(this.form.valid)
+    {
+      console.log(this.form);
+      localStorage.setItem("userProfile",JSON.stringify(this.user));
+       this.router.navigate(["/bodyguard"]);
+      this.message="";
+    }
+    else{
+      this.message="Complete los campos obligatorios"
+    }
+
     
-
   }
   
 
-  
+goToRegister() {
+  this.showLogin = false;
+  this.router.navigate(["register"]);
+}
+
+
+
 }
