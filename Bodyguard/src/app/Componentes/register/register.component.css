@@ -123,15 +123,25 @@ button[type="submit"] {
   .formulario {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    width: 100%;
+    gap: 0px;
+    width: 10%;
   }
   .formulario .largos mat-form-field{ 
-      width: 100%;
-      margin-bottom: 1%;
+      width: 110%;
+      margin-top: 0rem;
+      margin-bottom: -1rem;
+      
   }
   .formulario .cortos mat-form-field{ 
     width: 50%;
+    font-size: 16px;
+    margin-bottom: -1rem;
+
+}
+mat-form-field {
+  margin-right: 500px auto;
+  /* Añade un espacio de relleno alrededor del texto dentro del input */
+  /* Cambia el tamaño del texto dentro del input */
 }
 
   .formulario .link {
@@ -174,7 +184,7 @@ button[type="submit"] {
     width: 400px;
   }
    .formulario {
-    gap: 12px;
+    gap: 0px;
     width: 100%;
   }
   .btn {
@@ -209,7 +219,7 @@ button[type="submit"] {
     width: 400px;
   }
   .formulario {
-    gap: 15px;
+    gap: 0px;
     width: 100%;
   }
   .btn {

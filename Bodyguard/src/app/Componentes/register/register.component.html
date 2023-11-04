@@ -7,7 +7,7 @@
   
         <div class="logo">
           <img src="/assets/BODY_FONDo_NARANJA.png" alt="Bodyguard logo with background orange">
-          <p>Wellcome back you’ve been missed</p>
+          
         </div>
         <form [formGroup]="form"  action="#" class="formulario">
 
@@ -49,16 +49,19 @@
           </mat-form-field>
         </div>
 
-
+        <div class="largos">
           <mat-form-field class="campo" >
             <mat-label>Email</mat-label>
             <input type="email" matInput placeholder="Enter your email" formControlName="email" />
           </mat-form-field>
+        </div>
+
           <div class="cortos">
           <mat-form-field>
             <mat-label>Phone Number</mat-label>
             <input matInput>
           </mat-form-field>
+        
           
           <mat-form-field class="campo">
             <mat-label>Password</mat-label>
@@ -69,7 +72,7 @@
           <p>Do you already have an account? <span class="link" href="#" routerLink="/login">Log In</span></p>
           <p style="color: red;">{{message}}</p>
         </form>
-        <p>asofnaso XDXDD</p>
+       
       </div>
   
     </div>
