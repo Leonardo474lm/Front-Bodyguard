@@ -30,7 +30,7 @@ export class SpecializationService {
   }
 
   listId(id:number){
-    return this.http.get<Specialization>(this.url+"author/"+id);
+    return this.http.get<Specialization>(this.url+"/"+id);
   }
 
 }

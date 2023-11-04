@@ -28,15 +28,18 @@ export class SpecializationEditarComponent implements OnInit {
   //   description:string = "";
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required])
-    });
-
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
       this.edicion = data['id'] != null;
       this.init();
+      console.log(this.id)
+
+    });
+    this.form = new FormGroup({
+      id: new FormControl(),
+      name: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required])
+
     });
 
   }
@@ -48,13 +51,16 @@ export class SpecializationEditarComponent implements OnInit {
           name: new FormControl(data.name),
           description: new FormControl(data.description)
         });
+        console.log(data)
+
       });
+      
     }
   }
 
 
   aceptar() {
-
+    this.specialization.id = this.form.value['id'];
     this.specialization.name = this.form.value['name'];
     this.specialization.description = this.form.value['description'];
 
@@ -66,7 +72,7 @@ export class SpecializationEditarComponent implements OnInit {
             this.specializationServ.setList(data);
           })
         })
-        this.router.navigate(['/specialization']);
+       
 
       }
     } else {
@@ -76,7 +82,10 @@ export class SpecializationEditarComponent implements OnInit {
           this.specializationServ.setList(data);
         })
       });
+      
     }
+    console.log(this.specialization)
+    this.router.navigate(['/bodyguard/pages/specialization']);
 
   }
 

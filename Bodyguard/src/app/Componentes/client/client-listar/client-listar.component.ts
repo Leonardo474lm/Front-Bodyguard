@@ -13,7 +13,7 @@ import { ClientService } from 'src/app/Services/client.service';
 
 export class ClientListarComponent implements OnInit {
   lista: Client[] = [];
-  displayedColumns = ['id', 'dni', 'name', 'lastname', 'email', 'fech_nac', 'gender', 'phone', 'password', 'age','actions'];
+  displayedColumns = ['id', 'name', 'lastname', 'email', 'fech_nac', 'gender', 'phone', 'actions'];
   dataSource = new MatTableDataSource<Client>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
