@@ -25,8 +25,8 @@ const routes: Routes = [
         component: SpecializationComponent,
         children: [
             {
-                path: 'specializationLitar',
-                component: SpecializationListarComponent,
+                path: 'insertar',
+                component: SpecializationEditarComponent,
             },
             {
                 path: 'edicion/:id',

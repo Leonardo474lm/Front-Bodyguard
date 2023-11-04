@@ -1,14 +1,17 @@
 <div class="contenedor">
     <form [formGroup]="form" (submit)="aceptar()">
-
+      <mat-form-field class="example-full-width">
+        <mat-label>iD</mat-label>
+        <input matInput required placeholder="id" formControlName="id">
+      </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input matInput required placeholder="Name" formControlName="name">
+        <input matInput required placeholder="name" formControlName="name">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Description</mat-label>
-        <input matInput required placeholder="Description" formControlName="Description">
+        <input matInput required placeholder="description" formControlName="description">
       </mat-form-field>
 
       <button mat-raised-button type="submit" color="primary">Aceptar</button>
