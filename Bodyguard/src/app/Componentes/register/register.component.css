@@ -1,115 +1,28 @@
-/* body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
-.container {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-
-}
-
-.half {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left {
-    background-color: #E5F0FB;
-}
-.divider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    background-color: white;
-}
-.right {
-    background-color: #E5F0FB;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.form-group{
-    align-items: center;
-    width: 100%;
-}
-.mat-form-field .mat-input-element {
-    width: 100%;
-}
-form h2 {
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-
-}
-
-
-form, input, label, button {
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-
-}
-
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-}
-
-button[type="submit"] {
-    background-color: #F9B501;
-    color: #fff;
-}
-.full-size {
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 2%;
-}
-
- */
-
-
- .content {
+  .content {
     background-color: #e5f0fb;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 25px 10px;
   }
   .container {
-    margin: 0 auto;
+
     border: 5px solid #fff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
   }
   .container__img {
     display: none;
-
   }
   .container__form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 10px;
+    width: 100%;
+    padding: 15px 10px;
 
   }
   .logo {
@@ -123,26 +36,12 @@ button[type="submit"] {
   .formulario {
     display: flex;
     flex-direction: column;
-    gap: 0px;
-    width: 10%;
+    /* gap: 10px; */
+    width: 100%;
   }
-  .formulario .largos mat-form-field{ 
-      width: 110%;
-      margin-top: 0rem;
-      margin-bottom: -1rem;
-      
+  .formulario mat-form-field{
+      width: 100%;
   }
-  .formulario .cortos mat-form-field{ 
-    width: 50%;
-    font-size: 16px;
-    margin-bottom: -1rem;
-
-}
-mat-form-field {
-  margin-right: 500px auto;
-  /* Añade un espacio de relleno alrededor del texto dentro del input */
-  /* Cambia el tamaño del texto dentro del input */
-}
 
   .formulario .link {
     font-weight: 900;
@@ -151,6 +50,11 @@ mat-form-field {
   }
   .formulario p{
     text-align: right;
+  }
+  .link {
+    color: #f9b501; /* Cambia el color según tus preferencias */
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   .btn {
@@ -170,36 +74,39 @@ mat-form-field {
   .btn:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-
-
-  .link {
-    color: #f9b501; /* Cambia el color según tus preferencias */
-    text-decoration: underline;
-    cursor: pointer;
-  }
 @media (min-width: 576px)
 {
+  .content {
+    padding: 15px 10px;
+    height: 100%;
+  }
   .container__form {
-    padding: 40px;
-    width: 400px;
+      padding: 5px 50px;
+       /* width: 400px; */
+
   }
    .formulario {
-    gap: 0px;
+    /* gap: 12px; */
     width: 100%;
   }
+
   .btn {
     padding: 10px;
   }
+  .group{
+    display: flex;
+    gap: 21px;
+  }
 }
 
-@media (min-width: 893px) {
+@media (min-width: 926px) {
   .content {
     flex-direction: row;
   }
   .container {
     margin: 0 auto;
-    height: 650px;
-    max-width: 1066px;
+    /* height: 650px; */
+    max-width: 915px;
     border: 13px solid #fff;
     border-radius: 20px;
     display: flex;
@@ -208,18 +115,19 @@ mat-form-field {
   }
   .container__img {
     display: block;
-    max-height: 100%;
+    /* max-width: 493px; */
+
   }
   .container__form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 60px;
+    /* padding: 60px; */
     width: 400px;
   }
   .formulario {
-    gap: 0px;
+    /* gap: 15px; */
     width: 100%;
   }
   .btn {
