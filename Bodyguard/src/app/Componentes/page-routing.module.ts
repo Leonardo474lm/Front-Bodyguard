@@ -29,6 +29,10 @@ const routes: Routes = [
                 component: SpecializationListarComponent,
             },
             {
+                path: 'up',
+                component: SpecializationEditarComponent,
+            },
+            {
                 path: 'edicion/:id',
                 component: SpecializationEditarComponent,
             },
