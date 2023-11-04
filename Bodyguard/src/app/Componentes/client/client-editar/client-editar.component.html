@@ -1,1 +1,73 @@
-<p>client-editar works!</p>
+<div class="contenedor">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>id</mat-label>
+        <input matInput hidden placeholder="id" formControlName="id">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>dni</mat-label>
+        <input matInput required placeholder="dni" formControlName="dni">
+      </mat-form-field>
+      <br>
+     
+      <mat-form-field class="example-full-width">
+        <mat-label>nombre</mat-label>
+        <input matInput required placeholder="name" formControlName="name">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>lastname</mat-label>
+        <input matInput required placeholder="lastname" formControlName="lastname">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>email</mat-label>
+        <input matInput required placeholder="email" formControlName="email">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width" appearance="fill" required placeholder="gender">
+        <mat-label></mat-label>
+        <mat-select  formControlName="gender">  
+          <mat-option value="Femenino">Femenino</mat-option>
+          <mat-option value="Masculino">Masculino</mat-option>
+          <mat-option value="-">-</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>fech_nac</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fech_nac"
+        max="maxFecha">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>phone</mat-label>
+        <input matInput required placeholder="phone" formControlName="phone">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>age</mat-label>
+        <input matInput required placeholder="age" formControlName="age">
+      </mat-form-field>
+     
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>password</mat-label>
+        <input matInput required placeholder="password" formControlName="password">
+      
+      </mat-form-field>
+
+ 
+      <br>
+      <button mat-raised-button type="submit" color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/navar/pages/client/lista">Cancelar</button>
+      <p>{{mensaje}}</p>
+  
+    </form>
+  </div>

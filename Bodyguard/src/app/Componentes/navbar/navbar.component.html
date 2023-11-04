@@ -1,20 +1,25 @@
 <mat-toolbar class="menu">
 
   <div class="menu__logo">
+    
     <img src="/assets/logo_bodyguard_black.svg" alt="acount of user">
+   
     <button mat-button (click)="drawer.toggle()">
+      
       <mat-icon class="menu__icon" aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
     </button>
   </div>
+  
   <div class="menu__user">
     <div class="menu__search">
       <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="search"></mat-icon>
       <input type="text" placeholder="Search">
     </div>
+    
     <mat-icon class="menu__notification" aria-hidden="false" aria-label="notifications icon"
       fontIcon="notifications"></mat-icon>
-    <img src="/assets/logo.svg" alt="acount of user">
-
+    <img src="/assets/logo.svg" routerLink="" alt="acount of user"    >
+  
   </div>
 </mat-toolbar>
 <mat-drawer-container class="main">
@@ -24,6 +29,13 @@
       <span *ngIf="role == 'ADMIN'">Administrador</span>
       <span *ngIf="role == 'USER'">CHICHO</span>
       <span *ngIf="role == 'BODY'">BODIGUARD</span>
+      <mat-label></mat-label>
+      <mat-select >  
+        <mat-option value="">admin</mat-option>
+        <mat-option value="">user</mat-option>
+        <mat-option value="">bodyguar</mat-option>
+  
+      </mat-select>
     </div>
 
     <div class="main__buttons" *ngIf="role == 'ADMIN'">
@@ -39,7 +51,7 @@
       <button mat-button class="main__button" routerLink="pages/specialization">
         <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="person"></mat-icon> Especialidades
       </button>
-      <button mat-button class="main__button" routerLink="pages/client">
+      <button mat-button class="main__button" routerLink="pages/client/lista">
         <mat-icon class="" aria-hidden="false" aria-label="Clients icon" fontIcon="groups"></mat-icon> Clientes
       </button>
       <button mat-button class="main__button" routerLink="pages/perfil">
@@ -81,7 +93,7 @@
       </button>
     </div>
     <div class="main__logout">
-      <button mat-button class="" routerLink="login">
+      <button mat-button class="" routerLink="">
         <mat-icon class="main__icon_logout" aria-hidden="false" aria-label="menu icon" fontIcon="logout"></mat-icon> Logout
       </button>
     </div>

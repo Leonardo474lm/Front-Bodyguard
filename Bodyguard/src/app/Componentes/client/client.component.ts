@@ -11,30 +11,14 @@ import { ClientService } from 'src/app/Services/client.service';
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.css']
 })
-export class ClientComponent {
-  lista: Client[] = [];
-  displayedColumns = ['id', 'dni', 'name', 'lastname', 'email', 'fech_nac', 'gender', 'phone', 'password', 'age','actions'];
-  dataSource = new MatTableDataSource();
-  @ViewChild('paginator') paginator!: MatPaginator;
-  @ViewChild('MatSort') sort!: MatSort;
+export class ClientComponent implements OnInit {
+  
   constructor(private clientservice: ClientService) {
-    this.clientservice.list().subscribe(data => this.dataSource.data = data);
-    this.clientservice.getList().subscribe(data => {
-      this.dataSource.data = data;
-      
-    });
+ 
   }
 
   ngOnInit(): void {
-    this.clientservice.list().subscribe(data => this.dataSource.data = data);
-    this.clientservice.getList().subscribe(data => {
-      this.dataSource.data = data;
-    });
+   
   }
-  ngAfterViewInit() {
-   console.log(this.lista)
 
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
 }

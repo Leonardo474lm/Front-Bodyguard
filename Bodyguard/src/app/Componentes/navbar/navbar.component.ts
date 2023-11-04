@@ -20,6 +20,8 @@ export class NavbarComponent {
   {
 
   }
-
+cambioderol(){
+  
+}
   // showFiller = false;
 }

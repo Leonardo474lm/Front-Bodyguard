@@ -23,6 +23,7 @@ import { SpecializationComponent } from './Componentes/specialization/specializa
 
 import { LoginComponent } from './Componentes/login/login.component';
 //angular
+import { MatDatepickerModule } from '@angular/material/datepicker';//
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
@@ -46,6 +47,9 @@ import { SpecializationEditarComponent } from './Componentes/specialization/spec
 import { MatTableModule} from '@angular/material/table';//add
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort'; //add
 
 import { PerfilComponent } from './Componentes/perfil/perfil.component';
 @NgModule({
@@ -86,7 +90,11 @@ import { PerfilComponent } from './Componentes/perfil/perfil.component';
     MatTableModule,
     MatPaginatorModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

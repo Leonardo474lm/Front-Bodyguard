@@ -17,80 +17,84 @@ import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
 
- 
-  //path para specialization
-  {
-    path: 'specialization',
-    component: SpecializationComponent,
-    children: [
-      {
-        path: 'specializationLitar',
-        component: SpecializationListarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: SpecializationEditarComponent,
-      },
-    ],
 
-  },
-  {
-    path: 'client',
-    component: ClientComponent,
-    children: [
-      {
-        path: 'clientinsertar',
-        component: ClientListarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: ClientEditarComponent,
-      },
-    ],
+    //path para specialization
+    {
+        path: 'specialization',
+        component: SpecializationComponent,
+        children: [
+            {
+                path: 'specializationLitar',
+                component: SpecializationListarComponent,
+            },
+            {
+                path: 'edicion/:id',
+                component: SpecializationEditarComponent,
+            },
+        ],
 
-  },
-   //path para bodyguar
-   {
-    path: 'bodyguard',
-    component: BodyguarComponent,
-    children: [
-      {
-        path: 'bodyinsertar',
-        component: BodyListarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: BodyEditarComponent,
-      },
-    ],
+    },
+    {
+        path: 'client',
+        component: ClientComponent,
+        children: [
+            {
+                path: 'lista',
+                component: ClientListarComponent,
+            },
+            {
+                path: 'clientinsertar',
+                component: ClientEditarComponent,
+            },
+            {
+                path: 'edicion/:id',
+                component: ClientEditarComponent,
+            },
+        ],
 
-  },
+    },
+    //path para bodyguar
+    {
+        path: 'bodyguard',
+        component: BodyguarComponent,
+        children: [
+            {
+                path: 'bodyinsertar',
+                component: BodyListarComponent,
+            },
+            {
+                path: 'edicion/:id',
+                component: BodyEditarComponent,
+            },
+        ],
+
+    },
     //path para service
     {
         path: 'service',
         component: ServiceComponent,
         children: [
-          {
-            path: 'bodyinsertar',
-            component: ServiceListarComponent,
-          },
-          {
-            path: 'edicion/:id',
-            component: ServiceEditarComponent,
-          },
+            {
+                path: 'bodyinsertar',
+                component: ServiceListarComponent,
+            },
+            {
+                path: 'edicion/:id',
+                component: ServiceEditarComponent,
+            },
         ],
-    
-      },
-      //path para perfiles
-      {
+
+    },
+    //path para perfiles
+    {
         path: 'perfil',
-        component:PerfilComponent
-    
-      }
+        component: PerfilComponent
+
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class PageRoutingModule { }

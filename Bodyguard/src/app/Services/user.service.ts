@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Client } from '../Model/client';
+
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../Model/User';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClientService {
+export class UserService {
   private url = "http://localhost:8080/Clients";
-  private listaCambio = new Subject<Client[]>();
+  private listaCambio = new Subject<User[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
-    return this.http.get<Client[]>(this.url + "/List");
+    return this.http.get<User[]>(this.url + "/List");
   }
-  insert(client: Client) {
-    return this.http.post(this.url + '/insert', client);
+  insert(User: User) {
+    return this.http.post(this.url + '/insert', User);
   }
 
-  setList(listaNueva: Client[]) {
+  setList(listaNueva: User[]) {
     this.listaCambio.next(listaNueva);//enviar la nueva lista a los suscriptores
   }
   getList() {
     return this.listaCambio.asObservable();
   }
-  listId(iddevice:number){
-    return this.http.get<Client>(this.url+"/"+iddevice);
+  listId(id:number){
+    return this.http.get<User>(this.url+"/"+id);
   }
-  update(dev: Client){
-    return this.http.put(this.url + "/update", dev);
+  update(dev: User){
+    return this.http.put(this.url + "", dev);
   }
 }
