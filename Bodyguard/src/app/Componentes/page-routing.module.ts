@@ -42,7 +42,7 @@ const routes: Routes = [
     children: [
       {
         path: 'clientinsertar',
-        component: ClientListarComponent,
+        component: ClientEditarComponent,
       },
       {
         path: 'edicion/:id',

@@ -48,17 +48,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';//add
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import {MatSelectModule} from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort'; //add
 
 import { PerfilComponent } from './Componentes/perfil/perfil.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+
 import { MatCardModule } from '@angular/material/card';
 import { RegisterComponent } from './Componentes/register/register.component';
 
-
-import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 
 
@@ -104,18 +102,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatPaginatorModule,
     HttpClientModule,
     CommonModule,
-<<<<<<< HEAD
-    MatDatepickerModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatSortModule
-=======
+    MatSortModule,
     ReactiveFormsModule,
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule
->>>>>>> 5fb92444b9cca78a2b159d6dc21424e034c15e30
+
   ],
   providers: [],
   bootstrap: [AppComponent]

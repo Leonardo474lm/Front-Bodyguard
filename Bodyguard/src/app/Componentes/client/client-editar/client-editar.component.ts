@@ -20,6 +20,8 @@ export class ClientEditarComponent implements OnInit {
   maxFecha: Date = moment().add(1, 'days').toDate();
   listaUser: User[] = [];
   user: User = new User();
+   // Define una variable para almacenar el DNI original
+   dniOriginal: string = '';
   constructor(private clientservice: ClientService,
     private router: Router,
     private route: ActivatedRoute) {
@@ -57,9 +59,12 @@ export class ClientEditarComponent implements OnInit {
 
     if (this.edicion) {
       this.clientservice.listId(this.id).subscribe((data) => {
+        this.dniOriginal = data.user.dni; 
+        console.log(this.dniOriginal)
+
         this.form = new FormGroup({
           id: new FormControl(data.id),
-          dni: new FormControl(data.user.dni),
+          dni: new FormControl({ value: data.user.dni, disabled: false}),
           name: new FormControl(data.user.name),
           lastname: new FormControl(data.user.lastname),
           email: new FormControl(data.user.email),
@@ -76,6 +81,19 @@ export class ClientEditarComponent implements OnInit {
   } // del in
 
   aceptar() {
+    if (this.edicion) {
+      this.client.id = this.form.value['id'];
+      this.client.user.dni = this.dniOriginal;
+      this.client.user.name = this.form.value['name'];
+      this.client.user.lastname = this.form.value['lastname'];
+      this.client.user.email = this.form.value['email'];
+      this.client.user.fech_nac = this.form.value['fech_nac'];
+      this.client.user.gender = this.form.value['gender'];
+      this.client.user.phone = this.form.value['phone'];
+      this.client.user.age = this.form.value['age'];
+      this.client.user.password = this.form.value['password'];
+    }
+    else{
     this.client.id = this.form.value['id'];
     this.client.user.dni = this.form.value['dni'];
     this.client.user.name = this.form.value['name'];
@@ -86,7 +104,7 @@ export class ClientEditarComponent implements OnInit {
     this.client.user.phone = this.form.value['phone'];
     this.client.user.age = this.form.value['age'];
     this.client.user.password = this.form.value['password'];
-
+    }
 
     //agregado al editar  
     if (this.form.valid) {
@@ -109,7 +127,7 @@ export class ClientEditarComponent implements OnInit {
         })
       }
       console.log(this.client)
-      this.router.navigate(['/navar/pages/client/lista']);
+      this.router.navigate(['/bodyguard/pages/client/lista']);
     } else {
       this.mensaje = "Agregue campos omitidos";
     }
