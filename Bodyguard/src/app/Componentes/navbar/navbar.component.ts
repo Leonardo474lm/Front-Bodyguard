@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavbarComponent {
   activeButton: number = -1;
-  role:string="ADMIN";
+  role:string="";
+ 
   validarRol() {
     if (this.role == 'ADMIN' || this.role == 'USER' || this.role == 'BODY') {
       return true;
@@ -21,7 +22,7 @@ export class NavbarComponent {
 
   }
 cambioderol(){
-  
+
 }
   // showFiller = false;
  
