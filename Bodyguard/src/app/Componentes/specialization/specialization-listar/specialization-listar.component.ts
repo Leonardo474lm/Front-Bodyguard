@@ -7,6 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { SpecializationService } from 'src/app/Services/Sspecialization.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SpecializationFormDialogComponent } from '../specialization-form-dialog/specialization-form-dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-specialization-listar',
@@ -21,18 +22,14 @@ export class SpecializationListarComponent implements OnInit {
   @ViewChild('MatSort') sort!: MatSort;
 
   constructor(
-    private Sspecializationservice: SpecializationService,
+    private specialtyServ: SpecializationService,
     private dialog: MatDialog
   ) {
-    //  this.Sspecializationservice.list().subscribe(data => this.dataSource.data = data);
-    // this.Sspecializationservice.getList().subscribe(data => {
-    //   this.dataSource.data = data;
-    // });
     this.loadList();
   }
 
   ngOnInit(): void {
-    this.Sspecializationservice.list().subscribe(
+    this.specialtyServ.list().subscribe(
       (data) => (this.dataSource.data = data)
     );
   }
@@ -40,7 +37,7 @@ export class SpecializationListarComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
-  openDialog(id:number,title:string) {
+  openFormDialog(id:number,title:string) {
     let popup = this.dialog.open(SpecializationFormDialogComponent, {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '300ms',
@@ -54,21 +51,41 @@ export class SpecializationListarComponent implements OnInit {
     });
   }
   loadList() {
-    this.Sspecializationservice.list().subscribe((data) => (this.dataSource.data = data));
-    this.Sspecializationservice.getList().subscribe((data) => {
+    this.specialtyServ.list().subscribe((data) => (this.dataSource.data = data));
+    this.specialtyServ.getList().subscribe((data) => {
       this.dataSource.data = data;
     });
   }
 
   editSpecialization(id:number){
     console.log(id);
-    this.openDialog(id,'Editar especialidad')
+    this.openFormDialog(id,'Editar especialidad')
 
   }
 
   addSpecialization()
   {
-    this.openDialog(0,'Agregar especialidad');
+    this.openFormDialog(0,'Agregar especialidad');
+  }
+
+
+  openDeleteDialog(id:number){
+    const dialogRef = this.dialog.open(DeleteDialogComponent);
+    dialogRef.afterClosed().subscribe(result =>{
+      if(result){
+        this.delete(id);
+      }else{
+        console.log("FALSE");
+      }
+    });
+  }
+
+  delete(id:number){
+    this.specialtyServ.delete(id).subscribe(()=>{
+      this.specialtyServ.list().subscribe(data=>{
+        this.specialtyServ.setList(data);
+      })
+    });
   }
 
 }

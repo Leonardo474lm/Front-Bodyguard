@@ -38,6 +38,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgIf } from '@angular/common';
+import { DeleteDialogComponent } from './specialization/specialization-listar/delete-dialog/delete-dialog.component';
 
 @NgModule({
     declarations: [
@@ -58,6 +59,7 @@ import { NgIf } from '@angular/common';
     SpecializationListarComponent,
     NavbarComponent,
     PerfilComponent,
+    DeleteDialogComponent,
   ],
     imports: [
 
