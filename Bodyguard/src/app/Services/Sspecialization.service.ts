@@ -30,11 +30,11 @@ export class SpecializationService {
   }
 
   listById(id:number){
-    return this.http.get<Specialization>("http://localhost:8081/Specialization/"+id);
+    return this.http.get<Specialization>( this.url+ "/"+id);
   }
   delete(id:number)
   {
-    return this.http.delete<Specialization>("http://localhost:8081/Specialization/Delete/"+id);
+    return this.http.delete<Specialization>( this.url+"/Delete/"+id);
   }
 
 }
