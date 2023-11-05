@@ -1,0 +1,77 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+}
+
+.home__welcome {
+  background-color: #2C2C2C;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 13px;
+  color: #fff;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.home__content h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.home__content p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.home__stastics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.home__earnings,
+.home__clients {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 430px;
+}
+
+.home__earnings {
+  padding: 30px 15px;
+  background: linear-gradient(90deg, #8671EA 23.96%, #6379DA 56.77%, #507DD1 89.58%);
+  color: #fff;
+}
+
+.home__clients {
+  background: linear-gradient(90deg, #FE8463 23.96%, #FE7D76 56.77%, #FF7492 89.58%);
+  color: #fff;
+  padding: 30px 15px;
+}
+
+.home__earnings h3,
+.home__clients h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.home__earnings p,
+.home__clients p {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+ 

@@ -16,6 +16,11 @@ import { PerfilComponent } from './perfil/perfil.component';
 const routes: Routes = [
   //path para specialization
   {
+    path:'home',
+    component:HomeComponent
+
+  },
+  {
     path: 'specialization',
     component: SpecializationComponent,
   },
