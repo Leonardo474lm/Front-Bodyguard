@@ -42,7 +42,6 @@ export class SpecializationListarComponent implements OnInit {
   }
   openDialog(id:number,title:string) {
     let popup = this.dialog.open(SpecializationFormDialogComponent, {
-      width: '60%',
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '300ms',
       data: {
@@ -63,13 +62,13 @@ export class SpecializationListarComponent implements OnInit {
 
   editSpecialization(id:number){
     console.log(id);
-    this.openDialog(id,'Edit specialization')
+    this.openDialog(id,'Editar especialidad')
 
   }
-  
+
   addSpecialization()
   {
-    this.openDialog(0,'Add specialization');
+    this.openDialog(0,'Agregar especialidad');
   }
 
 }
