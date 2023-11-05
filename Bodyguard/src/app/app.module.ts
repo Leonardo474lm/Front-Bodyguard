@@ -22,7 +22,6 @@ import { PaymentComponent } from './Componentes/payment/payment.component';
 //component de specialization
 import { SpecializationComponent } from './Componentes/specialization/specialization.component';
 import { SpecializationListarComponent } from './Componentes/specialization/specialization-listar/specialization-listar.component';
-import { SpecializationEditarComponent } from './Componentes/specialization/specialization-editar/specialization-editar.component';
 //component de cliente
 import { ClientComponent } from './Componentes/client/client.component';
 import { ClientListarComponent } from './Componentes/client/client-listar/client-listar.component';
@@ -33,82 +32,36 @@ import { ClientEditarComponent } from './Componentes/client/client-editar/client
 
 import { LoginComponent } from './Componentes/login/login.component';
 //angular
-import { MatDatepickerModule } from '@angular/material/datepicker';//
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { NgIf } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatTableModule } from '@angular/material/table';//add
-import { MatPaginatorModule } from '@angular/material/paginator';
+
+
+
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
 
-import {MatSelectModule} from '@angular/material/select';
-import { MatSortModule } from '@angular/material/sort'; //add
 
 import { PerfilComponent } from './Componentes/perfil/perfil.component';
 
-import { MatCardModule } from '@angular/material/card';
+
 import { RegisterComponent } from './Componentes/register/register.component';
 
 import { MatNativeDateModule } from '@angular/material/core';
+import { PageModule } from './Componentes/page.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BodyguarComponent,
-    PaymentComponent,
-    SpecializationComponent,
-    LoginComponent,
-    RegisterComponent,
-    ServiceComponent,
-    ClientComponent,
-    ClientListarComponent,
-    ClientEditarComponent,
-    BodyListarComponent,
-    BodyEditarComponent,
-    ServiceListarComponent,
-    ServiceEditarComponent,
-    SpecializationListarComponent,
-    SpecializationEditarComponent,
-    NavbarComponent,
-    PerfilComponent,
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatToolbarModule,
-    NgIf,
-    FormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatSnackBarModule,
-    MatTableModule,
-    MatPaginatorModule,
     HttpClientModule,
     CommonModule,
-    MatSortModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
-
+    PageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

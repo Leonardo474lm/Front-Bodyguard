@@ -11,35 +11,15 @@ import { ServiceComponent } from './service/service.component';
 import { ServiceListarComponent } from './service/service-listar/service-listar.component';
 import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
 import { SpecializationComponent } from './specialization/specialization.component';
-import { SpecializationListarComponent } from './specialization/specialization-listar/specialization-listar.component';
-import { SpecializationEditarComponent } from './specialization/specialization-editar/specialization-editar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
-
-
-
-    //path para specialization
-    {
-        path: 'specialization',
-        component: SpecializationComponent,
-        children: [
-            {
-                path: 'insertar',
-                component: SpecializationEditarComponent,
-            },
-            {
-                path: 'up',
-                component: SpecializationEditarComponent,
-            },
-            {
-                path: 'edicion/:id',
-                component: SpecializationEditarComponent,
-            },
-        ],
-
+  //path para specialization
+  {
+    path: 'specialization',
+    component: SpecializationComponent,
   },
-  
+
   {
     path: 'client',
     component: ClientComponent,
@@ -53,69 +33,64 @@ const routes: Routes = [
         component: ClientEditarComponent,
       },
     ],
-
-    },
-    {
-        path: 'client',
-        component: ClientComponent,
-        children: [
-            {
-                path: 'lista',
-                component: ClientListarComponent,
-            },
-            {
-                path: 'clientinsertar',
-                component: ClientEditarComponent,
-            },
-            {
-                path: 'edicion/:id',
-                component: ClientEditarComponent,
-            },
-        ],
-
-    },
-    //path para bodyguar
-    {
-        path: 'bodyguard',
-        component: BodyguarComponent,
-        children: [
-            {
-                path: 'bodyinsertar',
-                component: BodyListarComponent,
-            },
-            {
-                path: 'edicion/:id',
-                component: BodyEditarComponent,
-            },
-        ],
-
-    },
-    //path para service
-    {
-        path: 'service',
-        component: ServiceComponent,
-        children: [
-            {
-                path: 'bodyinsertar',
-                component: ServiceListarComponent,
-            },
-            {
-                path: 'edicion/:id',
-                component: ServiceEditarComponent,
-            },
-        ],
-
-    },
-    //path para perfiles
-    {
-        path: 'perfil',
-        component: PerfilComponent
-
-    }
+  },
+  {
+    path: 'client',
+    component: ClientComponent,
+    children: [
+      {
+        path: 'lista',
+        component: ClientListarComponent,
+      },
+      {
+        path: 'clientinsertar',
+        component: ClientEditarComponent,
+      },
+      {
+        path: 'edicion/:id',
+        component: ClientEditarComponent,
+      },
+    ],
+  },
+  //path para bodyguar
+  {
+    path: 'bodyguard',
+    component: BodyguarComponent,
+    children: [
+      {
+        path: 'bodyinsertar',
+        component: BodyListarComponent,
+      },
+      {
+        path: 'edicion/:id',
+        component: BodyEditarComponent,
+      },
+    ],
+  },
+  //path para service
+  {
+    path: 'service',
+    component: ServiceComponent,
+    children: [
+      {
+        path: 'bodyinsertar',
+        component: ServiceListarComponent,
+      },
+      {
+        path: 'edicion/:id',
+        component: ServiceEditarComponent,
+      },
+    ],
+  },
+  //path para perfiles
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class PageRoutingModule { }
+export class PageRoutingModule {}

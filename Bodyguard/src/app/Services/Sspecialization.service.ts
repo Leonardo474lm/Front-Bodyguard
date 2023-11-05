@@ -7,9 +7,9 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SpecializationService {
-  private url = "http://localhost:8080/Specialization";
+  private url = "http://localhost:8081/Specialization";
   private listaCambio = new Subject<Specialization[]>();
- 
+
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
     return this.http.get<Specialization[]>(this.url + "/List");
@@ -29,8 +29,8 @@ export class SpecializationService {
     return this.http.put<Specialization>(this.url+"/update",specialization);
   }
 
-  listId(id:number){
-    return this.http.get<Specialization>(this.url+"/"+id);
+  listById(id:number){
+    return this.http.get<Specialization>("http://localhost:8081/Specialization/"+id);
   }
 
 }

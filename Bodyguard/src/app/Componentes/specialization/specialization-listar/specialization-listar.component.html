@@ -1,9 +1,12 @@
 <div class="container__add">
 
-  <button mat-raised-button routerLink="insertar">
-
+  <button mat-raised-button (click)="addSpecialization()">
     <mat-icon class="main__icon_logout" aria-hidden="false" aria-label="Add icon" fontIcon="add"></mat-icon>Agregar
   </button>
+
+  <!-- <button mat-raised-button routerLink="insertar">
+    <mat-icon class="main__icon_logout" aria-hidden="false" aria-label="Add icon" fontIcon="add"></mat-icon>Agregar
+  </button> -->
 </div>
 <div class="container__table">
   <h1> Gestion de Especialidades</h1>
@@ -20,11 +23,11 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
       <td mat-cell *matCellDef="let element"> {{element.description}} </td>
     </ng-container>
-  
+
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element">
-        <button id="buto" mat-icon-button color="primary" [routerLink]="['/specialization/edicion',element.id]">
+        <button (click)="editSpecialization(element.id)" id="buto" mat-icon-button color="primary">
           <span class="material-icons">edit</span>
         </button>
         <button mat-icon-button color="warn" [routerLink]="['/specialization/edicion',element.id]">
