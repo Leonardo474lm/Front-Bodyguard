@@ -7,11 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit{
+    value:string="";
+    
   constructor(public route: ActivatedRoute,)
   {
 
   }
   ngOnInit(): void {
-      
+
   }
 }

@@ -39,24 +39,6 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'client',
-    component: ClientComponent,
-    children: [
-      {
-        path: 'lista',
-        component: ClientListarComponent,
-      },
-      {
-        path: 'clientinsertar',
-        component: ClientEditarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: ClientEditarComponent,
-      },
-    ],
-  },
   //path para bodyguar
   {
     path: 'bodyguard',

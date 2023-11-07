@@ -1,1 +1,67 @@
-<p>perfil works!</p>
+<div class="profile">
+  <div class="profile__photo">
+    <div class="profile__img">
+      <img src="/assets/profile__photo.svg" alt="profile image">
+    </div>
+    <span>Chicho</span>
+  </div>
+
+  <div class="profile__info">
+    <h2>informacion personal</h2>
+    <form class="personal-data" action="#">
+      <mat-form-field class="personal-data__field">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput required placeholder="Enter your name" />
+      </mat-form-field>
+      <mat-form-field class="personal-data__field">
+        <mat-label>Last name</mat-label>
+        <input type="text" matInput  placeholder="Enter your last name" />
+      </mat-form-field>
+      <mat-form-field class="personal-data__field">
+        <mat-label>Last name</mat-label>
+        <input type="text" matInput required placeholder="Enter your last name" />
+      </mat-form-field>
+      <mat-form-field class="personal-data__field">
+        <mat-label>DNI</mat-label>
+        <input matInput required type="number" matInput placeholder="Enter your DNI" />
+      </mat-form-field>
+
+      <div class="personal-data__field--row">
+        <mat-form-field class="personal-data__field">
+          <mat-label>Birthdate</mat-label>
+          <input matInput [matDatepicker]="picker" max="maxFecha" placeholder="select your bithdate" required>
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="personal-data__field">
+          <mat-label>Gender</mat-label>
+          <mat-select [(value)]="value" required>
+            <mat-option value="Masculino" >Masculino</mat-option>
+            <mat-option value="Femenino" >Femenino</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="personal-data__field">
+        <mat-label>Email</mat-label>
+        <input type="email" required matInput placeholder="Enter your email">
+      </mat-form-field>
+
+      <div class="personal-data__field--row">
+        <mat-form-field class="personal-data__field">
+          <mat-label>Phone number</mat-label>
+          <input type="number" required matInput placeholder="Enter your phone number">
+        </mat-form-field>
+        <mat-form-field class="personal-data__field">
+          <mat-label>Password</mat-label>
+           <input type="password" required matInput placeholder="Enter your password">
+        </mat-form-field>
+      </div>
+
+
+    </form>
+
+  </div>
+
+</div>
