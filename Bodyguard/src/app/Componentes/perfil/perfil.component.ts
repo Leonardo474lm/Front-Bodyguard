@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilComponent implements OnInit{
     value:string="";
-    
+     hide = true;
+
   constructor(public route: ActivatedRoute,)
   {
 
