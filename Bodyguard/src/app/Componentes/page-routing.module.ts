@@ -24,20 +24,23 @@ const routes: Routes = [
     path: 'specialization',
     component: SpecializationComponent,
   },
-
   {
-    path: 'client',
-    component: ClientComponent,
-    children: [
-      {
-        path: 'clientinsertar',
-        component: ClientEditarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: ClientEditarComponent,
-      },
-    ],
+        path: 'client',
+        component: ClientComponent,
+        children: [
+            {
+                path: 'lista',
+                component: ClientListarComponent,
+            },
+            {
+                path: 'clientinsertar',
+                component: ClientEditarComponent,
+            },
+            {
+                path: 'edicion/:id',
+                component: ClientEditarComponent,
+            },
+        ],
   },
   //path para bodyguar
   {
