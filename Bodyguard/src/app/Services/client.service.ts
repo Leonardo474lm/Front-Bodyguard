@@ -14,6 +14,7 @@ export class ClientService {
   list(): Observable<any> {
     return this.http.get<Client[]>(this.url + "/List");
   }
+
   insert(client: Client) {
     return this.http.post(this.url + '/insert', client);
   }

@@ -1,3 +1,7 @@
+import { Client } from "./client";
+import { Bodyguard } from "./bodyguard";
+
+
 export class Service {
     id: number = 0;
     date: Date = new Date(Date.now());
@@ -6,8 +10,8 @@ export class Service {
     st_aceptar:boolean=false; 
     st_pagado: boolean = false;
     st_anulado:boolean = false;
-    clients:string = "";
-    bodyguards:string = "";
+    clients:Client = new Client;
+    bodyguards:Bodyguard = new Bodyguard;
     payment_method:string = "";
     review:number = 0;
 }
