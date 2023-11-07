@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  activeButton: number = -1;
+  activeButton: number = 0;
   role:string="";
  
   validarRol() {
