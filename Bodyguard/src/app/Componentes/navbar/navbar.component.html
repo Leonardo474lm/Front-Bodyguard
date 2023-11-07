@@ -28,20 +28,17 @@
   <mat-drawer #drawer class="main__sidenav" mode="side">
     <div class="main__acount">
       <img src="/assets/administrador.png" alt="acount of administrator">
-      <!-- <span *ngIf="role == 'ADMIN'">Administrador</span>
-      <span *ngIf="role == 'USER'">CHICHO</span>
-      <span *ngIf="role == 'BODY'">BODIGUARD</span> -->
+       <span>Rol del ususario</span>
     </div>
 
     <div class="main__buttons" >
-       
+
 
       <button mat-button class="main__button" routerLink="pages/home">
         <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon>ADMIN Home
       </button>
       <button mat-button class="main__button" routerLink="pages/service">
-        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="design_services"></mat-icon>
-        Servicios
+        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="design_services"></mat-icon> ADMIN Servicios
       </button>
       <button mat-button class="main__button" routerLink="pages/bodyguard">
         <mat-icon class="" aria-hidden="false" aria-label="Bodyguards icon" fontIcon="person"></mat-icon>ADMIN Bodyguards
@@ -58,21 +55,21 @@
 
 
       <button mat-button class="main__button" routerLink="">
-        <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon>USER Home
+        <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon>CLIENTE Home
       </button>
       <button mat-button class="main__button" routerLink="">
-        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="date_range"></mat-icon>USER History
+        <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="date_range"></mat-icon>CLIENTE History
       </button>
       <button mat-button class="main__button" routerLink="bodyguard">
-        <mat-icon class="" aria-hidden="false" aria-label="Bodyguards icon" fontIcon="person"></mat-icon>USER Bodyguards
+        <mat-icon class="" aria-hidden="false" aria-label="Bodyguards icon" fontIcon="person"></mat-icon>CLIENTE Bodyguards
       </button>
       <button mat-button class="main__button" routerLink="">
-        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="assessment"></mat-icon>USER Services
+        <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="assessment"></mat-icon>CLIENTE Mis services
+      </button>
+      <button mat-button class="main__button" routerLink="perfil">
+        <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon>CLIENTE Perfil
       </button>
 
-      <button mat-button class="main__button" routerLink="perfil">
-        <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon>USER Perfil
-      </button>
 
       <button mat-button class="main__button" routerLink="">
         <mat-icon class="" aria-hidden="false" aria-label="menu icon" fontIcon="home"></mat-icon>BODY Home
@@ -80,11 +77,9 @@
       <button mat-button class="main__button" routerLink="">
         <mat-icon class="" aria-hidden="false" aria-label="Services icon" fontIcon="library_add"></mat-icon>BODY Peticiones
       </button>
-
       <button mat-button class="main__button" routerLink="">
         <mat-icon class="" aria-hidden="false" aria-label="Speciality icon" fontIcon="fast_forward"></mat-icon>BODY Services
       </button>
-
       <button mat-button class="main__button" routerLink="perfil">
         <mat-icon class="" aria-hidden="false" aria-label="Accounts icon" fontIcon="manage_accounts"></mat-icon>BODY Perfil
       </button>
