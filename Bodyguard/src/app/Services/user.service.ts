@@ -8,12 +8,12 @@ import { User } from '../Model/User';
   providedIn: 'root'
 })
 export class UserService {
-  private url = "http://localhost:8080/Clients";
+  private url = "http://localhost:8081/user";
   private listaCambio = new Subject<User[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
-    return this.http.get<User[]>(this.url + "/List");
+    return this.http.get<User[]>(this.url + "/list");
   }
   insert(User: User) {
     return this.http.post(this.url + '/insert', User);
@@ -28,7 +28,13 @@ export class UserService {
   listId(id:number){
     return this.http.get<User>(this.url+"/"+id);
   }
-  update(dev: User){
-    return this.http.put(this.url + "", dev);
+
+  //esto funciona
+  update(user: User){
+    return this.http.put(this.url + "/update/"+user.id, user);
+  }
+  //esto funciona
+  getByEmail(email:string){
+    return this.http.get<User>(this.url+"/mail/"+email);
   }
 }
