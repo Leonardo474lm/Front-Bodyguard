@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../Model/User';
+const base_url = environment.base;
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private url = "http://localhost:8081/user";
+
+  private url = `${base_url}/Clients`;
+
   private listaCambio = new Subject<User[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
