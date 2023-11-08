@@ -35,13 +35,14 @@
 
 .bodyguards__card {
   width: 260px;
-  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   padding: 10px;
+  gap: 6px;
 
 }
 
@@ -77,19 +78,20 @@
   text-align: center;
 }
 
-.bodyguard__content h2 {
+.bodyguard__text h2, .bodyguard__text p {
   margin: 0;
 }
 
-.bodyguard__content p {}
+.bodyguard__text p { }
 
 .bodyguard__actions {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  padding: 0;
 }
 
- .bodyguard__actions button {
+.bodyguard__actions button {
   border-radius: 20px;
   border: 1px solid #000;
   background: #000;
@@ -98,3 +100,11 @@
   width: 176px;
 }
 
+.bodyguard__actions button:last-child {
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: rgba(0, 0, 0, 0.00);
+  color: #000;
+  padding: 6px 0px;
+  width: 176px;
+}
