@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Specialization } from '../Model/specialization';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { environment } from '../environments/environment';
+import { environment } from '../Environments/environment';
 const base_url = environment.base;
 
 @Injectable({
@@ -30,7 +30,9 @@ export class SpecializationService {
   update(specialization:Specialization){
     return this.http.put<Specialization>(this.url+"/update",specialization);
   }
-
+  listId(iddevice:number){
+    return this.http.get<Specialization>(this.url+"/"+iddevice);
+  }
   listById(id:number){
     return this.http.get<Specialization>( this.url+ "/"+id);
   }

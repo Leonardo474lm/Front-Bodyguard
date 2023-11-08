@@ -31,7 +31,9 @@ export class PaymentService {
   update(specialization:Payment){
     return this.http.put<Payment>(this.url+"/update",specialization);
   }
-
+  listId(iddevice:number){
+    return this.http.get<Payment>(this.url+"/"+iddevice);
+  }
   listById(id:number){
     return this.http.get<Payment>( this.url+ "/"+id);
   }
