@@ -1,5 +1,6 @@
 import { Client } from "./client";
 import { Bodyguard } from "./bodyguard";
+import { Payment } from "./payment";
 
 
 export class Service {
@@ -12,7 +13,7 @@ export class Service {
     st_anulado:boolean = false;
     clients:Client = new Client;
     bodyguards:Bodyguard = new Bodyguard;
-    payment_method:string = "";
+    payment_method:Payment = new Payment();
     review:number = 0;
 }
 

@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Specialization } from '../Model/specialization';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { environment } from '../environments/environment';
+const base_url = environment.base;
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpecializationService {
-  private url = "http://localhost:8081/Specialization";
+  private url = `${base_url}/Specialization`;
   private listaCambio = new Subject<Specialization[]>();
 
   constructor(private http: HttpClient) { }

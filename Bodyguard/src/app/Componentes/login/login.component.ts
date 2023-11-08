@@ -67,8 +67,14 @@ export class LoginComponent  implements OnInit{
   
 
 goToRegister() {
+  const url = 'URL_DE_DESTINO'; // Reemplaza 'URL_DE_DESTINO' con la URL de la página que deseas abrir en la ventana emergente.
+  const windowName = 'PopupWindow'; // Nombre de la ventana emergente
+  const windowFeatures = 'width=600,height=400'; // Características de la ventana emergente (ancho, alto, etc.)
   this.showLogin = false;
   this.router.navigate(["register"]);
+  
+
+  window.open('register',windowName,windowFeatures);
 }
 
 
