@@ -15,7 +15,7 @@ export class LoginComponent  implements OnInit{
 
   role: string=""
   hide = true;
-  showLogin = true;
+  // showLogin = true;
 
   user:User;
   form:  FormGroup = new FormGroup({});
@@ -59,15 +59,15 @@ export class LoginComponent  implements OnInit{
       this.message="";
     }
     else{
-      this.message="Complete los campos obligatorios"
+      // this.message="Complete los campos obligatorios"
     }
 
-    
+
   }
-  
+
 
 goToRegister() {
-  this.showLogin = false;
+  // this.showLogin = false;
   this.router.navigate(["register"]);
 }
 
