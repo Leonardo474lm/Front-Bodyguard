@@ -25,15 +25,16 @@ export class UserService {
   getList() {
     return this.listaCambio.asObservable();
   }
+  //aun falta implementar en backend
   listId(id:number){
     return this.http.get<User>(this.url+"/"+id);
   }
 
-  //esto funciona
+
   update(user: User){
     return this.http.put(this.url + "/update/"+user.id, user);
   }
-  //esto funciona
+ 
   getByEmail(email:string){
     return this.http.get<User>(this.url+"/mail/"+email);
   }
