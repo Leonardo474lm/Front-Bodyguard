@@ -40,6 +40,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgIf } from '@angular/common';
 import { DeleteDialogComponent } from './specialization/specialization-listar/delete-dialog/delete-dialog.component';
 import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.component';
+import { ShopDialogComponent } from './bodyguard-shop/shop-dialog/shop-dialog.component';
 
 @NgModule({
     declarations: [
@@ -62,6 +63,7 @@ import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.componen
     PerfilComponent,
     DeleteDialogComponent,
     BodyguardShopComponent,
+    ShopDialogComponent,
   ],
     imports: [
 
