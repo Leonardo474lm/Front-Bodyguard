@@ -16,41 +16,31 @@ import { PerfilComponent } from './perfil/perfil.component';
 const routes: Routes = [
   //path para specialization
   {
+    path:'home',
+    component:HomeComponent
+
+  },
+  {
     path: 'specialization',
     component: SpecializationComponent,
   },
-
   {
-    path: 'client',
-    component: ClientComponent,
-    children: [
-      {
-        path: 'clientinsertar',
-        component: ClientEditarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: ClientEditarComponent,
-      },
-    ],
-  },
-  {
-    path: 'client',
-    component: ClientComponent,
-    children: [
-      {
-        path: 'lista',
-        component: ClientListarComponent,
-      },
-      {
-        path: 'clientinsertar',
-        component: ClientEditarComponent,
-      },
-      {
-        path: 'edicion/:id',
-        component: ClientEditarComponent,
-      },
-    ],
+        path: 'client',
+        component: ClientComponent,
+        children: [
+            {
+                path: 'lista',
+                component: ClientListarComponent,
+            },
+            {
+                path: 'clientinsertar',
+                component: ClientEditarComponent,
+            },
+            {
+                path: 'edicion/:id',
+                component: ClientEditarComponent,
+            },
+        ],
   },
   //path para bodyguar
   {

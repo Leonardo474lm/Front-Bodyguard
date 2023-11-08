@@ -1,39 +1,4 @@
-/* @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
 
-  .half {
-    width: 100%;
-  }
-
-  form {
-    width: 100%;
-}
-}
-
-.form-group {
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input {
-  width: calc(100% - 16px);
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  width: calc(50% - 5px);
-  margin: 10px 5px;
-} */
 
 .menu{
   display: flex;
@@ -108,8 +73,9 @@ button {
   padding-bottom: 10px;
 }
 .main__content {
-  height: 100%;
+  min-height: 100%;
   background: #F3F3F3;
+  padding: 40px ;
 }
 .main__buttons{
   padding: 30px 0px;
@@ -162,7 +128,4 @@ button {
   color: #FFB908;
 }
 
-.main__content{
 
-  padding: 40px ;
-}

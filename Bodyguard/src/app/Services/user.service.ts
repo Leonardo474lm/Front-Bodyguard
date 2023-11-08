@@ -10,12 +10,14 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class UserService {
+
   private url = `${base_url}/Clients`;
+
   private listaCambio = new Subject<User[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
-    return this.http.get<User[]>(this.url + "/List");
+    return this.http.get<User[]>(this.url + "/list");
   }
   insert(User: User) {
     return this.http.post(this.url + '/insert', User);
@@ -27,10 +29,17 @@ export class UserService {
   getList() {
     return this.listaCambio.asObservable();
   }
+  //aun falta implementar en backend
   listId(id:number){
     return this.http.get<User>(this.url+"/"+id);
   }
-  update(dev: User){
-    return this.http.put(this.url + "", dev);
+
+
+  update(user: User){
+    return this.http.put(this.url + "/update/"+user.id, user);
+  }
+
+  getByEmail(email:string){
+    return this.http.get<any>(this.url+"/mail/"+email);
   }
 }
