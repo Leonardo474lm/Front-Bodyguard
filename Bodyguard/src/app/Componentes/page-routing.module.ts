@@ -12,6 +12,7 @@ import { ServiceListarComponent } from './service/service-listar/service-listar.
 import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
 import { SpecializationComponent } from './specialization/specialization.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.component';
 
 const routes: Routes = [
   //path para specialization
@@ -77,6 +78,11 @@ const routes: Routes = [
     path: 'perfil',
     component: PerfilComponent,
   },
+  //Lista de guardaespaldas  para el cliente
+  {
+    path:'shop',
+    component:BodyguardShopComponent
+  }
 ];
 
 @NgModule({

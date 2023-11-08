@@ -39,6 +39,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgIf } from '@angular/common';
 import { DeleteDialogComponent } from './specialization/specialization-listar/delete-dialog/delete-dialog.component';
+import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.component';
 
 @NgModule({
     declarations: [
@@ -60,6 +61,7 @@ import { DeleteDialogComponent } from './specialization/specialization-listar/de
     NavbarComponent,
     PerfilComponent,
     DeleteDialogComponent,
+    BodyguardShopComponent,
   ],
     imports: [
 
