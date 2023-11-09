@@ -18,8 +18,8 @@ export class SpecializationListarComponent implements OnInit {
   lista: Specialization[] = [];
   displayedColumns = ['id', 'name', 'description', 'actions'];
   dataSource = new MatTableDataSource();
-  @ViewChild('paginator') paginator!: MatPaginator;
-  @ViewChild('MatSort') sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private specialtyServ: SpecializationService,

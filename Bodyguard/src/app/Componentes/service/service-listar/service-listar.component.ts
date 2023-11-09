@@ -12,13 +12,13 @@ import { iServiceService } from 'src/app/Services/iService.service';
 })
 export class ServiceListarComponent implements OnInit {
   lista: Service[] = [];
-  displayedColumns = ['id', 'date','hours_start','location','clients','bodyguards','review','payment_method','st_aceptar','st_pagado','st_anulado','actions'];
+  displayedColumns = ['id', 'date', 'hours_start', 'location', 'clients', 'bodyguards', 'review', 'payment_method', 'st_aceptar', 'st_pagado', 'st_anulado', 'actions'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private iserviceService: iServiceService) {
-     this.iserviceService.list().subscribe(data => this.dataSource.data = data);
+    this.iserviceService.list().subscribe(data => this.dataSource.data = data);
     this.iserviceService.getList().subscribe(data => {
       this.dataSource.data = data;
     });
@@ -28,6 +28,14 @@ export class ServiceListarComponent implements OnInit {
     this.iserviceService.list().subscribe(data => this.dataSource.data = data);
     this.iserviceService.getList().subscribe(data => {
       this.dataSource.data = data;
+      // Supongamos que 'precio' es la variable que contiene tu valor numérico
+      let precio = 44;
+
+      // Formatear el precio como una cadena con formato de moneda
+      let precioFormateado = precio.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
+
+      console.log(precioFormateado); // Mostrará "€1,234.56" (o el símbolo de moneda correspondiente en tu configuración regional)
+
     });
   }
   ngAfterViewInit() {

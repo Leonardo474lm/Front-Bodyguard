@@ -24,8 +24,8 @@
         <td mat-cell *matCellDef="let element"> {{element.clients.id}} </td>
       </ng-container>
       <ng-container matColumnDef="bodyguards">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> bodyguards </th>
-        <td mat-cell *matCellDef="let element"> {{element.bodyguards.id}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+        <td mat-cell  *matCellDef="let element"> {{element.bodyguards.price_per_hour | currency: 'USD'}} </td>
       </ng-container>
       <ng-container matColumnDef="review">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> review </th>

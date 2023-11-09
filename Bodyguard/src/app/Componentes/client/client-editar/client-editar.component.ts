@@ -18,8 +18,6 @@ export class ClientEditarComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false;
   maxFecha: Date = moment().add(1, 'days').toDate();
-  listaUser: User[] = [];
-  user: User = new User();
   // Define una variable para almacenar el DNI original
   dniOriginal: string = '';
   constructor(private clientservice: ClientService,
