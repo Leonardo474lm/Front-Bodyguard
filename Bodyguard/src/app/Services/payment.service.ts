@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, Subject } from 'rxjs';
-import { environment } from '../Environments/environment';
+import { environment } from 'src/Environments/environment';
 
 import { Payment } from '../Model/payment';
 const base_url = environment.base;
