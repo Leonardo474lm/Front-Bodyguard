@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
+
+import { environment } from 'src/Environments/environment';
+
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Service } from '../Model/service';
-import { environment } from '../Environments/environment';
+
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
 })
 export class iServiceService {
-  private url = `${base_url}/services`;
+  private url = "http://localhost:8080/services";
   private listaCambio = new Subject<Service[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
@@ -39,10 +42,6 @@ export class iServiceService {
 
   update(dev: Service){
     return this.http.put(this.url + "/Update", dev);
-  }
-
-  listById(id:number) {
-    return this.http.get<Service>(this.url + "/" + id);
   }
 
   setList(listaNueva: Service[]) {

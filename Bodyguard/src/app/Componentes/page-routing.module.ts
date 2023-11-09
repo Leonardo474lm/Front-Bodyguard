@@ -64,7 +64,7 @@ const routes: Routes = [
     component: ServiceComponent,
     children: [
       {
-        path: 'bodyinsertar',
+        path: 'serviceinsert',
         component: ServiceListarComponent,
       },
       {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, Subject } from 'rxjs';
-import { environment } from '../Environments/environment';
+import { environment } from 'src/Environments/environment';
 
 import { Payment } from '../Model/payment';
 const base_url = environment.base;
@@ -31,7 +31,9 @@ export class PaymentService {
   update(specialization:Payment){
     return this.http.put<Payment>(this.url+"/update",specialization);
   }
-
+  listId(iddevice:number){
+    return this.http.get<Payment>(this.url+"/"+iddevice);
+  }
   listById(id:number){
     return this.http.get<Payment>( this.url+ "/"+id);
   }
