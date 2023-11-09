@@ -6,7 +6,7 @@ import { Payment } from "./payment";
 export class Service {
     id: number = 0;
     date: Date = new Date(Date.now());
-    hours_start: number = 9;
+    hours_start: number = 0;
     location: string = "";
     st_aceptar:boolean=false; 
     st_pagado: boolean = false;
