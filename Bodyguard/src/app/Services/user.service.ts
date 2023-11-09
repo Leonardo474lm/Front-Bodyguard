@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+
 import { environment } from 'src/Environments/environment';
+
 
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../Model/User';
+
 const base_url = environment.base;
 
 @Injectable({
@@ -11,7 +14,7 @@ const base_url = environment.base;
 })
 export class UserService {
 
-  private url = `${base_url}/Clients`;
+  private url = `${base_url}/user`;
 
   private listaCambio = new Subject<User[]>();
   // inyectando httpClient
