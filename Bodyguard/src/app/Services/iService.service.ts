@@ -44,6 +44,10 @@ export class iServiceService {
     return this.http.put(this.url + "/Update", dev);
   }
 
+  listById(id:number) {
+    return this.http.get<Service>(this.url + "/" + id);
+  }
+
   setList(listaNueva: Service[]) {
     this.listaCambio.next(listaNueva);//enviar la nueva lista a los suscriptores
   }
