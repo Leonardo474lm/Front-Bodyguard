@@ -45,6 +45,7 @@ export class LoginComponent  implements OnInit{
         password: new FormControl(this.user.password,[Validators.required])
       }
     )
+    
   }
 
   submit():void {
@@ -54,7 +55,14 @@ export class LoginComponent  implements OnInit{
     if(this.form.valid)
     {
       console.log(this.form);
+      
+
+
+
       localStorage.setItem("userProfile",JSON.stringify(this.user));
+
+
+
        this.router.navigate(["/bodyguard"]);
       this.message="";
     }

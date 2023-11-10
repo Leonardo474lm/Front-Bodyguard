@@ -112,7 +112,7 @@ const routes: Routes = [
   },
   {
     path: 'client/services',
-    component: ClientServicesComponent,
+    component: ServClientListarComponent,
   },
   {
     path: 'client/perfil',

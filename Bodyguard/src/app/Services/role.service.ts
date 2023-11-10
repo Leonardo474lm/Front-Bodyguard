@@ -10,20 +10,23 @@ const base_url=environment.base;
 })
 export class RoleService {
 
-  url:String = `${base_url}`
+  url:String = `${base_url}/roles/`
   private listaCambio = new Subject<Role[]>();
   constructor(
     private http:HttpClient
   ) { }
 
-  //  list(): Observable<any> {
-  //   return this.http.get<Role[]>(this.url + "/List");
-  // }
-  // setList(listaNueva: Role[]) {
-  //   this.listaCambio.next(listaNueva);
-  // }
-  // getList() {
-  //   return this.listaCambio.asObservable();
-  // }
+   list(): Observable<any> {
+    return this.http.get<Role[]>(this.url + "/List");
+  }
+  setList(listaNueva: Role[]) {
+    this.listaCambio.next(listaNueva);
+  }
+  getList() {
+    return this.listaCambio.asObservable();
+  }
+  getRoleByUserId(id:number){
+    return this.http.get<Role>(this.url+"/user/"+id)
+  }
 
 }
