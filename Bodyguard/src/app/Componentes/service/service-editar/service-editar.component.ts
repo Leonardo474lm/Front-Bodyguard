@@ -32,7 +32,7 @@ export class ServiceEditarComponent implements OnInit {
       date: new FormControl('', [Validators.required]),
       hours_start: new FormControl('', [Validators.required]),
       location: new FormControl(),
-    });
+    });  
 
     this.inputData = this.data;
     if (this.inputData.id > 0) {

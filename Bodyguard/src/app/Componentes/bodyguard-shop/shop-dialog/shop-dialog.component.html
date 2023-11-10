@@ -5,39 +5,38 @@
 
         <mat-form-field class="form__input">
           <mat-label>Direccion</mat-label>
-          <input required matInput required placeholder="Enter your direction"  >
+          <input required matInput required placeholder="Enter your direction" formControlName="location"  >
         </mat-form-field>
 
         <div class="form__inputs">
           <mat-form-field class="form__input">
             <mat-label>Fecha de inicio</mat-label>
-            <input required matInput [matDatepicker]="picker" placeholder="Select the start date" >
+            <input required matInput [matDatepicker]="picker" placeholder="Select the start date" formControlName="date" >
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <mat-form-field class="form__input">
-            <mat-label>Hora</mat-label>
-            <input required matInput placeholder="Enter start hour" >
+            <mat-label>Hora de Inicio</mat-label>
+            <input required matInput placeholder="Enter start hour" formControlName="hours_start">
           </mat-form-field>
         </div>
 
         <div class="form__inputs">
           <mat-form-field class="form__input">
             <mat-label>Duracion</mat-label>
-            <input required matInput placeholder="Enter duration" >
+            <input required matInput placeholder="Enter duration" formControlName="hour">
           </mat-form-field>
           <mat-form-field class="form__input">
             <mat-label>Especialidad</mat-label>
-            <input required matInput placeholder="especialidad" >
+            <input readonly matInput placeholder="especialidad" formControlName="specialty" >
           </mat-form-field>
         </div>
 
         <mat-form-field class="form__input">
           <mat-label>Metodo de pago</mat-label>
-          <mat-select required [(value)]="selectValue"  >
-            <mat-option value="yape">Yape</mat-option>
-            <mat-option value="plin">Plin</mat-option>
+          <mat-select required [(value)]="idPaymentSelected" formControlName="payment_method" >
+            <mat-option  [value]="pay.id" *ngFor="let pay of listPay" >{{pay.methods}}</mat-option>
           </mat-select>
         </mat-form-field>
 

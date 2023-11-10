@@ -79,10 +79,13 @@ export class ServiceListarComponent implements OnInit {
 
   }
 
+  
+
    /*addSpecialization()
   {
     this.openFormDialog(0,'Agregar especialidad');
   }
+
 
 
  openDeleteDialog(id:number){

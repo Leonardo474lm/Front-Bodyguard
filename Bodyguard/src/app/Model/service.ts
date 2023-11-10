@@ -7,8 +7,9 @@ export class Service {
     id: number = 0;
     date: Date = new Date(Date.now());
     hours_start: number = 0;
+    hours:number=0;
     location: string = "";
-    st_aceptar:boolean=false; 
+    st_aceptar:boolean=false;
     st_pagado: boolean = false;
     st_anulado:boolean = false;
     clients:Client = new Client;

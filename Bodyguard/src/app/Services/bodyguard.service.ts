@@ -23,6 +23,9 @@ export class BodyguardService {
   getListObs(){
       return this.listBodyguards.asObservable();
   }
+  getById(id:number){
+    return this.http.get<Bodyguard>(this.url+"/"+id)
+  }
 
 
 
