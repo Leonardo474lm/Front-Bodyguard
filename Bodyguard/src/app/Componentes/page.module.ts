@@ -43,6 +43,12 @@ import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.componen
 import { ShopDialogComponent } from './bodyguard-shop/shop-dialog/shop-dialog.component';
 import { ServClientListarComponent } from './client/serv-client-listar/serv-client-listar.component';
 import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-listar.component';
+import { HomeClientComponent } from './home-client/home-client.component';
+import { ClientServicesComponent } from './client-services/client-services.component';
+import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
+import { ClientHistoryComponent } from './client-history/client-history.component';
+import { BodyguardServicesComponent } from './bodyguard-services/bodyguard-services.component';
+import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
 
 
 @NgModule({
@@ -69,6 +75,12 @@ import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-l
     ShopDialogComponent,
     ServClientListarComponent,
     ServBodyListarComponent,
+    HomeClientComponent,
+    ClientServicesComponent,
+    BodyguardHomeComponent,
+    ClientHistoryComponent,
+    BodyguardServicesComponent,
+    BodyguardPeticionesComponent,
    
   ],
     imports: [

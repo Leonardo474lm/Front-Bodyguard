@@ -15,45 +15,40 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.component';
 import { ServClientListarComponent } from './client/serv-client-listar/serv-client-listar.component';
 import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-listar.component';
+import { HomeClientComponent } from './home-client/home-client.component';
+import { ClientServicesComponent } from './client-services/client-services.component';
+import { ClientHistoryComponent } from './client-history/client-history.component';
+import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
+import { BodyguardServicesComponent } from './bodyguard-services/bodyguard-services.component';
+import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
 
 const routes: Routes = [
-  //path para specialization
+  //Administrador
   {
-    path:'home',
-    component:HomeComponent
-
+    path: 'admin',
+    component: HomeComponent,
   },
-  {
-    path: 'specialization',
-    component: SpecializationComponent,
-  },
-  //path para client
 
   {
-        path: 'client',
-        component: ClientComponent,
-        children: [
-            {
-                path: 'lista',
-                component: ClientListarComponent,
-            },
-            {
-                path: 'clientinsertar',
-                component: ClientEditarComponent,
-            },
-            {
-                path: 'edicion/:id',
-                component: ClientEditarComponent,
-            },
-            {
-              path: 'listaServicios',
-              component: ServClientListarComponent,
-          },
-        ],
+    path: 'admin/home',
+    component: HomeComponent,
   },
-  //path para bodyguar
   {
-    path: 'bodyguard',
+    path: 'admin/services',
+    component: ServiceComponent,
+    children: [
+      {
+        path: 'serviceinsert',
+        component: ServiceEditarComponent,
+      },
+      {
+        path: 'edicion/:id',
+        component: ServiceEditarComponent,
+      },
+    ],
+  },
+  {
+    path: 'admin/bodyguard',
     component: BodyguarComponent,
     children: [
       {
@@ -70,31 +65,81 @@ const routes: Routes = [
       },
     ],
   },
-  //path para service
   {
-    path: 'service',
-    component: ServiceComponent,
+    path: 'admin/specialty',
+    component: SpecializationComponent,
+  },
+  {
+    path: 'admin/client',
+    component: ClientComponent,
     children: [
       {
-        path: 'serviceinsert',
-        component: ServiceEditarComponent,
+        path: 'lista',
+        component: ClientListarComponent,
+      },
+      {
+        path: 'clientinsertar',
+        component: ClientEditarComponent,
       },
       {
         path: 'edicion/:id',
-        component: ServiceEditarComponent,
+        component: ClientEditarComponent,
       },
     ],
   },
-  //path para perfiles
   {
-    path: 'perfil',
+    path: 'admin/perfil',
     component: PerfilComponent,
   },
-  //Lista de guardaespaldas  para el cliente
+
+  ///ROL  Cliente
   {
-    path:'shop',
-    component:BodyguardShopComponent
-  }
+    path: 'client',
+    component: HomeClientComponent,
+  },
+
+  {
+    path: 'client/home',
+    component: HomeClientComponent,
+  },
+  {
+    path: 'client/history',
+    component: ClientHistoryComponent,
+  },
+  {
+    path: 'client/shop',
+    component: BodyguardShopComponent,
+  },
+  {
+    path: 'client/services',
+    component: ClientServicesComponent,
+  },
+  {
+    path: 'client/perfil',
+    component: PerfilComponent,
+  },
+
+  //ROL BODYGUARD
+  {
+    path: 'bodyguard',
+    component: BodyguardHomeComponent,
+  },
+  {
+    path: 'bodyguard/home',
+    component: HomeClientComponent,
+  },
+  {
+    path: 'bodyguard/peticiones',
+    component: BodyguardPeticionesComponent,
+  },
+  {
+    path: 'bodyguard/services',
+    component: BodyguardServicesComponent,
+  },
+  {
+    path: 'bodyguard/perfil',
+    component: PerfilComponent,
+  },
 ];
 
 @NgModule({
