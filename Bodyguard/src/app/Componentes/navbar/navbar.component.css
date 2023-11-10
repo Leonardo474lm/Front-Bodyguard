@@ -81,10 +81,15 @@
   padding: 30px 0px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
+
+}
+.main__role{
+  display: flex;
+  flex-direction: column;
   gap: 5px;
 }
-.main__buttons .main__button{
+.main__buttons div .main__button{
   background-color: rgba(119, 119, 119, 0.4);
   border-bottom: 2.5px solid rgba(119, 119, 119, .1);
   width: 100%;

@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavbarComponent {
   activeButton: number = 0;
-  role:string="";
+  role:string="Cliente";
 
   validarRol() {
     if (this.role == 'ADMIN' || this.role == 'USER' || this.role == 'BODY') {
