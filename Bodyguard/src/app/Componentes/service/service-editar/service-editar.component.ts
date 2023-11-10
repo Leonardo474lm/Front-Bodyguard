@@ -41,7 +41,11 @@ export class ServiceEditarComponent implements OnInit {
       date: new FormControl('', [Validators.required]),
       hours_start: new FormControl('', [Validators.required]),
       location: new FormControl(),
-    });  
+      st_aceptar: new FormControl(),
+      st_pagado: new FormControl(),
+      st_anulado: new FormControl(),
+      review: new FormControl(),
+    });
 
     this.inputData = this.data;
     if (this.inputData.id > 0) {
@@ -67,6 +71,10 @@ export class ServiceEditarComponent implements OnInit {
           date: new FormControl(item.date),
           hours_start: new FormControl(item.hours_start),
           location: new FormControl(item.location),
+          st_aceptar: new FormControl(item.st_aceptar),
+          st_pagado: new FormControl(item.st_pagado),
+          st_anulado: new FormControl(item.st_anulado),
+          review: new FormControl(item.review),
         });
       });
       }
@@ -77,22 +85,23 @@ export class ServiceEditarComponent implements OnInit {
   }
 
   enviar() {
+    console.log(this.service)
     this.service.id = this.form.value['id'];
     this.service.date = this.form.value['date'];
     this.service.hours_start = this.form.value['hours_start'];
     this.service.location = this.form.value['location'];
-    this.service.st_aceptar = this.st_aceptar
-    this.service.st_anulado = this.st_anulado
-    this.service.st_pagado = this.st_pagado
-    this.service.clients = this.clients
-    this.service.bodyguards.id = this.bodyguards.id
-    this.service.payment_method = this.payment_method
-    this.service.review = this.review
+    this.service.st_aceptar = this.form.value['st_aceptar'];
+    this.service.st_pagado = this.form.value['st_pagado'];
+    this.service.st_anulado = this.form.value['st_anulado'];
+    this.service.review = this.form.value['review'];
 
+    
+    
 
     if (this.form.valid) {
       if (this.editing) {
         this.iserviceService.update(this.service).subscribe(() => {
+          console.log(this.service)
           this.closeDialog();
           this.iserviceService.list().subscribe((data) => {
             this.iserviceService.setList(data);

@@ -9,9 +9,9 @@ export class Service {
     hours_start: number = 0;
     hours:number=0;
     location: string = "";
-    st_aceptar:boolean=false;
-    st_pagado: boolean = false;
-    st_anulado:boolean = false;
+    st_aceptar:boolean=false; //estado de servicio = falso o true
+    st_pagado: boolean = false; //estdo de pago 
+    st_anulado:boolean = false; // 
     clients:Client = new Client;
     bodyguards:Bodyguard = new Bodyguard;
     payment_method:Payment = new Payment();
