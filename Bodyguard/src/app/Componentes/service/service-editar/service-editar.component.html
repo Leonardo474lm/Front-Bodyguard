@@ -4,14 +4,14 @@
       <div class="form__content" mat-dialog-content>
         <!-- <div class="contenedor"> -->
 
-        <mat-form-field class="form__input">
-            <mat-label>ID</mat-label>
-            <input matInput required placeholder="id" formControlName="id">
-        </mat-form-field>
+        
 
-          <mat-form-field class="form__input">
-            <mat-label>Fecha</mat-label>
-            <input matInput required placeholder="fecha" formControlName="date">
+          <mat-form-field appearance="fill" class="form__input">
+            <mat-label>BirthDate</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date" max="maxFecha">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
           <mat-form-field class="form__input">
@@ -23,6 +23,13 @@
             <mat-label>Ubicacion</mat-label>
             <input matInput required placeholder="location" formControlName="location">
           </mat-form-field>
+
+          <mat-form-field class="form__input">
+            <mat-label>St_Aceptar</mat-label>
+            <input matInput required placeholder="location" formControlName="st_aceptar">
+          </mat-form-field>
+
+          
   
           
   
