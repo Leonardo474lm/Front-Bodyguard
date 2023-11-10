@@ -13,6 +13,8 @@ import { ServiceEditarComponent } from './service/service-editar/service-editar.
 import { SpecializationComponent } from './specialization/specialization.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.component';
+import { ServClientListarComponent } from './client/serv-client-listar/serv-client-listar.component';
+import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-listar.component';
 
 const routes: Routes = [
   //path para specialization
@@ -25,6 +27,8 @@ const routes: Routes = [
     path: 'specialization',
     component: SpecializationComponent,
   },
+  //path para client
+
   {
         path: 'client',
         component: ClientComponent,
@@ -41,6 +45,10 @@ const routes: Routes = [
                 path: 'edicion/:id',
                 component: ClientEditarComponent,
             },
+            {
+              path: 'listaServicios',
+              component: ServClientListarComponent,
+          },
         ],
   },
   //path para bodyguar
@@ -56,6 +64,10 @@ const routes: Routes = [
         path: 'edicion/:id',
         component: BodyEditarComponent,
       },
+      {
+        path: 'listarServicios',
+        component: ServBodyListarComponent,
+      },
     ],
   },
   //path para service
@@ -65,7 +77,7 @@ const routes: Routes = [
     children: [
       {
         path: 'serviceinsert',
-        component: ServiceListarComponent,
+        component: ServiceEditarComponent,
       },
       {
         path: 'edicion/:id',
