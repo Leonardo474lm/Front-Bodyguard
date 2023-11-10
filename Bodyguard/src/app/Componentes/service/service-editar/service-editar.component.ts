@@ -1,6 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Bodyguard } from 'src/app/Model/bodyguard';
+import { Client } from 'src/app/Model/client';
+import { Payment } from 'src/app/Model/payment';
 import { Service } from 'src/app/Model/service';
 import { iServiceService } from 'src/app/Services/iService.service';
 
@@ -15,7 +18,13 @@ export class ServiceEditarComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   editing: boolean;
   service: Service = new Service();
-
+  st_aceptar:boolean=false; 
+  st_pagado: boolean = false;
+  st_anulado:boolean = false;
+  clients:Client = new Client;
+  bodyguards:Bodyguard = new Bodyguard;
+  payment_method:Payment = new Payment();
+  review:number = 0;
 
   constructor(
     private ref: MatDialogRef<ServiceEditarComponent>,
@@ -50,6 +59,13 @@ export class ServiceEditarComponent implements OnInit {
       this.iserviceService.listById(id).subscribe((item) => {
         console.log(item)
          this.editData = item;
+         this.clients=item.clients;
+         this.review-item.review;
+         this.payment_method=item.payment_method;
+         this.bodyguards=item.bodyguards;
+         this.st_aceptar=item.st_aceptar;
+         this.st_anulado=item.st_anulado;
+         this.st_pagado=item.st_pagado;
         this.form = new FormGroup({
           id: new FormControl(item.id),
           date: new FormControl(item.date),

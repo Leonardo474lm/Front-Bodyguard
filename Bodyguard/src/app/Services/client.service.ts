@@ -37,4 +37,7 @@ export class ClientService {
   update(dev: Client){
     return this.http.put(this.url + "/update", dev);
   }
+  getByUserId(id:number){
+    return this.http.get<Client>(this.url+"/user/"+id)
+  }
 }

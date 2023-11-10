@@ -11,7 +11,7 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class iServiceService {
-  private url = "http://localhost:8080/services";
+  private url =   `${base_url}/services`;
   private listaCambio = new Subject<Service[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
