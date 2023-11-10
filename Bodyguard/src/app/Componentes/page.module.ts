@@ -41,6 +41,9 @@ import { NgIf } from '@angular/common';
 import { DeleteDialogComponent } from './specialization/specialization-listar/delete-dialog/delete-dialog.component';
 import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.component';
 import { ShopDialogComponent } from './bodyguard-shop/shop-dialog/shop-dialog.component';
+import { ServClientListarComponent } from './client/serv-client-listar/serv-client-listar.component';
+import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-listar.component';
+
 
 @NgModule({
     declarations: [
@@ -64,6 +67,9 @@ import { ShopDialogComponent } from './bodyguard-shop/shop-dialog/shop-dialog.co
     DeleteDialogComponent,
     BodyguardShopComponent,
     ShopDialogComponent,
+    ServClientListarComponent,
+    ServBodyListarComponent,
+   
   ],
     imports: [
 
