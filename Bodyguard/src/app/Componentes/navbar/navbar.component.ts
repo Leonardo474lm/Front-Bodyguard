@@ -42,7 +42,7 @@ export class NavbarComponent implements OnInit{
       this.userBack=user1;
       this.roleService.getRoleByUserId(this.userBack.id).subscribe(data=>{
         this.role=data.rol;
-        console.log("user role",this.role)
+  
       })
     })
 

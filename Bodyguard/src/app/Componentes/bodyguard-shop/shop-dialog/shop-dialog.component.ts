@@ -58,6 +58,7 @@ export class ShopDialogComponent implements OnInit {
       this.currentUser = user1;
       this.clientServ.getByUserId(this.currentUser.id).subscribe((client) => {
         this.currentClient = client;
+        console.log("current init ",this.currentClient)
       });
     });
 
@@ -104,6 +105,7 @@ export class ShopDialogComponent implements OnInit {
       this.newService.bodyguards = this.editBody;
       this.newPayment.id = this.idPaymentSelected;
       this.newService.payment_method=this.newPayment;
+      console.log("servicoi",this.newService)
       this.iService.insert(this.newService).subscribe(()=>{
         this.iService.list().subscribe(data=>this.iService.setList(data))
       })

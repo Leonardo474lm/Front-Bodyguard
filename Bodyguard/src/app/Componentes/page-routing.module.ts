@@ -21,6 +21,7 @@ import { ClientHistoryComponent } from './client-history/client-history.componen
 import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
 import { BodyguardServicesComponent } from './bodyguard-services/bodyguard-services.component';
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   //Administrador
@@ -70,6 +71,10 @@ const routes: Routes = [
     component: SpecializationComponent,
   },
   {
+    path: 'admin/payment',
+    component: PaymentComponent,
+  },
+  {
     path: 'admin/client',
     component: ClientComponent,
     children: [
@@ -78,10 +83,7 @@ const routes: Routes = [
         component: ClientListarComponent,
       },
       {
-        path: 'clientinsertar',
-        component: ClientEditarComponent,
-      },
-      {
+        // /bodyguard/pages/admin/client/edicion
         path: 'edicion/:id',
         component: ClientEditarComponent,
       },
