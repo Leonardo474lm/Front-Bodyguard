@@ -44,7 +44,6 @@ import { ShopDialogComponent } from './bodyguard-shop/shop-dialog/shop-dialog.co
 import { ServClientListarComponent } from './client/serv-client-listar/serv-client-listar.component';
 import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-listar.component';
 import { HomeClientComponent } from './home-client/home-client.component';
-import { ClientServicesComponent } from './client-services/client-services.component';
 import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
 import { ClientHistoryComponent } from './client-history/client-history.component';
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
@@ -75,7 +74,6 @@ import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-p
     ServClientListarComponent,
     ServBodyListarComponent,
     HomeClientComponent,
-    ClientServicesComponent,
     BodyguardHomeComponent,
     ClientHistoryComponent,
     BodyguardPeticionesComponent,

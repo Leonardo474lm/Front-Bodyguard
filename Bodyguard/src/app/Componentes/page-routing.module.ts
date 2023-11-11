@@ -8,7 +8,6 @@ import { BodyguarComponent } from './bodyguar/bodyguar.component';
 import { BodyListarComponent } from './bodyguar/body-listar/body-listar.component';
 import { BodyEditarComponent } from './bodyguar/body-editar/body-editar.component';
 import { ServiceComponent } from './service/service.component';
-import { ServiceListarComponent } from './service/service-listar/service-listar.component';
 import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
 import { SpecializationComponent } from './specialization/specialization.component';
 import { PerfilComponent } from './perfil/perfil.component';
@@ -16,7 +15,6 @@ import { BodyguardShopComponent } from './bodyguard-shop/bodyguard-shop.componen
 import { ServClientListarComponent } from './client/serv-client-listar/serv-client-listar.component';
 import { ServBodyListarComponent } from './bodyguar/serv-body-listar/serv-body-listar.component';
 import { HomeClientComponent } from './home-client/home-client.component';
-import { ClientServicesComponent } from './client-services/client-services.component';
 import { ClientHistoryComponent } from './client-history/client-history.component';
 import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
