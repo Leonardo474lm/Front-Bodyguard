@@ -19,7 +19,6 @@ import { HomeClientComponent } from './home-client/home-client.component';
 import { ClientServicesComponent } from './client-services/client-services.component';
 import { ClientHistoryComponent } from './client-history/client-history.component';
 import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
-import { BodyguardServicesComponent } from './bodyguard-services/bodyguard-services.component';
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
 import { PaymentComponent } from './payment/payment.component';
 
@@ -136,7 +135,7 @@ const routes: Routes = [
   },
   {
     path: 'bodyguard/services',
-    component: BodyguardServicesComponent,
+    component: ServBodyListarComponent,
   },
   {
     path: 'bodyguard/perfil',

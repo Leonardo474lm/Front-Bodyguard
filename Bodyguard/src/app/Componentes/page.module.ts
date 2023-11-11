@@ -47,7 +47,6 @@ import { HomeClientComponent } from './home-client/home-client.component';
 import { ClientServicesComponent } from './client-services/client-services.component';
 import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
 import { ClientHistoryComponent } from './client-history/client-history.component';
-import { BodyguardServicesComponent } from './bodyguard-services/bodyguard-services.component';
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
 
 
@@ -79,7 +78,6 @@ import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-p
     ClientServicesComponent,
     BodyguardHomeComponent,
     ClientHistoryComponent,
-    BodyguardServicesComponent,
     BodyguardPeticionesComponent,
 
   ],
@@ -109,7 +107,7 @@ import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-p
         MatCardModule,
         MatSidenavModule,
         MatToolbarModule,
-        
+
 
     ],
     providers: [],

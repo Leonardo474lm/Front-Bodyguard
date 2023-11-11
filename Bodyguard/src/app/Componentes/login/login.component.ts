@@ -45,7 +45,7 @@ export class LoginComponent  implements OnInit{
         password: new FormControl(this.user.password,[Validators.required])
       }
     )
-    
+
   }
 
   submit():void {
@@ -55,7 +55,7 @@ export class LoginComponent  implements OnInit{
     if(this.form.valid)
     {
       console.log(this.form);
-      
+
 
 
 
