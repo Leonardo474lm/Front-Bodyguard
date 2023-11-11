@@ -10,7 +10,7 @@ const base_url=environment.base;
 })
 export class RoleService {
 
-  url:String = `${base_url}/roles/`
+  url:String = `${base_url}/roles`
   private listaCambio = new Subject<Role[]>();
   constructor(
     private http:HttpClient
