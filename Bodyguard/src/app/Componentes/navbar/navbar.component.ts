@@ -1,5 +1,6 @@
+import { MatMenuTrigger } from '@angular/material/menu';
 import { Role } from './../../Model/role';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/Model/User';
 import { RoleService } from 'src/app/Services/role.service';
@@ -42,13 +43,18 @@ export class NavbarComponent implements OnInit{
       this.userBack=user1;
       this.roleService.getRoleByUserId(this.userBack.id).subscribe(data=>{
         this.role=data.rol;
-  
+
       })
     })
 
 
-     
-    
+
+
+  }
+  @ViewChild(MatMenuTrigger)
+  trigger!: MatMenuTrigger;
+  openMenu(){
+     this.trigger.toggleMenu();
   }
 cambioderol(){
 

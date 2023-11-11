@@ -81,7 +81,7 @@ import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-p
     ClientHistoryComponent,
     BodyguardServicesComponent,
     BodyguardPeticionesComponent,
-   
+
   ],
     imports: [
 
@@ -109,6 +109,7 @@ import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-p
         MatCardModule,
         MatSidenavModule,
         MatToolbarModule,
+        
 
     ],
     providers: [],
