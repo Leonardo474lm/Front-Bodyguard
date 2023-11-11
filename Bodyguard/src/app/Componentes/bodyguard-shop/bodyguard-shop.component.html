@@ -15,7 +15,7 @@
         </div>
         <ng-template #graded>
           <div class="stars">
-            <mat-icon fontIcon="grade" *ngFor="let item of [].constructor(body.star)" ></mat-icon>
+            <mat-icon fontIcon="grade" *ngFor="let item of [].constructor(body.star)" > {{body.star}} </mat-icon>
           </div>
         </ng-template>
         <div class="bodyguard__text">
