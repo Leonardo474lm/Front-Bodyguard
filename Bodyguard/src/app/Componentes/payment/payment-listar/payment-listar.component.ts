@@ -6,7 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Payment } from 'src/app/Model/payment';
 import { PaymentService } from 'src/app/Services/payment.service';
 import { PaymentEditarComponent } from '../payment-editar/payment-editar.component';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+
+import { DeletteDialogComponent } from './delette-dialog/delette-dialog.component';
 
 @Component({
   selector: 'app-payment-listar',
@@ -71,7 +72,7 @@ export class PaymentListarComponent implements OnInit{
 
 
   openDeleteDialog(id:number){
-    const dialogRef = this.dialog.open(DeleteDialogComponent);
+    const dialogRef = this.dialog.open(DeletteDialogComponent);
     dialogRef.afterClosed().subscribe(result =>{
       if(result){
         this.delete(id);

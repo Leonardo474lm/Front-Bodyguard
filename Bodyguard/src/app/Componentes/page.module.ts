@@ -49,6 +49,7 @@ import { ClientHistoryComponent } from './client-history/client-history.componen
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
 import { PaymentListarComponent } from './payment/payment-listar/payment-listar.component';
 import { PaymentEditarComponent } from './payment/payment-editar/payment-editar.component';
+import { DeletteDialogComponent } from './payment/payment-listar/delette-dialog/delette-dialog.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { PaymentEditarComponent } from './payment/payment-editar/payment-editar.
     BodyguardPeticionesComponent,
     PaymentListarComponent,
     PaymentEditarComponent,
+    DeletteDialogComponent,
 
   ],
     imports: [
