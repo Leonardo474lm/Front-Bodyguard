@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit{
   // role:string="Bodyguard";
 
   validarRol() {
-    if (this.role == 'ADMIN' || this.role == 'USER' || this.role == 'BODY') {
+    if (this.role == 'Administrador' || this.role == 'Cliente' || this.role == 'Bodyguard') {
       return true;
     } else {
       return false;
@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit{
 
       })
     })
-
+console.log(this.role)
 
 
 

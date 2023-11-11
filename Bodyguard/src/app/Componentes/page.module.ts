@@ -47,6 +47,8 @@ import { HomeClientComponent } from './home-client/home-client.component';
 import { BodyguardHomeComponent } from './bodyguard-home/bodyguard-home.component';
 import { ClientHistoryComponent } from './client-history/client-history.component';
 import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-peticiones.component';
+import { PaymentListarComponent } from './payment/payment-listar/payment-listar.component';
+import { PaymentEditarComponent } from './payment/payment-editar/payment-editar.component';
 
 
 @NgModule({
@@ -77,6 +79,8 @@ import { BodyguardPeticionesComponent } from './bodyguard-peticiones/bodyguard-p
     BodyguardHomeComponent,
     ClientHistoryComponent,
     BodyguardPeticionesComponent,
+    PaymentListarComponent,
+    PaymentEditarComponent,
 
   ],
     imports: [
