@@ -40,7 +40,8 @@
 }
 
 .home__earnings,
-.home__clients {
+.home__clients,
+.home__hours {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,15 +62,22 @@
   color: #fff;
   padding: 30px 15px;
 }
+.home__hours {
+  background: linear-gradient(90deg, #0077C0 23.96%, #008CCD 56.77%, #00A6DD 89.58%);
+  color: #fff;
+  padding: 30px 15px;
+}
 
 .home__earnings h3,
-.home__clients h3 {
+.home__clients h3,
+.home__hours h3 {
   font-size: 24px;
   font-weight: 700;
 }
 
 .home__earnings p,
-.home__clients p {
+.home__clients p,
+.home__hours p {
   font-size: 64px;
   font-weight: 700;
 }

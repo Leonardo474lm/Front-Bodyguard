@@ -128,7 +128,7 @@ const routes: Routes = [
   },
   {
     path: 'bodyguard/home',
-    component: HomeClientComponent,
+    component: BodyguardHomeComponent,
   },
   {
     path: 'bodyguard/peticiones',

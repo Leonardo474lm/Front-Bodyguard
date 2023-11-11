@@ -113,7 +113,7 @@ box-shadow: 0px 0px 45px 23px rgba(0,0,0,0.1);
 
 
 }
-.main__buttons .main__button:focus{
+.main__buttons div .main__button:focus{
     border-bottom: 2.5px solid #FFB908;
     background: rgba(119, 119, 119, 0.1);
     color: #FFB908;
