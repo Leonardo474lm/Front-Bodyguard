@@ -53,10 +53,25 @@ export class BodyguardPeticionesComponent {
     this.dataSource.filter = e.target.value.trim();
   }
   aceptarPeticion(id:number){
-    
+    this.iService.listById(id).subscribe(data=>{
+      data.st_aceptar=true;
+      this.iService.update(data).subscribe(()=>{
+        this.iService.listPeticiones(data.bodyguards.id).subscribe(list=>{
+            this.iService.setListPeticiones(list);
+        })
+      })
+    })
 
   }
   denegarPeticion(id:number){
+    this.iService.listById(id).subscribe(data=>{
+      data.st_anulado=true;
+      this.iService.update(data).subscribe(()=>{
+        this.iService.listPeticiones(data.bodyguards.id).subscribe(list=>{
+            this.iService.setListPeticiones(list);
+        })
+      })
+    })
 
   }
 
