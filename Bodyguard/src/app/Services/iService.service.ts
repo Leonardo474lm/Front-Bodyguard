@@ -13,6 +13,7 @@ const base_url = environment.base;
 export class iServiceService {
   private url =   `${base_url}/services`;
   private listaCambio = new Subject<Service[]>();
+  private listaPeticiones = new Subject<Service[]>();
   // inyectando httpClient
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
@@ -53,5 +54,14 @@ export class iServiceService {
   }
   getList() {
     return this.listaCambio.asObservable();
+  }
+  listPeticiones(id:number): Observable<any> {
+    return this.http.get<Service[]>(this.url + "/peticion/"+id);
+  }
+  getListPeticiones(){
+     return this.listaPeticiones.asObservable();
+  }
+  setListPeticiones(newList : Service[]){
+    this.listaPeticiones.next(newList)//enviar la nueva lista a los suscriptores
   }
 }

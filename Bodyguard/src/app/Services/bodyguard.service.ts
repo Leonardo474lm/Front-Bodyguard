@@ -26,6 +26,9 @@ export class BodyguardService {
   getById(id:number){
     return this.http.get<Bodyguard>(this.url+"/"+id)
   }
+  getByUserMail(mail:String){
+    return this.http.get<Bodyguard>(this.url+"/usermail/"+mail);
+  }
 
 
 
