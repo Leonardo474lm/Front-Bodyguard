@@ -14,7 +14,7 @@ import { iServiceService } from 'src/app/Services/iService.service';
   styleUrls: ['./bodyguard-peticiones.component.css']
 })
 export class BodyguardPeticionesComponent {
-  //lista:Service[] = [];
+
    displayedColumns = ['Precio', 'Fecha', 'Hora', 'Duracion','Cliente','Direccion', 'Acciones'];
 
    dataSource = new MatTableDataSource<Service>();
@@ -29,15 +29,13 @@ export class BodyguardPeticionesComponent {
     private bodyService:BodyguardService,
 
   ){
-     console.log("Load Constructor");
+     
      this.localUser=new User();
    }
   ngOnInit(): void {
     this.store = localStorage.getItem("userProfile");
     if(this.store) this.localUser=JSON.parse(this.store);
-    console.log("local user desde peticiones ",this.localUser)
     this.bodyService.getByUserMail(this.localUser.email).subscribe(body=>{
-      console.log("body de bac",body)
       this.iService.listPeticiones(body.id).subscribe(data=>this.dataSource.data=data);
       this.iService.getListPeticiones().subscribe(data=>this.dataSource.data=data);
     })
