@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { User } from 'src/app/Model/User';
@@ -49,7 +49,10 @@ export class RegisterComponent implements OnInit {
       age: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     })
+
+
   }
+
   aceptar() {
 
     this.client.id = this.form.value['id'];
@@ -64,7 +67,7 @@ export class RegisterComponent implements OnInit {
     this.client.user.password = this.form.value['password'];
 
 
-    //agregado al editar  
+    //agregado al editar
     if (this.form.valid) {
 
       console.log(this.clientservice);//se ve en la herramienta de desarrollador de Chrome
@@ -79,6 +82,10 @@ export class RegisterComponent implements OnInit {
     } else {
       this.mensaje = "Agregue campos omitidos";
     }
+  }
+
+  onSelect(value:string){
+    console.log("on select",value)
   }
 
 }

@@ -80,7 +80,7 @@ export class ShopDialogComponent implements OnInit {
 
   loadDialog(idBody: number) {
     this.bodyServ.getById(idBody).subscribe((body) => {
-      this.editBody = body; 
+      this.editBody = body;
       console.log(body);
       console.log(body.specialization.name);
       this.form = new FormGroup({
@@ -98,7 +98,8 @@ export class ShopDialogComponent implements OnInit {
     this.newService.date = this.form.value['date'];
     this.newService.hours_start = this.form.value['hours_start']; //view-format
     this.newService.location = this.form.value['location'];
-    this.newService.location = this.form.value['location'];
+    this.newService.hours = this.form.value['hour'];
+    this.newService.hours_start = this.form.value['hours_start'];
 
     if (this.form.valid) {
       this.newService.clients = this.currentClient;

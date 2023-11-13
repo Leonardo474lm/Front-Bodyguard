@@ -48,8 +48,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PageModule } from './Componentes/page.module';
 
 
-
-
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeEsPE from '@angular/common/locales/es-PE';
+registerLocaleData(localeEsPE, 'es-PE');
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,7 @@ import { PageModule } from './Componentes/page.module';
     MatNativeDateModule,
     PageModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es-PE' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

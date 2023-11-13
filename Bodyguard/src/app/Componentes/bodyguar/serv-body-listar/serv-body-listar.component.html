@@ -6,7 +6,7 @@
     <table mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="monto">
             <th mat-header-cell *matHeaderCellDef mat-sort-header > Precio </th>
-            <td mat-cell *matCellDef="let element" > {{element.bodyguards.price_per_hour| currency: 'USD'}} </td>
+            <td mat-cell *matCellDef="let element" > {{ element.bodyguards.price_per_hour*element.hours | currency:'PEN':'symbol':'2.2-2':'es-PE'}} </td>
         </ng-container>
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>

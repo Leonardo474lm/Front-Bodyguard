@@ -25,8 +25,8 @@ export class iServiceService {
   ListServiceUser(clientId:number){
     return this.http.get<Service[]>(this.url + "/client/"+clientId);
   }
-  ListServiceBodyguard  (ser:number){
-    return this.http.get<Service[]>(this.url + "/bodiguard/"+ser);
+  ListServiceBodyguard  (userId:number){
+    return this.http.get<Service[]>(this.url + "/bodiguard/"+userId);
   }
 
   insert(service: Service) {

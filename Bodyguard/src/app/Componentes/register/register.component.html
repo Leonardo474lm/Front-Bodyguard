@@ -32,10 +32,10 @@
           </mat-form-field>
           <mat-form-field class="campo">
             <mat-label>Genero</mat-label>
-            <mat-select [(value)]="value" formControlName="gender" >
+            <mat-select [(value)]="value" (selectionChange)="onSelect(value)" formControlName="gender" >
               <mat-option value="Masculino">Masculino</mat-option>
               <mat-option value="Femenino">Femenino</mat-option>
-              <mat-option value="30 tipos de gays">30 tipos de gays</mat-option>
+
             </mat-select>
           </mat-form-field>
         </div>
