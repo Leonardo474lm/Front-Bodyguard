@@ -23,7 +23,7 @@ export class LoginComponent  implements OnInit{
   form:  FormGroup = new FormGroup({});
   message: string;
   userTemp:User;
- 
+
 
   constructor(
     private router:Router,
@@ -64,25 +64,24 @@ export class LoginComponent  implements OnInit{
     {
       this.userService.getByEmail(this.user.email).subscribe(data=>{
         this.userTemp=data;
-        console.log("user back with data",this.userTemp)
+        console.log("user data",this.userTemp)
         if(this.userTemp.email===this.user.email && this.userTemp.password==this.user.password)
         {
           this.roleService.getRoleByUserId(this.userTemp.id).subscribe(data=>
             {this.role=data.rol
               switch(this.role)
               {
-                case "Administrador": this.router.navigate(["/bodyguard/pages/admin/home"]); break;
-                case "Cliente": this.router.navigate(["/bodyguard/pages/client/home"]); break;
-                case "Bodyguard": this.router.navigate(["/bodyguard/pages/bodyguard/home"]); break;
+                case "Administrador": this.router.navigate(["/bodyguard/pages/admin"]); break;
+                case "Cliente": this.router.navigate(["/bodyguard/pages/client"]); break;
+                case "Bodyguard": this.router.navigate(["/bodyguard/pages/bodyguard"]); break;
               }
             })
            this.userTemp=new User();
-           console.log("user null",this.userTemp)
+           console.log("user null",this.userTemp);
+           this.message="";
         }
         else this.message="email y/o pasword incorrectos";
       })
-
-      console.log(this.form);
       localStorage.setItem("userProfile",JSON.stringify(this.user));
       this.message="";
     }
@@ -92,9 +91,9 @@ export class LoginComponent  implements OnInit{
 
 
   }
-  
+
   authentication(email:String,password:String){
-    
+
 
   }
 
@@ -112,5 +111,5 @@ goToRegister() {
 
 
 }
- 
+
 

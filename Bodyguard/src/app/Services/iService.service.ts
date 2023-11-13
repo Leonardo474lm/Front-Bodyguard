@@ -22,8 +22,8 @@ export class iServiceService {
   findfecha(date: Date): Observable<any> {
     return this.http.get<Service[]>(this.url + "/findbyfecha/"+date);
   }
-  ListServiceUser(ser:number){
-    return this.http.get<Service[]>(this.url + "/client/"+ser);
+  ListServiceUser(clientId:number){
+    return this.http.get<Service[]>(this.url + "/client/"+clientId);
   }
   ListServiceBodyguard  (ser:number){
     return this.http.get<Service[]>(this.url + "/bodiguard/"+ser);
@@ -45,8 +45,8 @@ export class iServiceService {
     return this.http.put(this.url + "/Update", dev);
   }
 
-  listById(id:number) {
-    return this.http.get<Service>(this.url + "/" + id);
+  listById(idService:number) {
+    return this.http.get<Service>(this.url + "/" + idService);
   }
 
   setList(listaNueva: Service[]) {
@@ -55,6 +55,8 @@ export class iServiceService {
   getList() {
     return this.listaCambio.asObservable();
   }
+
+
   listPeticiones(id:number): Observable<any> {
     return this.http.get<Service[]>(this.url + "/peticion/"+id);
   }
@@ -64,4 +66,12 @@ export class iServiceService {
   setListPeticiones(newList : Service[]){
     this.listaPeticiones.next(newList)//enviar la nueva lista a los suscriptores
   }
+
+  getTotalGastosByClient(clientId:number){
+    return this.http.get(this.url+"/gastototal/"+clientId);
+  }
+  getTotalServiciosContratadosByClient(clientId:number){
+    return this.http.get(this.url+"/totalserv/"+clientId);
+  }
+
 }

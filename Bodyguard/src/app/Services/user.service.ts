@@ -43,6 +43,6 @@ export class UserService {
   }
 
   getByEmail(email:string){
-    return this.http.get<any>(this.url+"/mail/"+email);
+    return this.http.get<User>(this.url+"/mail/"+email);
   }
 }
