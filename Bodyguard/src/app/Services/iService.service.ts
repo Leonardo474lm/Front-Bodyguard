@@ -14,7 +14,7 @@ export class iServiceService {
   private url =   `${base_url}/services`;
   private listaCambio = new Subject<Service[]>();
   private listaPeticiones = new Subject<Service[]>();
-  // inyectando httpClient
+
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
     return this.http.get<Service[]>(this.url + "/list");
@@ -28,15 +28,7 @@ export class iServiceService {
   ListServiceBodyguard  (ser:number){
     return this.http.get<Service[]>(this.url + "/bodiguard/"+ser);
   }
-  GetHorasTotales(ser:number){
-    return this.http.get<Service[]>(this.url + "/HourTotal/"+ser);
-  }
-  GetPagosTotalesBody(bodyid:number){
-    return this.http.get<Service[]>(this.url + "/Pagototal/"+bodyid);
-  }
-  GetCantidadClientBody(bodyid:number){
-    return this.http.get<Service[]>(this.url + "/countclientesByBodyguard/"+bodyid);
-  }
+
   insert(service: Service) {
     return this.http.post(this.url + '/insert', service);
   }
@@ -72,6 +64,19 @@ export class iServiceService {
   }
   getTotalServiciosContratadosByClient(clientId:number){
     return this.http.get(this.url+"/totalserv/"+clientId);
+  }
+
+
+  countClientsByBodyguard(bodyId:number){
+    return this.http.get<number>(this.url+"/countclientesByBodyguard/"+bodyId);
+  }
+  getTotalEarningsForBodyguard(bodyId:number)
+  {
+    return this.http.get<number>(this.url+"/pagototal/"+bodyId);
+  }
+  getTotalHoursWorkedForBodyguard(bodyId:number)
+  {
+     return this.http.get<number>(this.url+"/HourTotal/"+bodyId);
   }
 
 }

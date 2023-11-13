@@ -12,7 +12,6 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class HomeClientComponent implements OnInit {
   user:User;
-  // client:Client;
   gastoTotal:any;
   totalServicios:any;
   constructor(
@@ -22,7 +21,6 @@ export class HomeClientComponent implements OnInit {
 
   ){
     this.user= new User();
-    // this.client=new Client();
 
   }
   ngOnInit(): void {

@@ -29,7 +29,7 @@ export class BodyguardPeticionesComponent {
     private bodyService:BodyguardService,
 
   ){
-     
+
      this.localUser=new User();
    }
   ngOnInit(): void {
@@ -47,16 +47,14 @@ export class BodyguardPeticionesComponent {
      this.dataSource.sort = this.sort;
      this.dataSource.paginator = this.paginator;
   }
-  filtrar(e:any){
-    this.dataSource.filter = e.target.value.trim();
-  }
+  // filtrar(e:any){
+  //   this.dataSource.filter = e.target.value.trim();
+  // }
   aceptarPeticion(id:number){
     this.iService.listById(id).subscribe(data=>{
       data.st_aceptar=true;
       this.iService.update(data).subscribe(()=>{
-        this.iService.listPeticiones(data.bodyguards.id).subscribe(list=>{
-            this.iService.setListPeticiones(list);
-        })
+        this.iService.listPeticiones(data.bodyguards.id).subscribe(list=>this.iService.setListPeticiones(list))
       })
     })
 
@@ -65,9 +63,7 @@ export class BodyguardPeticionesComponent {
     this.iService.listById(id).subscribe(data=>{
       data.st_anulado=true;
       this.iService.update(data).subscribe(()=>{
-        this.iService.listPeticiones(data.bodyguards.id).subscribe(list=>{
-            this.iService.setListPeticiones(list);
-        })
+        this.iService.listPeticiones(data.bodyguards.id).subscribe(list=>this.iService.setListPeticiones(list))
       })
     })
 
