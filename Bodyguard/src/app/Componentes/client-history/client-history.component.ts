@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-client-history',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./client-history.component.css']
 })
 export class ClientHistoryComponent {
+  constructor(public route:ActivatedRoute){
+
+  }
 
 }

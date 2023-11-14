@@ -14,6 +14,7 @@ export class iServiceService {
   private url =   `${base_url}/services`;
   private listaCambio = new Subject<Service[]>();
   private listaPeticiones = new Subject<Service[]>();
+  private historyList = new Subject<Service[]>();
 
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
@@ -77,6 +78,13 @@ export class iServiceService {
   getTotalHoursWorkedForBodyguard(bodyId:number)
   {
      return this.http.get<number>(this.url+"/HourTotal/"+bodyId);
+  }
+
+  getClientHistory(clientId:number){
+    return this.http.get<Service[]>(this.url+"/clienthistory/"+clientId);
+  }
+  getClientHistoryList(){
+    return this.historyList.asObservable();
   }
 
 }
