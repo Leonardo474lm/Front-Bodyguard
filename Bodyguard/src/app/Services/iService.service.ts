@@ -5,6 +5,7 @@ import { environment } from 'src/Environments/environment';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Service } from '../Model/service';
+import { UrlTree } from '@angular/router';
 
 const base_url = environment.base;
 @Injectable({
@@ -36,6 +37,9 @@ export class iServiceService {
 
   update(dev: Service){
     return this.http.put(this.url + "/Update", dev);
+  }
+  delete(idServ:number){
+    return this.http.delete<Service>(this.url+"/Delete/"+idServ);
   }
 
   listById(idService:number) {
@@ -85,6 +89,9 @@ export class iServiceService {
   }
   getClientHistoryList(){
     return this.historyList.asObservable();
+  }
+  setClientHistoryList(newList:Service[]){
+    this.historyList.next(newList);
   }
 
 }

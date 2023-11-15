@@ -7,7 +7,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./client-history.component.css']
 })
 export class ClientHistoryComponent {
-  constructor(public route:ActivatedRoute){
+  constructor(
+    public route:ActivatedRoute,
+    ){
 
   }
 

@@ -51,6 +51,8 @@ import { PaymentListarComponent } from './payment/payment-listar/payment-listar.
 import { PaymentEditarComponent } from './payment/payment-editar/payment-editar.component';
 import { DeletteDialogComponent } from './payment/payment-listar/delette-dialog/delette-dialog.component';
 import { ClientHistoryListComponent } from './client-history/client-history-list/client-history-list.component';
+import { DeleteHistoryDialogComponent } from './client-history/delete-history-dialog/delete-history-dialog.component';
+import { ReviewHistoryDialogComponent } from './client-history/review-history-dialog/review-history-dialog.component';
 
 
 @NgModule({
@@ -85,6 +87,8 @@ import { ClientHistoryListComponent } from './client-history/client-history-list
     PaymentEditarComponent,
     DeletteDialogComponent,
     ClientHistoryListComponent,
+    DeleteHistoryDialogComponent,
+    ReviewHistoryDialogComponent,
 
   ],
     imports: [
