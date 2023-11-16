@@ -50,6 +50,10 @@ const routes: Routes = [
     component: BodyguarComponent,
     children: [
       {
+        path: 'lista',
+        component: BodyListarComponent,
+      },
+      {
         path: 'bodyinsertar',
         component: BodyListarComponent,
       },
