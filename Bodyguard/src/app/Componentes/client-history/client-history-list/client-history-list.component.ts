@@ -26,11 +26,21 @@ export class ClientHistoryListComponent {
     'location',
     'bodyguards',
     'review',
-    'st_anulado',
-    'st_aceptar',
-    'st_pagado',
     'Acciones',
   ];
+  // displayedColumns = [
+  //   'Monto',
+  //   'date',
+  //   'hours_start',
+  //   'Duracion',
+  //   'location',
+  //   'bodyguards',
+  //   'review',
+  //   'st_anulado',
+  //   'st_aceptar',
+  //   'st_pagado',
+  //   'Acciones',
+  // ];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
