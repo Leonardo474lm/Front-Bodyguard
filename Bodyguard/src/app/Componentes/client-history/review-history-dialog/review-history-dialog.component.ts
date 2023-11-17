@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./review-history-dialog.component.css']
 })
 export class ReviewHistoryDialogComponent {
-
+   selectedShoe:number=0;
 }

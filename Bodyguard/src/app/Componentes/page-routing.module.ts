@@ -71,7 +71,7 @@ const routes: Routes = [
     path: 'admin/specialty',
     component: SpecializationComponent,
   },
-  
+
   {
     path: 'admin/payment',
     component: PaymentComponent,

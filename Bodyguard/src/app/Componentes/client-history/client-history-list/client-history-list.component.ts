@@ -90,6 +90,13 @@ export class ClientHistoryListComponent {
 
   openReviewDialog(id:number){
     const review = this.dialog.open(ReviewHistoryDialogComponent);
+    review.afterClosed().subscribe(resp=>{
+       console.log(resp[0])
+      if(resp) {
+
+        //actualizar review del servicio por parte del cliente
+      }
+    })
 
   }
 

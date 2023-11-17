@@ -53,6 +53,7 @@ import { DeletteDialogComponent } from './payment/payment-listar/delette-dialog/
 import { ClientHistoryListComponent } from './client-history/client-history-list/client-history-list.component';
 import { DeleteHistoryDialogComponent } from './client-history/delete-history-dialog/delete-history-dialog.component';
 import { ReviewHistoryDialogComponent } from './client-history/review-history-dialog/review-history-dialog.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -117,6 +118,7 @@ import { ReviewHistoryDialogComponent } from './client-history/review-history-di
         MatCardModule,
         MatSidenavModule,
         MatToolbarModule,
+        MatListModule,
 
 
     ],
