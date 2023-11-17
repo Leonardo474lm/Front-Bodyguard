@@ -38,6 +38,7 @@ export class ClientHistoryListComponent {
 
   private client: Client;
   private localUser: User;
+  private rev:number=0;
   constructor(
     private iService: iServiceService,
     private userServ: UserService,
@@ -92,7 +93,20 @@ export class ClientHistoryListComponent {
     const review = this.dialog.open(ReviewHistoryDialogComponent);
     review.afterClosed().subscribe(resp=>{
        console.log(resp[0])
-      if(resp) {
+      if(resp[0]) {
+        this.rev=resp[0];
+        this.iService.listById(id).subscribe(resp=>{
+          resp.review= this.rev;
+           
+          this.iService.update(resp).subscribe(()=>{
+            
+            this.iService.getClientHistory(this.client.id).subscribe((data) => {
+              this.iService.setClientHistoryList(data);
+            });
+          });
+          
+        })
+
 
         //actualizar review del servicio por parte del cliente
       }
