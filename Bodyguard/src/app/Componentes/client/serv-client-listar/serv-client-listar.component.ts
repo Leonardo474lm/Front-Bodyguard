@@ -39,10 +39,12 @@ export class ServClientListarComponent implements OnInit {
         console.log(this.user);
 
         // Mover la carga de datos aquí
-        this.serviceservi.ListServiceUser(this.user.id).subscribe(data => {
+        this.serviceservi.getClientServices(this.user.id).subscribe(data => {
           console.log('Data from ListServiceUser:', data);
           this.dataSource.data = data;
         });
+
+        
       });
     }
   }

@@ -116,8 +116,6 @@ export class ClientHistoryListComponent {
           });
           
         })
-
-
         //actualizar review del servicio por parte del cliente
       }
     })
