@@ -1,7 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { User } from 'src/app/Model/User';
+import { Bodyguard } from 'src/app/Model/bodyguard';
+
 import { Body } from 'src/app/Model/Body';
+
 import { Specialization } from 'src/app/Model/specialization';
 import { UserBody } from 'src/app/Model/userBody';
 import { SpecializationService } from 'src/app/Services/Sspecialization.service';
@@ -14,6 +20,7 @@ import { BodyguardService } from 'src/app/Services/bodyguard.service';
 })
 export class BodyDialogComponent {
   inputData: any;
+
   form: FormGroup = new FormGroup({});
   editing: boolean;
   bodyguard: Body = new Body();
@@ -37,6 +44,7 @@ export class BodyDialogComponent {
     this.form = new FormGroup({
 
       price_per_hour: new FormControl('', [Validators.required]),
+
       email: new FormControl('', [Validators.required]),
       dni: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
@@ -58,14 +66,18 @@ export class BodyDialogComponent {
   }
  
 
+
   closeDialog() {
     this.ref.close();
   }
 
   enviar() {
 
-    this.bodyguard.price_per_hour = this.form.value['price_per_hour'];
+
+    this.bodyguard.price_per_hour = 0
     this.bodyguard.st_activo = true;
+    this.bodyguard.user.dni = this.form.value['dni'];
+    this.bodyguard.user.email = this.form.value['email'];
 
     this.user.email = this.form.value['email'];
     this.user.dni = this.form.value['dni'];
@@ -91,6 +103,9 @@ export class BodyDialogComponent {
         });
       
     }
+
   }
+
+
 
 }

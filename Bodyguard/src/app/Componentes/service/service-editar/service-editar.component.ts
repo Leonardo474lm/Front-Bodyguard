@@ -26,6 +26,7 @@
 //   payment_method:Payment = new Payment();
 //   review:number = 0;
 
+
 //   constructor(
 //     private ref: MatDialogRef<ServiceEditarComponent>,
 //     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -34,6 +35,7 @@
 //     this.editing = false;
 //     this.editData=new Service();
 //   }
+
 
 //   ngOnInit(): void {
 //     this.form = new FormGroup({
