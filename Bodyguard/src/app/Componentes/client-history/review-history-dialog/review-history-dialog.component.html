@@ -1,6 +1,6 @@
 <div class="dialog">
   <mat-dialog-content class="dialog__content">
-    <p>Review options</p>
+    <p>Opciones de calificación</p>
     <mat-selection-list [(ngModel)]="selectedShoe"[multiple]="false">
       <mat-list-option value="1"><mat-icon fontIcon="grade">review</mat-icon></mat-list-option>
       <mat-list-option [value]="2"> <mat-icon fontIcon="grade" *ngFor="let item of [].constructor(2)"></mat-icon></mat-list-option>
@@ -9,11 +9,6 @@
       <mat-list-option [value]="5"> <mat-icon fontIcon="grade" *ngFor="let item of [].constructor(5)"></mat-icon></mat-list-option>
 
     </mat-selection-list>
-    <!-- <p>
-      Option selected: {{selectedShoe}}
-    </p> -->
-
-
   </mat-dialog-content>
   <mat-dialog-actions class="dialog__actions">
     <button mat-raised-button mat-dialog-close class="dialog__button_no">Cancelar</button>

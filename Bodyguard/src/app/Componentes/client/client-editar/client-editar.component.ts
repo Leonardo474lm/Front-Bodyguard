@@ -34,9 +34,6 @@ export class ClientEditarComponent implements OnInit {
       console.log(this.id)
     });
 
-
-    //
-
     this.form = new FormGroup({
       id: new FormControl(),
       dni: new FormControl('', [Validators.required]),
@@ -50,8 +47,6 @@ export class ClientEditarComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
 
     })
-
-
 
   }
   init() {
@@ -77,8 +72,8 @@ export class ClientEditarComponent implements OnInit {
         });
         console.log(data)
       });
-    } //del if
-  } // del in
+    } 
+  } 
 
   aceptar() {
     if (this.edicion) {

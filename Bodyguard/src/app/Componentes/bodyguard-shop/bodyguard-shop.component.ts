@@ -24,7 +24,7 @@ export class BodyguardShopComponent implements OnInit {
     this.bodyguardService.getList().subscribe(data=>this.arrBodyguards=data);
   }
   openShopDialog(idBodyguard:number) {
-    console.log("desde bodyguard enviamos id",idBodyguard)
+    
     let popup = this.dialog.open(ShopDialogComponent, {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '300ms',
