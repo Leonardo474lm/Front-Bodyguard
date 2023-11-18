@@ -29,7 +29,7 @@ import { ClientEditarComponent } from './client/client-editar/client-editar.comp
 import { BodyEditarComponent } from './bodyguar/body-editar/body-editar.component';
 import { BodyListarComponent } from './bodyguar/body-listar/body-listar.component';
 import { ServiceListarComponent } from './service/service-listar/service-listar.component';
-import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
+// import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
 import { SpecializationListarComponent } from './specialization/specialization-listar/specialization-listar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PerfilComponent } from './perfil/perfil.component';
@@ -71,7 +71,7 @@ import {MatListModule} from '@angular/material/list';
     BodyListarComponent,
     BodyEditarComponent,
     ServiceListarComponent,
-    ServiceEditarComponent,
+    // ServiceEditarComponent,
     SpecializationListarComponent,
     NavbarComponent,
     PerfilComponent,

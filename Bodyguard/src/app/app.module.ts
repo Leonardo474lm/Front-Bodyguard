@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //component de service
 import { ServiceListarComponent } from './Componentes/service/service-listar/service-listar.component';
-import { ServiceEditarComponent } from './Componentes/service/service-editar/service-editar.component';
+ 
 import { ServiceComponent } from './Componentes/service/service.component';
 //component de bodyguard
 

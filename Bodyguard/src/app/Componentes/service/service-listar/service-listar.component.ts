@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Service } from 'src/app/Model/service';
 import { iServiceService } from 'src/app/Services/iService.service';
-import { ServiceEditarComponent } from '../service-editar/service-editar.component';
+// import { ServiceEditarComponent } from '../service-editar/service-editar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Client } from 'src/app/Model/client';
 import { User } from 'src/app/Model/User';
@@ -69,12 +69,14 @@ export class ServiceListarComponent implements OnInit {
   }
   activarServicio(idServ: number) {
     this.iService.listById(idServ).subscribe((service) => {
-      service.st_pagado = true;
-      this.iService.update(service).subscribe(() => {
-        this.iService.getAdminServices().subscribe((resp) => {
-          this.iService.setAdminServicesList(resp);
+      if (!service.st_pagado) {
+        service.st_pagado = true;
+        this.iService.update(service).subscribe(() => {
+          this.iService.getAdminServices().subscribe((resp) => {
+            this.iService.setAdminServicesList(resp);
+          });
         });
-      });
+      }
     });
   }
 }
