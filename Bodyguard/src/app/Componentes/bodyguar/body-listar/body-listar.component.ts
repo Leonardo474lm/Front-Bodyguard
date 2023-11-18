@@ -7,24 +7,28 @@ import { BodyguardService } from '../../../Services/bodyguard.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BodyDialogComponent } from '../body-dialog/body-dialog.component';
 
+
 @Component({
   selector: 'app-body-listar',
   templateUrl: './body-listar.component.html',
   styleUrls: ['./body-listar.component.css'],
 })
 export class BodyListarComponent implements OnInit {
-  lista: Bodyguard[] = [];
+  
+ 
   displayedColumns = [
     'id',
     'name_user',
     'email',
-    'name_specialization',
+    'name_specialization'
   ];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private sbodyguard: BodyguardService, private dialog: MatDialog) {
+  constructor(private sbodyguard: BodyguardService, 
+    private dialog: MatDialog,
+   ) {
     this.loadList();
   }
 
@@ -33,6 +37,8 @@ export class BodyListarComponent implements OnInit {
     this.sbodyguard.getList().subscribe((data) => {
       this.dataSource.data = data;
     });
+ 
+
   }
 
   ngAfterViewInit() {
@@ -40,13 +46,12 @@ export class BodyListarComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  openFormDialog(id: number, title: string) {
+  openFormDialog(title: string) {
     let popup = this.dialog.open(BodyDialogComponent, {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '300ms',
       data: {
-        title: title,
-        id: id,
+        title: title
       },
     });
     popup.afterClosed().subscribe((item) => {
@@ -58,12 +63,7 @@ export class BodyListarComponent implements OnInit {
     this.sbodyguard.getList().subscribe(data =>this.dataSource.data = data);
   }
 
-  // editSpecialization(id:number){
-  //   this.openFormDialog(id,'Editar Bodyguard')
-
-  // }
-
   addBodyguard() {
-    this.openFormDialog(0, 'Agregar bodyguard');
+    this.openFormDialog('Agregar bodyguard');
   }
 }

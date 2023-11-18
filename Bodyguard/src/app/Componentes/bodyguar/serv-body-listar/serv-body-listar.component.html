@@ -1,47 +1,75 @@
-
 <div class="container__table">
+  <h1>Mis Servicios</h1>
 
-    <h1>ser-body-listar Mis Servicios</h1>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="monto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto</th>
+      <td mat-cell *matCellDef="let element">
+        {{
+          element.bodyguards.price_per_hour * element.hours
+            | currency : "PEN" : "symbol" : "2.2-2" : "es-PE"
+        }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="hours_start">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora de inicio</th>
+      <td mat-cell *matCellDef="let element">
+        {{ formatHours(element.hours_start) }}
+      </td>
+    </ng-container>
 
-    <table mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="monto">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header > Precio </th>
-            <td mat-cell *matCellDef="let element" > {{ element.bodyguards.price_per_hour*element.hours | currency:'PEN':'symbol':'2.2-2':'es-PE'}} </td>
-        </ng-container>
-        <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
-            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-        </ng-container>
-        <ng-container matColumnDef="hours_start">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> hours_start </th>
-            <td mat-cell *matCellDef="let element"> {{ formatHours(element.hours_start) }} </td>
-        </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Direccion</th>
+      <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+    </ng-container>
 
-        <ng-container matColumnDef="location">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> location </th>
-            <td mat-cell *matCellDef="let element"> {{element.location}} </td>
-        </ng-container>
+    <ng-container matColumnDef="client">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cliente</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.clients.user.name + " " + element.clients.user.lastname }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="st_pagado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado de pago</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.st_pagado ? "Cancelado" : "Sin pagar" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="calificacion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Calificacion</th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="element.review == 0; else graded">
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion" />
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion" />
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion" />
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion" />
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion" />
+        </div>
+        <ng-template #graded>
+          <div class="stars">
+            <mat-icon
+              fontIcon="grade"
+              *ngFor="let item of [].constructor(element.review)"
+            >
+              {{ element.review }}
+            </mat-icon>
+          </div>
+        </ng-template>
+      </td>
+    </ng-container>
 
-        <ng-container matColumnDef="client">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
-            <td mat-cell *matCellDef="let element"> {{element.clients.user.name}} </td>
-        </ng-container>
-        <ng-container matColumnDef="st_pagado">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado de Pago </th>
-            <td mat-cell *matCellDef="let element"> {{element.st_pagado}} </td>
-        </ng-container>
-        <ng-container matColumnDef="calificacion">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Calificacion</th>
-            <td mat-cell *matCellDef="let element"> {{element.bodyguards.review}}</td>
-        </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page of periodic elements">
-    </mat-paginator>
-
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 15]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
 </div>

@@ -4,6 +4,7 @@ import { Bodyguard } from '../Model/bodyguard';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Specialization } from '../Model/specialization';
+import { Body } from '../Model/Body';
 
 const base_url = environment.base;
 @Injectable({
@@ -33,6 +34,9 @@ export class BodyguardService {
 
   insert(bodyguard: Bodyguard): Observable<any> {
     return this.http.post(this.url + '/insert', bodyguard);
+  }
+  insertByAdmin(body: Body): Observable<any> {
+    return this.http.post(this.url + '/insert', body);
   }
   update(bod: Bodyguard): Observable<any> {
     return this.http.put(this.url + "/Update", bod);
