@@ -26,7 +26,6 @@ import { ServiceComponent } from './service/service.component';
 import { ClientComponent } from './client/client.component';
 import { ClientListarComponent } from './client/client-listar/client-listar.component';
 import { ClientEditarComponent } from './client/client-editar/client-editar.component';
-import { BodyEditarComponent } from './bodyguar/body-editar/body-editar.component';
 import { BodyListarComponent } from './bodyguar/body-listar/body-listar.component';
 import { ServiceListarComponent } from './service/service-listar/service-listar.component';
 // import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
@@ -54,6 +53,9 @@ import { ClientHistoryListComponent } from './client-history/client-history-list
 import { DeleteHistoryDialogComponent } from './client-history/delete-history-dialog/delete-history-dialog.component';
 import { ReviewHistoryDialogComponent } from './client-history/review-history-dialog/review-history-dialog.component';
 import {MatListModule} from '@angular/material/list';
+import { BodyDialogComponent } from './bodyguar/body-dialog/body-dialog.component';
+
+
 
 
 @NgModule({
@@ -69,7 +71,6 @@ import {MatListModule} from '@angular/material/list';
     ClientListarComponent,
     ClientEditarComponent,
     BodyListarComponent,
-    BodyEditarComponent,
     ServiceListarComponent,
     // ServiceEditarComponent,
     SpecializationListarComponent,
@@ -90,6 +91,9 @@ import {MatListModule} from '@angular/material/list';
     ClientHistoryListComponent,
     DeleteHistoryDialogComponent,
     ReviewHistoryDialogComponent,
+    BodyDialogComponent,
+ 
+
 
   ],
     imports: [

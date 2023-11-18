@@ -6,7 +6,7 @@ import { ClientEditarComponent } from './client/client-editar/client-editar.comp
 import { HomeComponent } from './home/home.component';
 import { BodyguarComponent } from './bodyguar/bodyguar.component';
 import { BodyListarComponent } from './bodyguar/body-listar/body-listar.component';
-import { BodyEditarComponent } from './bodyguar/body-editar/body-editar.component';
+// import { BodyEditarComponent } from './bodyguar/body-editar/body-editar.component';
 import { ServiceComponent } from './service/service.component';
 // import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
 import { SpecializationComponent } from './specialization/specialization.component';
@@ -57,10 +57,7 @@ const routes: Routes = [
         path: 'bodyinsertar',
         component: BodyListarComponent,
       },
-      {
-        path: 'edicion/:id',
-        component: BodyEditarComponent,
-      },
+
       {
         path: 'listarServicios',
         component: ServBodyListarComponent,
