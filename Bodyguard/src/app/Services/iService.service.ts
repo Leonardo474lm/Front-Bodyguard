@@ -17,6 +17,7 @@ export class iServiceService {
   private listaPeticiones = new Subject<Service[]>();
   private historyList = new Subject<Service[]>();
   private clientServicesList = new Subject<Service[]>();
+  private adminServicesList = new Subject<Service[]>();
 
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
@@ -104,6 +105,17 @@ export class iServiceService {
   }
   setClientServicesList(newList:Service[]){
     this.clientServicesList.next(newList);
+  }
+
+  //Admin SERVICES
+  getAdminServices(){
+    return this.http.get<Service[]>(this.url+"/servicestoacept");
+  }
+  getAdminServicesList(){
+    return this.adminServicesList.asObservable();
+  }
+  setAdminServicesList(newList:Service[]){
+    this.adminServicesList.next(newList);
   }
 
 }
