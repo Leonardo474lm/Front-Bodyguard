@@ -1,10 +1,31 @@
 <div class="form">
   <form [formGroup]="form" (submit)="enviar()" class="form__container">
-    <h2 class="form__title" mat-dialog-title>{{inputData.title}}</h2>
+    <h2 class="form__title" mat-dialog-title>{{ inputData.title }}</h2>
     <div class="form__content" mat-dialog-content>
       <!-- <div class="contenedor"> -->
+
+        <!-- price_per_hour: new FormControl('', [Validators.required]),
+        // st_activo: new FormControl('', [Validators.required]),
+  
+        email: new FormControl('', [Validators.required]),
+        dni: new FormControl('', [Validators.required]),
+        name: new FormControl('', [Validators.required]),
+        lastname: new FormControl('', [Validators.required]),
+        fech_nac: new FormControl('', [Validators.required]),
+        gender: new FormControl('', [Validators.required]),
+        phone: new FormControl('', [Validators.required]),
+        password: new FormControl('', [Validators.required]),
+        age: new FormControl('', [Validators.required]),
+        specialization: new FormControl(),
+        district: new FormControl('', [Validators.required]), -->
+        
+        <mat-form-field class="form__input">
+          <mat-label>price_per_hour</mat-label>
+          <input matInput required placeholder="Precio por hora" formControlName="price_per_hour" />
+        </mat-form-field>
         <mat-form-field class="form__input">
           <mat-label>dni</mat-label>
+
           <input matInput required placeholder="dni" formControlName="dni">
         </mat-form-field>
         <div class="group">
@@ -70,11 +91,78 @@
           <mat-label>email</mat-label>
           <input matInput placeholder="email" formControlName="email">
         </mat-form-field>
+
       </div>
+      <mat-form-field class="form__input">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="email" formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="campo birth">
+        <mat-label>BirthDate</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="fech_nac"
+          max="maxFecha"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="campo genero">
+        <mat-label>Genero</mat-label>
+        <mat-select [(value)]="value" formControlName="gender">
+          <mat-option value="Masculino">Masculino</mat-option>
+          <mat-option value="Femenino">Femenino</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="group">
+        <mat-form-field class="form__input">
+          <mat-label>phone</mat-label>
+          <input matInput placeholder="phone" formControlName="phone" />
+        </mat-form-field>
+
+        <mat-form-field class="form__input">
+          <mat-label>password</mat-label>
+          <input matInput placeholder="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+      <div class="group">
+        <mat-form-field class="form__input">
+          <mat-label>age</mat-label>
+          <input matInput placeholder="age" formControlName="age" />
+        </mat-form-field>
+        <mat-form-field class="form__input">
+          <mat-label>district</mat-label>
+          <input matInput placeholder="district" formControlName="district" />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="campo specialty">
+        <mat-label>specialization</mat-label>
+        <mat-select [(value)]="idSpecSelected" formControlName="specialization">
+          <mat-option [value]="spec.id" *ngFor="let spec of listaSpecialty">{{
+            spec.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+ 
     <!-- </div> -->
     <div mat-dialog-actions class="form__actions">
-      <button mat-button (click)="closeDialog()" class="form__button__cancel">Cancel</button>
-      <button mat-button  type="submit" class="form__button_submit">Aceptar</button>
+
+      <button mat-button (click)="closeDialog()" class="form__button__cancel">
+        Cancel
+      </button>
+      <button mat-button type="submit" class="form__button_submit">
+        Aceptar
+      </button>
+
     </div>
   </form>
 </div>

@@ -1,10 +1,16 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { User } from 'src/app/Model/User';
 import { Bodyguard } from 'src/app/Model/bodyguard';
+
+import { Body } from 'src/app/Model/Body';
+
 import { Specialization } from 'src/app/Model/specialization';
+import { UserBody } from 'src/app/Model/userBody';
+import { SpecializationService } from 'src/app/Services/Sspecialization.service';
 import { BodyguardService } from 'src/app/Services/bodyguard.service';
 
 @Component({
@@ -17,23 +23,28 @@ export class BodyDialogComponent {
 
   form: FormGroup = new FormGroup({});
   editing: boolean;
-  bodyguard: Bodyguard = new Bodyguard();
-  user: User = new User();
-  specialization: Specialization = new Specialization();
-  value: String = "";
-  iduser: number = 0
+  bodyguard: Body = new Body();
+  user: UserBody  = new UserBody();
+  specialty: Specialization = new Specialization();
+  value:String="";
+  listaSpecialty:  Specialization[] = [];
+  idSpecSelected:number=0;
+
 
   constructor(
     private ref: MatDialogRef<BodyDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private bodyService: BodyguardService
+    @Inject (MAT_DIALOG_DATA) public data: any,
+    private bodyService: BodyguardService,
+    private speServ:SpecializationService,
   ) {
     this.editing = false;
-
   }
+
   ngOnInit(): void {
     this.form = new FormGroup({
-   
+
+      price_per_hour: new FormControl('', [Validators.required]),
+
       email: new FormControl('', [Validators.required]),
       dni: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
@@ -49,8 +60,11 @@ export class BodyDialogComponent {
     });
 
     this.inputData = this.data;
-
+    this.speServ.list().subscribe((data)=>{
+      this.listaSpecialty=data;
+    })
   }
+ 
 
 
   closeDialog() {
@@ -65,29 +79,31 @@ export class BodyDialogComponent {
     this.bodyguard.user.dni = this.form.value['dni'];
     this.bodyguard.user.email = this.form.value['email'];
 
-    this.bodyguard.user.name = this.form.value['name'];
-    this.bodyguard.user.lastname = this.form.value['lastname'];
-    this.bodyguard.user.fech_nac = this.form.value['fech_nac'];
-    this.bodyguard.user.gender = this.form.value['gender'];
-    this.bodyguard.user.phone = this.form.value['phone'];
-    this.bodyguard.user.password = this.form.value['password'];
-    this.bodyguard.user.age = this.form.value['age'];
-
-
-    this.bodyguard.specialization = this.form.value['specialization'];
+    this.user.email = this.form.value['email'];
+    this.user.dni = this.form.value['dni'];
+    this.user.name = this.form.value['name'];
+    this.user.lastname = this.form.value['lastname'];
+    this.user.fech_nac = this.form.value['fech_nac'];
+    this.user.gender = this.form.value['gender'];
+    this.user.phone = this.form.value['phone'];
+    this.user.password = this.form.value['password'];
+    this.user.age = this.form.value['age'];
+    this.bodyguard.user = this.user;
+    this.bodyguard.specialization.id = this.idSpecSelected;
     this.bodyguard.district = this.form.value['district'];
-    this.bodyguard.star = 0
+    console.log("body form",this.bodyguard)
 
+    if (this.form.valid) {
+        console.log("body to send",this.bodyguard)
+        this.bodyService.insertByAdmin(this.bodyguard).subscribe(() => {
+          this.closeDialog();
+          this.bodyService.list().subscribe((data) => {
+            this.bodyService.setList(data);
+          });
+        });
+      
+    }
 
-    this.bodyService.insert(this.bodyguard).subscribe(() => {
-      this.closeDialog();
-      this.bodyService.list().subscribe((data) => {
-        this.bodyService.setList(data);
-      });
-    });
-
-    console.log(this.bodyguard)
-    
   }
 
 
