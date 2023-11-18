@@ -36,8 +36,8 @@ export class iServiceService {
     return this.http.post(this.url + '/insert', service);
   }
 
-  update(dev: Service){
-    return this.http.put(this.url + "/Update", dev);
+  update(serv: Service){
+    return this.http.put(this.url + "/Update", serv);
   }
   delete(idServ:number){
     return this.http.delete<Service>(this.url+"/Delete/"+idServ);
@@ -95,11 +95,11 @@ export class iServiceService {
     this.historyList.next(newList);
   }
 
-  //CLIENT SERVICES 
+  //CLIENT SERVICES
   getClientServices(clientId:number){
     return this.http.get<Service[]>(this.url+"/clientservices/"+clientId);
   }
-  getClientServicesList(){         
+  getClientServicesList(){
     return this.clientServicesList.asObservable();
   }
   setClientServicesList(newList:Service[]){

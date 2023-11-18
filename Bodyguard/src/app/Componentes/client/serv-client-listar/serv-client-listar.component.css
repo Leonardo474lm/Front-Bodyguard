@@ -17,19 +17,27 @@
   .container__add{
     display: flex;
     align-items: center;
-  
+
   }
   .container__add button{
     background-color: #000;
     color: #fff;
     margin-left: 25px;
   }
-  #buto{
-    color: #0057FF;
-  }
 
   .container__table mat-cell {
     text-align: center;
   }
-  
-  
+
+
+.acciones__denegar {
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 400;
+  background: #ff4a4a;
+  color: #fff;
+}
+.acciones__denegar:hover {
+  background: #fb8c8c;
+
+}
