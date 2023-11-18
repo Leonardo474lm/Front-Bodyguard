@@ -1,0 +1,80 @@
+<div class="form">
+  <form [formGroup]="form" (submit)="enviar()" class="form__container">
+    <h2 class="form__title" mat-dialog-title>{{inputData.title}}</h2>
+    <div class="form__content" mat-dialog-content>
+      <!-- <div class="contenedor"> -->
+        <mat-form-field class="form__input">
+          <mat-label>dni</mat-label>
+          <input matInput required placeholder="dni" formControlName="dni">
+        </mat-form-field>
+        <div class="group">
+          <mat-form-field class="form__input">
+            <mat-label>name</mat-label>
+            <input matInput placeholder="name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field class="form__input">
+            <mat-label>lastname</mat-label>
+            <input matInput placeholder="lastname" formControlName="lastname">
+          </mat-form-field>
+        </div>
+
+
+          <mat-form-field appearance="fill" class="campo birth">
+            <mat-label>BirthDate</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fech_nac" max="maxFecha">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="campo genero">
+            <mat-label>Genero</mat-label>
+            <mat-select [(value)]="value" formControlName="gender">
+              <mat-option value="Masculino">Masculino</mat-option>
+              <mat-option value="Femenino">Femenino</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+        <div class="group">
+          <mat-form-field class="form__input">
+            <mat-label>phone</mat-label>
+            <input matInput placeholder="phone" formControlName="phone">
+          </mat-form-field>
+
+          <mat-form-field class="form__input">
+            <mat-label>password</mat-label>
+            <input matInput placeholder="password" formControlName="password">
+          </mat-form-field>
+        </div>
+        <div class="group">
+          <mat-form-field class="form__input">
+            <mat-label>age</mat-label>
+            <input matInput placeholder="age" formControlName="age">
+          </mat-form-field>
+          <mat-form-field class="form__input">
+            <mat-label>district</mat-label>
+            <input matInput placeholder="district" formControlName="district">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="campo specialty">
+          <mat-label>specialization</mat-label>
+          <mat-select  formControlName="specialization">
+            <mat-option value="Masculino">Masculino</mat-option>
+            <mat-option value="Femenino">Femenino</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form__input">
+          <mat-label>email</mat-label>
+          <input matInput placeholder="email" formControlName="email">
+        </mat-form-field>
+      </div>
+    <!-- </div> -->
+    <div mat-dialog-actions class="form__actions">
+      <button mat-button (click)="closeDialog()" class="form__button__cancel">Cancel</button>
+      <button mat-button  type="submit" class="form__button_submit">Aceptar</button>
+    </div>
+  </form>
+</div>

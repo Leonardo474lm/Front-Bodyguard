@@ -16,6 +16,8 @@ export class iServiceService {
   private listaCambio = new Subject<Service[]>();
   private listaPeticiones = new Subject<Service[]>();
   private historyList = new Subject<Service[]>();
+  private clientServicesList = new Subject<Service[]>();
+  private adminServicesList = new Subject<Service[]>();
 
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
@@ -35,8 +37,8 @@ export class iServiceService {
     return this.http.post(this.url + '/insert', service);
   }
 
-  update(dev: Service){
-    return this.http.put(this.url + "/Update", dev);
+  update(serv: Service){
+    return this.http.put(this.url + "/Update", serv);
   }
   delete(idServ:number){
     return this.http.delete<Service>(this.url+"/Delete/"+idServ);
@@ -92,6 +94,28 @@ export class iServiceService {
   }
   setClientHistoryList(newList:Service[]){
     this.historyList.next(newList);
+  }
+
+  //CLIENT SERVICES
+  getClientServices(clientId:number){
+    return this.http.get<Service[]>(this.url+"/clientservices/"+clientId);
+  }
+  getClientServicesList(){
+    return this.clientServicesList.asObservable();
+  }
+  setClientServicesList(newList:Service[]){
+    this.clientServicesList.next(newList);
+  }
+
+  //Admin SERVICES
+  getAdminServices(){
+    return this.http.get<Service[]>(this.url+"/servicestoacept");
+  }
+  getAdminServicesList(){
+    return this.adminServicesList.asObservable();
+  }
+  setAdminServicesList(newList:Service[]){
+    this.adminServicesList.next(newList);
   }
 
 }

@@ -13,4 +13,12 @@
   align-items: center;
   justify-content: center;
 }
+.review_grade{
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
 
+.stars mat-icon {
+  color: #F3D018;
+}

@@ -26,10 +26,9 @@ import { ServiceComponent } from './service/service.component';
 import { ClientComponent } from './client/client.component';
 import { ClientListarComponent } from './client/client-listar/client-listar.component';
 import { ClientEditarComponent } from './client/client-editar/client-editar.component';
-import { BodyEditarComponent } from './bodyguar/body-editar/body-editar.component';
 import { BodyListarComponent } from './bodyguar/body-listar/body-listar.component';
 import { ServiceListarComponent } from './service/service-listar/service-listar.component';
-import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
+// import { ServiceEditarComponent } from './service/service-editar/service-editar.component';
 import { SpecializationListarComponent } from './specialization/specialization-listar/specialization-listar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PerfilComponent } from './perfil/perfil.component';
@@ -53,6 +52,10 @@ import { DeletteDialogComponent } from './payment/payment-listar/delette-dialog/
 import { ClientHistoryListComponent } from './client-history/client-history-list/client-history-list.component';
 import { DeleteHistoryDialogComponent } from './client-history/delete-history-dialog/delete-history-dialog.component';
 import { ReviewHistoryDialogComponent } from './client-history/review-history-dialog/review-history-dialog.component';
+import {MatListModule} from '@angular/material/list';
+import { BodyDialogComponent } from './bodyguar/body-dialog/body-dialog.component';
+
+
 
 
 @NgModule({
@@ -68,9 +71,8 @@ import { ReviewHistoryDialogComponent } from './client-history/review-history-di
     ClientListarComponent,
     ClientEditarComponent,
     BodyListarComponent,
-    BodyEditarComponent,
     ServiceListarComponent,
-    ServiceEditarComponent,
+    // ServiceEditarComponent,
     SpecializationListarComponent,
     NavbarComponent,
     PerfilComponent,
@@ -89,6 +91,9 @@ import { ReviewHistoryDialogComponent } from './client-history/review-history-di
     ClientHistoryListComponent,
     DeleteHistoryDialogComponent,
     ReviewHistoryDialogComponent,
+    BodyDialogComponent,
+ 
+
 
   ],
     imports: [
@@ -117,6 +122,7 @@ import { ReviewHistoryDialogComponent } from './client-history/review-history-di
         MatCardModule,
         MatSidenavModule,
         MatToolbarModule,
+        MatListModule,
 
 
     ],

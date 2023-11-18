@@ -1,77 +1,59 @@
+<div class="container__table">
+  <h1> Servicios</h1>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="Monto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto</th>
+      <td mat-cell *matCellDef="let element"> {{"S/ "+element.hours*element.bodyguards.price_per_hour}} </td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="hours_start">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Hora de inicio </th>
+      <td mat-cell *matCellDef="let element"> {{element.hours_start + ":00"}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Duracion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Duracion </th>
+      <td mat-cell *matCellDef="let element"> {{element.hours + " horas"}} </td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Direccion </th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+    </ng-container>
+    <ng-container matColumnDef="bodyguards">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Bodyguard </th>
+      <td mat-cell *matCellDef="let element"> {{element.bodyguards.user.name + " " + element.bodyguards.user.lastname }}
+      </td>
+    </ng-container>
 
-  <div class="container__table">
-    <h1> Servicios</h1>
-    <table mat-table [dataSource]="dataSource" matSort>
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-      </ng-container>
-      <ng-container matColumnDef="hours_start">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> hours_start </th>
-        <td mat-cell *matCellDef="let element"> {{element.hours_start}} </td>
-      </ng-container>
-      
-      <ng-container matColumnDef="location">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> location </th>
-        <td mat-cell *matCellDef="let element"> {{element.location}} </td>
-      </ng-container>
-      <ng-container matColumnDef="clients">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> clients </th>
-        <td mat-cell *matCellDef="let element"> {{element.clients.id}} </td>
-      </ng-container>
-      <!--
-      <ng-container matColumnDef="bodyguards">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
-        <td mat-cell  *matCellDef="let element"> {{element.bodyguards.price_per_hour | currency: 'USD'}} </td>
-      </ng-container>
-      <ng-container matColumnDef="review">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> review </th>
-        <td mat-cell *matCellDef="let element"> {{element.review}} </td>
-      </ng-container>
-      <ng-container matColumnDef="payment_method">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> payment_method </th>
-        <td mat-cell *matCellDef="let element"> {{element.payment_method.id}} </td>
-      </ng-container>-->
-      
-      <ng-container matColumnDef="st_aceptar">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> st_aceptar </th>
-        <td mat-cell *matCellDef="let element"> {{element.st_aceptar}} </td>
-      </ng-container>
-      <ng-container matColumnDef="st_pagado">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> st_pagado </th>
-        <td mat-cell *matCellDef="let element"> {{element.st_pagado}} </td>
-      </ng-container>
-      <ng-container matColumnDef="st_anulado">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> st_anulado </th>
-        <td mat-cell *matCellDef="let element"> {{element.st_anulado}} </td>
-      </ng-container>
-      <ng-container matColumnDef="actions01">
-        <th mat-header-cell *matHeaderCellDef> Acciones </th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-raised-button >Activar</button>
-        </td>
+    <ng-container matColumnDef="st_anulado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Anulado </th>
+      <td mat-cell *matCellDef="let element">{{ element.st_anulado ? "Anulado" : "No anulado"}}</td>
+    </ng-container>
 
-      </ng-container>
+    <ng-container matColumnDef="st_aceptar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+      <td mat-cell *matCellDef="let element">{{ element.st_aceptar ? "Aceptado" : "En espera"}} </td>
+    </ng-container>
+    <ng-container matColumnDef="st_pagado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Pago </th>
+      <td mat-cell *matCellDef="let element">{{ element.st_pagado ? "Cancelado" : "Sin pagar"}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="actions02">
-        <th mat-header-cell *matHeaderCellDef> Acciones </th>
-        <td mat-cell *matCellDef="let element">
-        <button (click)="editService(element.id)"mat-mini-fab matTooltip="Accent" color="accent" aria-label="Example mini fab with a heart icon">
-          <mat-icon>favorite</mat-icon>
+    <ng-container matColumnDef="Acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="warn" (click)="activarServicio(element.id)" class="acciones__activar">
+          Activar
         </button>
       </td>
-        
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-    </table>
-    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
-    </mat-paginator>
-  </div>
-  
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+  </mat-paginator>
+</div>
