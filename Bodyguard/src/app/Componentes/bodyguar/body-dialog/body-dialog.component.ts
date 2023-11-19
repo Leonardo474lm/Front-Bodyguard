@@ -3,8 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { User } from 'src/app/Model/User';
-import { Bodyguard } from 'src/app/Model/bodyguard';
 
 import { Body } from 'src/app/Model/Body';
 
@@ -44,7 +42,6 @@ export class BodyDialogComponent {
     this.form = new FormGroup({
 
       price_per_hour: new FormControl('', [Validators.required]),
-
       email: new FormControl('', [Validators.required]),
       dni: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
@@ -74,7 +71,9 @@ export class BodyDialogComponent {
   enviar() {
 
 
+
     this.bodyguard.price_per_hour = this.form.value['price_per_hour']
+
     this.bodyguard.st_activo = true;
     this.bodyguard.user.dni = this.form.value['dni'];
     this.bodyguard.user.email = this.form.value['email'];

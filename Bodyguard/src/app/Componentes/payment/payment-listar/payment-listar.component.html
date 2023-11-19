@@ -5,14 +5,14 @@
     </button>
   </div>
   <div class="container__table">
-    <h1> Gestion de Formas de Pago </h1>
+    <h1> Gestion de metodos de pago </h1>
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
       <ng-container matColumnDef="methods">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> methods </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Metodo </th>
         <td mat-cell *matCellDef="let element"> {{element.methods}} </td>
       </ng-container>
   

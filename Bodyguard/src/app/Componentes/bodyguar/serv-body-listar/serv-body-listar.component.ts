@@ -37,9 +37,6 @@ export class ServBodyListarComponent implements OnInit{
       this.user = JSON.parse(store) as User;
       this.userService.getByEmail(this.user.email).subscribe((user1) => {
         this.user = user1;
-        console.log(this.user);
-
-        // Mover la carga de datos aquí
         this.serviceservi.ListServiceBodyguard(this.user.id).subscribe(data => {
           console.log('Data from ListServiceBodyguard:', data);
           this.dataSource.data = data;
@@ -48,13 +45,11 @@ export class ServBodyListarComponent implements OnInit{
     }
   }
   ngAfterViewInit() {
-    console.log(this.lista)
-
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  //esto es para transformar un number a formato hora xd
+  //esto es para transformar un number a formato hora
   formatHours(value: number): string {
     const hours = Math.floor(value);
     const minutes = value % 1;

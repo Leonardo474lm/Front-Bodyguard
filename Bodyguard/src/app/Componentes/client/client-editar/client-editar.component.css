@@ -1,0 +1,25 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+
+    padding: 10px 0px;
+}
+form{
+    background-color: #fff;
+    padding: 20px;
+}
+.group{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.group.flex_end{
+   
+    justify-content: flex-end;
+}
+.btn_aceptar{
+    background-color: #000;
+}
+.input{
+    width: 100%;
+}

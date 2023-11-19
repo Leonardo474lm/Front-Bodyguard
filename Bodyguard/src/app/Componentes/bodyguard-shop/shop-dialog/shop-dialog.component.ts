@@ -96,7 +96,7 @@ export class ShopDialogComponent implements OnInit {
 
   submit() {
     this.newService.date = this.form.value['date'];
-    this.newService.hours_start = this.form.value['hours_start']; //view-format
+    this.newService.hours_start = this.form.value['hours_start'];
     this.newService.location = this.form.value['location'];
     this.newService.hours = this.form.value['hour'];
     this.newService.hours_start = this.form.value['hours_start'];
