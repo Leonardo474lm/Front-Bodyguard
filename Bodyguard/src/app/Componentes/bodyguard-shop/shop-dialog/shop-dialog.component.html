@@ -1,0 +1,49 @@
+<div class="form">
+  <form  [formGroup]="form" (submit)="submit()" class="form__container">
+    <h2 class="form__title" mat-dialog-title>Contratar guardaespalda</h2>
+    <div class="form__content" mat-dialog-content>
+
+        <mat-form-field class="form__input">
+          <mat-label>Direccion</mat-label>
+          <input required matInput required placeholder="Enter your direction" formControlName="location"  >
+        </mat-form-field>
+
+        <div class="form__inputs">
+          <mat-form-field class="form__input">
+            <mat-label>Fecha de inicio</mat-label>
+            <input required matInput [matDatepicker]="picker" placeholder="Select the start date" formControlName="date" >
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="form__input">
+            <mat-label>Hora de Inicio</mat-label>
+            <input required matInput placeholder="Enter start hour" formControlName="hours_start">
+          </mat-form-field>
+        </div>
+
+        <div class="form__inputs">
+          <mat-form-field class="form__input">
+            <mat-label>Duracion</mat-label>
+            <input required matInput placeholder="Enter duration" formControlName="hour">
+          </mat-form-field>
+          <mat-form-field class="form__input">
+            <mat-label>Especialidad</mat-label>
+            <input readonly matInput placeholder="especialidad" formControlName="specialty" >
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="form__input">
+          <mat-label>Metodo de pago</mat-label>
+          <mat-select required [(value)]="idPaymentSelected" formControlName="payment_method" >
+            <mat-option  [value]="pay.id" *ngFor="let pay of listPay" >{{pay.methods}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div mat-dialog-actions class="form__actions">
+      <button mat-button mat-dialog-close class="form__button__cancel">Cancel</button>
+      <button mat-button type="submit"  class="form__button_submit">Contratar</button>
+    </div>
+  </form>
+</div>

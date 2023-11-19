@@ -16,10 +16,9 @@ export class ClientEditarComponent implements OnInit {
   client: Client = new Client();
   mensaje: string = '';
   id: number = 0;
-  edicion: boolean = false;
+  edicion: boolean = false
+  iduser:number=0
   maxFecha: Date = moment().add(1, 'days').toDate();
-  listaUser: User[] = [];
-  user: User = new User();
   // Define una variable para almacenar el DNI original
   dniOriginal: string = '';
   constructor(private clientservice: ClientService,
@@ -35,9 +34,6 @@ export class ClientEditarComponent implements OnInit {
       console.log(this.id)
     });
 
-
-    //
-
     this.form = new FormGroup({
       id: new FormControl(),
       dni: new FormControl('', [Validators.required]),
@@ -52,18 +48,17 @@ export class ClientEditarComponent implements OnInit {
 
     })
 
-
-
   }
   init() {
 
     if (this.edicion) {
       this.clientservice.listId(this.id).subscribe((data) => {
         this.dniOriginal = data.user.dni;
+        this.iduser=data.user.id
         console.log(this.dniOriginal)
 
         this.form = new FormGroup({
-          id: new FormControl({value:data.id,disabled:true}),
+          id: new FormControl(data.id),
           dni: new FormControl({value:this.dniOriginal,disabled:true}),
           name: new FormControl(data.user.name),
           lastname: new FormControl(data.user.lastname),
@@ -77,12 +72,13 @@ export class ClientEditarComponent implements OnInit {
         });
         console.log(data)
       });
-    } //del if
-  } // del in
+    } 
+  } 
 
   aceptar() {
     if (this.edicion) {
       this.client.id = this.form.value['id'];
+       this.client.user.id = this.iduser;
       this.client.user.dni = this.dniOriginal;
       this.client.user.name = this.form.value['name'];
       this.client.user.lastname = this.form.value['lastname'];
@@ -127,7 +123,7 @@ export class ClientEditarComponent implements OnInit {
         })
       }
       console.log(this.client)
-      this.router.navigate(['/bodyguard/pages/client/lista']);
+      this.router.navigate(['/bodyguard/pages/admin/client/lista']);
     } else {
       this.mensaje = "Agregue campos omitidos";
     }

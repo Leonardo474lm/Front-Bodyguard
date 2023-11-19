@@ -17,15 +17,23 @@
   .container__add{
     display: flex;
     align-items: center;
-  
+
   }
   .container__add button{
     background-color: #000;
     color: #fff;
     margin-left: 25px;
   }
-  #buto{
-    color: #0057FF;
-  }
-   
-  
+
+.acciones__activar {
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 400;
+  background: #88FFC6;
+  color: #000;
+}
+.acciones__activar:hover {
+  background: #01ad5a;
+  color: #fff;
+
+}

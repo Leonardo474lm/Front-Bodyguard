@@ -3,13 +3,18 @@ import { Specialization } from '../Model/specialization';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
+import { environment } from 'src/Environments/environment';
+
+
+const base_url = environment.base;
+
 @Injectable({
   providedIn: 'root'
 })
 export class SpecializationService {
-  private url = "http://localhost:8080/Specialization";
+  private url = `${base_url}/Specialization`;
   private listaCambio = new Subject<Specialization[]>();
- 
+
   constructor(private http: HttpClient) { }
   list(): Observable<any> {
     return this.http.get<Specialization[]>(this.url + "/List");
@@ -28,9 +33,15 @@ export class SpecializationService {
   update(specialization:Specialization){
     return this.http.put<Specialization>(this.url+"/update",specialization);
   }
-
-  listId(id:number){
-    return this.http.get<Specialization>(this.url+"/"+id);
+  listId(iddevice:number){
+    return this.http.get<Specialization>(this.url+"/"+iddevice);
+  }
+  listById(id:number){
+    return this.http.get<Specialization>( this.url+ "/"+id);
+  }
+  delete(id:number)
+  {
+    return this.http.delete<Specialization>( this.url+"/Delete/"+id);
   }
 
 }

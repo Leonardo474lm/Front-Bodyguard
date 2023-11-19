@@ -1,73 +1,102 @@
 <div class="contenedor">
-    <form [formGroup]="form" (submit)="aceptar()">
+  <form [formGroup]="form" (submit)="aceptar()">
+    <div class="group">
       <mat-form-field class="example-full-width">
         <mat-label>id</mat-label>
-        <input matInput placeholder="id" formControlName="id">
+        <input matInput placeholder="id" formControlName="id" />
       </mat-form-field>
-      <br>
+
       <mat-form-field class="example-full-width">
         <mat-label>dni</mat-label>
-        <input matInput required placeholder="dni" formControlName="dni">
+        <input matInput required placeholder="dni" formControlName="dni" />
       </mat-form-field>
-      <br> 
-     
+    </div>
+    <div class="group">
       <mat-form-field class="example-full-width">
         <mat-label>nombre</mat-label>
-        <input matInput required placeholder="name" formControlName="name">
+        <input matInput required placeholder="name" formControlName="name" />
       </mat-form-field>
-      <br>
       <mat-form-field class="example-full-width">
         <mat-label>lastname</mat-label>
-        <input matInput required placeholder="lastname" formControlName="lastname">
+        <input
+          matInput
+          required
+          placeholder="lastname"
+          formControlName="lastname"
+        />
       </mat-form-field>
-      <br>
+    </div>
+    <div class="group">
       <mat-form-field class="example-full-width">
         <mat-label>email</mat-label>
-        <input matInput required placeholder="email" formControlName="email">
+        <input matInput required placeholder="email" formControlName="email" />
       </mat-form-field>
-      <br>
 
-      <mat-form-field class="example-full-width" appearance="fill" required placeholder="gender">
+      <mat-form-field
+        class="example-full-width"
+        appearance="fill"
+        required
+        placeholder="gender"
+      >
         <mat-label></mat-label>
-        <mat-select  formControlName="gender">  
+        <mat-select formControlName="gender">
           <mat-option value="Femenino">Femenino</mat-option>
           <mat-option value="Masculino">Masculino</mat-option>
           <mat-option value="-">-</mat-option>
-
         </mat-select>
       </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>fech_nac</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fech_nac"
-        max="maxFecha">
-        <mat-hint>DD/MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>phone</mat-label>
-        <input matInput required placeholder="phone" formControlName="phone">
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>age</mat-label>
-        <input matInput required placeholder="age" formControlName="age">
-      </mat-form-field>
-     
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>password</mat-label>
-        <input matInput required placeholder="password" formControlName="password">
-      
-      </mat-form-field>
+    </div>
 
- 
-      <br>
-      <button mat-raised-button type="submit" color="primary">Aceptar</button>
-      <button mat-raised-button color="warn" routerLink="/bodyguard/pages/client/lista">Cancelar</button>
-      <p>{{mensaje}}</p>
-  
-    </form>
+    <div class="group">
+
+    <mat-form-field appearance="fill" class="date">
+      <mat-label>fech_nac</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="fech_nac"
+        max="maxFecha"
+      />
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>phone</mat-label>
+      <input matInput required placeholder="phone" formControlName="phone" />
+    </mat-form-field>
   </div>
+
+  <div class="group">
+    <mat-form-field class="example-full-width">
+      <mat-label>age</mat-label>
+      <input matInput required placeholder="age" formControlName="age" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>password</mat-label>
+      <input
+        matInput
+        required
+        placeholder="password"
+        formControlName="password"
+      />
+    </mat-form-field>
+  </div>
+    <div class="group flex_end">
+      <button mat-raised-button type="submit" color="primary" class="btn_aceptar">Aceptar</button>
+      <button
+        mat-raised-button
+        color="warn"
+        routerLink="/bodyguard/pages/admin/client/lista"
+      >
+        Cancelar
+      </button>
+    </div>
+    <p>{{ mensaje }}</p>
+  </form>
+</div>
