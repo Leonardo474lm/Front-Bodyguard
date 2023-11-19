@@ -74,7 +74,7 @@ export class BodyDialogComponent {
   enviar() {
 
 
-    this.bodyguard.price_per_hour = 0
+    this.bodyguard.price_per_hour = this.form.value['price_per_hour']
     this.bodyguard.st_activo = true;
     this.bodyguard.user.dni = this.form.value['dni'];
     this.bodyguard.user.email = this.form.value['email'];
@@ -91,8 +91,16 @@ export class BodyDialogComponent {
     this.bodyguard.user = this.user;
     this.bodyguard.specialization.id = this.idSpecSelected;
     this.bodyguard.district = this.form.value['district'];
-    console.log("body form",this.bodyguard)
 
+    console.log("body form",this.bodyguard)
+    //esto se agrega para guardar los datos de specializacion listado
+    if (this.idSpecSelected > 0) {
+      let spec = new Specialization();
+      spec.id = this.idSpecSelected;
+      this.bodyguard.specialization = spec;
+    }
+
+      
     if (this.form.valid) {
         console.log("body to send",this.bodyguard)
         this.bodyService.insertByAdmin(this.bodyguard).subscribe(() => {
