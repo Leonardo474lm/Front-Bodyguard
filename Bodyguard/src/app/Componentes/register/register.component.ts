@@ -3,7 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { User } from 'src/app/Model/User';
 import { Client } from 'src/app/Model/client';
+import { Role } from 'src/app/Model/role';
 import { ClientService } from 'src/app/Services/client.service';
+import { RoleService } from 'src/app/Services/role.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +16,8 @@ import { ClientService } from 'src/app/Services/client.service';
 export class RegisterComponent implements OnInit {
 
   value: string = "";
-  role: string = ""
+  role: Role = new Role()
+  useraux: User = new User();
   hide = true;
   showLogin = true;
   client: Client = new Client()
@@ -26,7 +30,7 @@ export class RegisterComponent implements OnInit {
   constructor(private clientservice: ClientService,
     private router: Router,
     public route: ActivatedRoute,
-    private renderer: Renderer2, private el: ElementRef
+    private renderer: Renderer2, private el: ElementRef, private roless: RoleService, private userservice: UserService
   ) {
 
   }
@@ -34,8 +38,9 @@ export class RegisterComponent implements OnInit {
 
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
-      console.log("id",this.id)
+      // console.log("id", this.id)
     });
+
 
     this.form = new FormGroup({
 
@@ -55,7 +60,7 @@ export class RegisterComponent implements OnInit {
 
   aceptar() {
 
-    this.client.id = this.form.value['id'];
+
     this.client.user.dni = this.form.value['dni'];
     this.client.user.name = this.form.value['name'];
     this.client.user.lastname = this.form.value['lastname'];
@@ -67,25 +72,47 @@ export class RegisterComponent implements OnInit {
     this.client.user.password = this.form.value['password'];
 
 
-    //agregado al editar
-    if (this.form.valid) {
 
-      console.log(this.clientservice);//se ve en la herramienta de desarrollador de Chrome
+    // ... tu código previo
+
+    if (this.form.valid) {
+      // Insertar el cliente
       this.clientservice.insert(this.client).subscribe((data) => {
         this.clientservice.list().subscribe(data => {
           this.clientservice.setList(data);//enviando la lista al suscriptor
-        })
-      })
 
-      console.log(this.client)
-      this.router.navigate(['']);
+          this.userservice.getByEmail(this.client.user.email).subscribe((user) => {
+            // Verificar si se encontró el usuario
+            console.log(this.role)
+            // Asignar valores al rol
+            this.role.rol = "Cliente";
+            this.role.user = user;
+            console.log(user.id)
+            console.log(this.role)
+
+            // Insertar el rol
+            this.roless.insertrole(this.role).subscribe((data) => {
+
+            });
+
+            // Continuar con cualquier lógica adicional aquí
+            // this.router.navigate(['']);
+
+          });
+        });
+
+        // Obtener el usuario por email
+
+      });
     } else {
       this.mensaje = "Agregue campos omitidos";
     }
   }
 
-  onSelect(value:string){
-    console.log("on select",value)
+
+
+  onSelect(value: string) {
+    console.log("on select", value)
   }
 
 }

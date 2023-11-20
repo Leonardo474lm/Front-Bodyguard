@@ -5,11 +5,14 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Body } from 'src/app/Model/Body';
+import { Role } from 'src/app/Model/role';
 
 import { Specialization } from 'src/app/Model/specialization';
 import { UserBody } from 'src/app/Model/userBody';
 import { SpecializationService } from 'src/app/Services/Sspecialization.service';
 import { BodyguardService } from 'src/app/Services/bodyguard.service';
+import { RoleService } from 'src/app/Services/role.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-body-dialog',
@@ -18,22 +21,22 @@ import { BodyguardService } from 'src/app/Services/bodyguard.service';
 })
 export class BodyDialogComponent {
   inputData: any;
-
+  role: Role = new Role()
   form: FormGroup = new FormGroup({});
   editing: boolean;
   bodyguard: Body = new Body();
-  user: UserBody  = new UserBody();
+  user: UserBody = new UserBody();
   specialty: Specialization = new Specialization();
-  value:String="";
-  listaSpecialty:  Specialization[] = [];
-  idSpecSelected:number=0;
+  value: String = "";
+  listaSpecialty: Specialization[] = [];
+  idSpecSelected: number = 0;
 
 
   constructor(
     private ref: MatDialogRef<BodyDialogComponent>,
-    @Inject (MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private bodyService: BodyguardService,
-    private speServ:SpecializationService,
+    private speServ: SpecializationService, private userservice: UserService, private roless: RoleService
   ) {
     this.editing = false;
   }
@@ -57,11 +60,11 @@ export class BodyDialogComponent {
     });
 
     this.inputData = this.data;
-    this.speServ.list().subscribe((data)=>{
-      this.listaSpecialty=data;
+    this.speServ.list().subscribe((data) => {
+      this.listaSpecialty = data;
     })
   }
- 
+
 
 
   closeDialog() {
@@ -91,7 +94,7 @@ export class BodyDialogComponent {
     this.bodyguard.specialization.id = this.idSpecSelected;
     this.bodyguard.district = this.form.value['district'];
 
-    console.log("body form",this.bodyguard)
+    console.log("body form", this.bodyguard)
     //esto se agrega para guardar los datos de specializacion listado
     if (this.idSpecSelected > 0) {
       let spec = new Specialization();
@@ -99,16 +102,35 @@ export class BodyDialogComponent {
       this.bodyguard.specialization = spec;
     }
 
-      
+
     if (this.form.valid) {
-        console.log("body to send",this.bodyguard)
-        this.bodyService.insertByAdmin(this.bodyguard).subscribe(() => {
-          this.closeDialog();
-          this.bodyService.list().subscribe((data) => {
-            this.bodyService.setList(data);
+      console.log("body to send", this.bodyguard)
+      this.bodyService.insertByAdmin(this.bodyguard).subscribe(() => {
+        this.closeDialog();
+        this.bodyService.list().subscribe((data) => {
+          this.bodyService.setList(data);
+          this.userservice.getByEmail(this.bodyguard.user.email).subscribe((user) => {
+            // Verificar si se encontró el usuario
+            console.log(this.role)
+            // Asignar valores al rol
+            this.role.rol = "Bodyguard";
+            this.role.user = user;
+            console.log(user.id)
+            console.log(this.role)
+
+            // Insertar el rol
+            this.roless.insertrole(this.role).subscribe((data) => {
+
+            });
+
+            // Continuar con cualquier lógica adicional aquí
+            // this.router.navigate(['']);
+
           });
         });
-      
+      });
+
+
     }
 
   }
