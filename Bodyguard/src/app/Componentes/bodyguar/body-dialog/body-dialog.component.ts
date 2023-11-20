@@ -73,14 +73,10 @@ export class BodyDialogComponent {
 
   enviar() {
 
-
-
     this.bodyguard.price_per_hour = this.form.value['price_per_hour']
-
     this.bodyguard.st_activo = true;
     this.bodyguard.user.dni = this.form.value['dni'];
     this.bodyguard.user.email = this.form.value['email'];
-
     this.user.email = this.form.value['email'];
     this.user.dni = this.form.value['dni'];
     this.user.name = this.form.value['name'];
