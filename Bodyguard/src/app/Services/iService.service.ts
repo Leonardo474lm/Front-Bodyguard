@@ -118,4 +118,12 @@ export class iServiceService {
     this.adminServicesList.next(newList);
   }
 
+  gettotalmoney(){
+    return this.http.get<number>(this.url+"/gettotalmoney");
+
+  }
+  getclienttotal(){
+    return this.http.get<number>(this.url+"/getclienttotal");
+
+  }
 }

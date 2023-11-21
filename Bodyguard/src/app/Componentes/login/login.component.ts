@@ -99,13 +99,7 @@ export class LoginComponent  implements OnInit{
 
 
 goToRegister() {
-
-  // this.showLogin = false;
-
   this.router.navigate(["register"]);
-
-
-  // window.open('register',windowName,windowFeatures);
 }
 
 

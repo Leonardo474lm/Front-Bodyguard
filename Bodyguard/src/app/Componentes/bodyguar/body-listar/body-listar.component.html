@@ -1,8 +1,6 @@
 <div class="container__add">
 
-    <button mat-raised-button routerLink="/bodyguard/pages/bodyguard/bodyinsertar">
-
-
+    <button mat-raised-button (click)="addBodyguard()" >
       <mat-icon class="main__icon_logout" aria-hidden="false" aria-label="Add icon" fontIcon="add"></mat-icon>Agregar
     </button>
   </div>
@@ -17,7 +15,7 @@
       </ng-container>
       <ng-container matColumnDef="name_user">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.user.name}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.user.name + " "+ element.user.lastname }} </td>
       </ng-container>
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> email </th>
@@ -27,18 +25,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header> especializacion </th>
         <td mat-cell *matCellDef="let element"> {{element.specialization.name}} </td>
       </ng-container>
-
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Acciones </th>
-        <td mat-cell *matCellDef="let element">
-
-          <button id="buto" mat-icon-button color="primary" [routerLink]="['/bodyguard/pages/bodyguard/edicion',element.id]">
-
-            <span class="material-icons">edit</span>
-          </button>
-
-        </td>
-      </ng-container>
+     
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

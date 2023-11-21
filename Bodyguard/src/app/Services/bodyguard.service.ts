@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/Environments/environment';
 import { Bodyguard } from '../Model/bodyguard';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Specialization } from '../Model/specialization';
+import { Body } from '../Model/Body';
 
 const base_url = environment.base;
 @Injectable({
@@ -12,13 +13,14 @@ const base_url = environment.base;
 export class BodyguardService {
   private url = `${base_url}/Bodyguard`;
   private listBodyguards = new Subject<Bodyguard[]>();
+   public search = new BehaviorSubject<string>("");
   constructor(
     private http:HttpClient
   ) {
 
   }
   getList():Observable<any>{
-    return this.http.get(this.url+"/List")
+    return this.http.get<Bodyguard[]>(this.url+"/List")
   }
 
   getListObs(){
@@ -33,6 +35,9 @@ export class BodyguardService {
 
   insert(bodyguard: Bodyguard): Observable<any> {
     return this.http.post(this.url + '/insert', bodyguard);
+  }
+  insertByAdmin(body: Body): Observable<any> {
+    return this.http.post(this.url + '/insert', body);
   }
   update(bod: Bodyguard): Observable<any> {
     return this.http.put(this.url + "/Update", bod);
@@ -56,6 +61,7 @@ export class BodyguardService {
   setList(listaNueva: Bodyguard[]) {
     this.listBodyguards.next(listaNueva);//enviar la nueva lista a los suscriptores
   }
+
 
 
 

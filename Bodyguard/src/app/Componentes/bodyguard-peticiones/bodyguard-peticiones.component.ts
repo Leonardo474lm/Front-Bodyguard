@@ -47,9 +47,6 @@ export class BodyguardPeticionesComponent {
      this.dataSource.sort = this.sort;
      this.dataSource.paginator = this.paginator;
   }
-  // filtrar(e:any){
-  //   this.dataSource.filter = e.target.value.trim();
-  // }
   aceptarPeticion(id:number){
     this.iService.listById(id).subscribe(data=>{
       data.st_aceptar=true;

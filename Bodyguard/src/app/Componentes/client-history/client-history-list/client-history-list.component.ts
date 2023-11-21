@@ -28,19 +28,7 @@ export class ClientHistoryListComponent {
     'review',
     'Acciones',
   ];
-  // displayedColumns = [
-  //   'Monto',
-  //   'date',
-  //   'hours_start',
-  //   'Duracion',
-  //   'location',
-  //   'bodyguards',
-  //   'review',
-  //   'st_anulado',
-  //   'st_aceptar',
-  //   'st_pagado',
-  //   'Acciones',
-  // ];
+
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -102,21 +90,18 @@ export class ClientHistoryListComponent {
   openReviewDialog(id:number){
     const review = this.dialog.open(ReviewHistoryDialogComponent);
     review.afterClosed().subscribe(resp=>{
-       console.log(resp[0])
       if(resp[0]) {
         this.rev=resp[0];
         this.iService.listById(id).subscribe(resp=>{
           resp.review= this.rev;
-           
           this.iService.update(resp).subscribe(()=>{
-            
             this.iService.getClientHistory(this.client.id).subscribe((data) => {
               this.iService.setClientHistoryList(data);
             });
           });
           
         })
-        //actualizar review del servicio por parte del cliente
+        
       }
     })
 

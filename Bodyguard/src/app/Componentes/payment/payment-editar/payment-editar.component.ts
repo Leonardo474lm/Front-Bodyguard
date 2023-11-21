@@ -44,7 +44,6 @@ export class PaymentEditarComponent implements OnInit {
     this.editing = true;
     if(this.editing){
       this.paymentservice.listById(id).subscribe((item) => {
-        console.log(item)
          this.editData = item;
         this.form = new FormGroup({
           id: new FormControl(item.id),
