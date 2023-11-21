@@ -17,7 +17,7 @@ export class RoleService {
   ) { }
 
    list(): Observable<any> {
-    return this.http.get<Role[]>(this.url + "/List");
+    return this.http.get<Role[]>(this.url + "/list");
   }
   setList(listaNueva: Role[]) {
     this.listaCambio.next(listaNueva);
@@ -28,5 +28,10 @@ export class RoleService {
   getRoleByUserId(id:number){
     return this.http.get<Role>(this.url+"/user/"+id)
   }
-
+  insertrole(role: Role){
+    return this.http.post(this.url+"/insert",role)
+  }
+  Lista():Observable<any>{
+    return this.http.get<Role>(this.url+"/lista")
+  }
 }

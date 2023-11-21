@@ -54,6 +54,7 @@ import { DeleteHistoryDialogComponent } from './client-history/delete-history-di
 import { ReviewHistoryDialogComponent } from './client-history/review-history-dialog/review-history-dialog.component';
 import {MatListModule} from '@angular/material/list';
 import { BodyDialogComponent } from './bodyguar/body-dialog/body-dialog.component';
+import { BodyguardService } from '../Services/bodyguard.service';
 
 
 
@@ -92,7 +93,8 @@ import { BodyDialogComponent } from './bodyguar/body-dialog/body-dialog.componen
     DeleteHistoryDialogComponent,
     ReviewHistoryDialogComponent,
     BodyDialogComponent,
- 
+
+
 
 
   ],
@@ -126,7 +128,7 @@ import { BodyDialogComponent } from './bodyguar/body-dialog/body-dialog.componen
 
 
     ],
-    providers: [],
+    providers: [BodyguardService],
 
 })
 

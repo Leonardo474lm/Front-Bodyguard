@@ -14,10 +14,12 @@ import { PageModule } from './Componentes/page.module';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeEsPE from '@angular/common/locales/es-PE';
+
 registerLocaleData(localeEsPE, 'es-PE');
 @NgModule({
   declarations: [
     AppComponent,
+ 
   ],
   imports: [
     BrowserModule,

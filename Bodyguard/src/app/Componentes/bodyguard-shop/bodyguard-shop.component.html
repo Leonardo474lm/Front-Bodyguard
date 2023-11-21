@@ -1,16 +1,20 @@
 <div class="shop">
   <div class="shop__search">
-    <mat-icon fontIcon="search"></mat-icon><input matInput type="text" placeholder="Busque un guardaespalda">
+    <mat-icon fontIcon="search"></mat-icon><input matInput type="text" placeholder="Busque un guardaespalda por su nombre" [(ngModel)]="searchTerm" (keyup)="search($event)">
 
   </div>
   <div class="bodyguards">
 
-    <mat-card class="bodyguards__card" *ngFor="let body of arrBodyguards">
+    <mat-card class="bodyguards__card" *ngFor="let body of arrBodyguards ">
       <div class="bodyguard__img">
         <img mat-card-image src="/assets/profile__bodyguard.svg" alt="Photo of a bodyguard">
       </div>
       <mat-card-content class="bodyguard__content">
         <div *ngIf="body.star==0; else graded">
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion">
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion">
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion">
+          <img src="/assets/stars_removebg.svg" alt="sin calificacion">
           <img src="/assets/stars_removebg.svg" alt="sin calificacion">
         </div>
         <ng-template #graded>
@@ -19,7 +23,7 @@
           </div>
         </ng-template>
         <div class="bodyguard__text">
-          <h2>{{body.user.name +" "+ body.user.lastname}}</h2>
+          <h2>{{body.user.name + " " + body.user.lastname  }}</h2>
           <p>Proteccion especializada en {{body.specialization.name}} por S/ {{body.price_per_hour}} la hora</p>
         </div>
       </mat-card-content>
